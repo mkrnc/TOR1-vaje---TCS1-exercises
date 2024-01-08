@@ -1,0 +1,38 @@
+%*******************************************************
+% Titlepage
+%*******************************************************
+\begin{titlepage}
+\definecolor{amber}{rgb}{1.0, 0.75, 0.0}
+\pagecolor{amber}\afterpage{\nopagecolor}
+	% if you want the titlepage to be centered, uncomment and fine-tune the line below (KOMA classes environment)
+	\begin{addmargin}[-1cm]{-1cm}
+    \begin{center}
+        \large  
+
+        \hfill
+
+        \vfill
+
+        \begingroup
+            \color{Maroon}\spacedallcaps{\LARGE\myTitle} \\ \bigskip
+        \endgroup
+
+        \spacedlowsmallcaps{\mySubtitle}
+
+        \vfill
+
+        \includegraphics[width=11cm]{petersen.png} %\\ \medskip
+				\vfill
+        \myName \\ \medskip   
+        %\myDegree \\
+        %\myDepartment \\                            
+        %\myFaculty \\
+        %\myUni \\ \bigskip
+
+        \myMonth \xspace \myYear \ -- \verzija
+
+        \vfill                      
+
+    \end{center}  
+  \end{addmargin}       
+\end{titlepage}   
