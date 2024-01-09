@@ -116,13 +116,6 @@ Pred tabo so zapiski iz predavanj za predmet TOR1, ki se predava študentom prve
 Predmet pokriva osnove iz različnih področij teoretičnega računalništva in je usmerjen potrebam računalničarjev.
 %Od leta 2020 naprej sem se odločil tale TeX projekt odpreti kot javni repozitorij, tako da lahko zares vsak študent predlaga svoje naloge (oz. rešitve), ki se jih ustrezno vključi v tole skripto.
 
-Gradivo je osnovano na izročkih  predhodnih predavateljev istega predmeta, ter na knjigi: 
-\begin{quote}
-   Niko Prijatelj (1996):
-   \emph{Matematične strukture 1}.
-   \\
-   Društvo   matematikov,   fizikov in astronomov Slovenije. 
-\end{quote}
 
 Dokument je zamišljen kot dopolnjevanje predavanj, in se ga ne sme jemati kot samostojno gradivo za pripravo na izpit. 
 Morebitna vprašanja in najdene napake, lepo prosim, sporočite na
@@ -131,13 +124,6 @@ Morebitna vprašanja in najdene napake, lepo prosim, sporočite na
     \url{https://github.com/mkrnc/TCS1-course-notes.git}.    
 \end{center}
 
-\medskip
-Gradivo je osnovano na nekaterih starejših izročkih od mojih predhodnih predavateljev tega istega predmeta, med katerimi so 
-\begin{center}
-    prof. \textbf{M. Milanič}, 
-    prof. \textbf{N. Prijatelj}, ter 
-    prof. \textbf{P. Škraba}.
-\end{center}
 
 %Among most notable student contributors are:
 
@@ -812,12 +798,6 @@ Zgled: $A = \{1\}, B = C = \emptyset$.
 
 
 \chapter{Relacije}
-
-\section{Pregled najpomembnejših pojmov in nekaj nalog}
-
-
-\subsection{(Binarne) relacije}
-
 Ključni pojmi:
 \begin{itemize}
   \item Binarne relacije:
@@ -829,6 +809,48 @@ Ključni pojmi:
 sovisnost, stroga sovisnost.
 \item Ekvivalenčna relacija. Faktorska množica $S/R$.
 \end{itemize}
+\hrule
+\begin{enumerate}
+
+
+\item Naj velja $S=\{1,2,3,4,5\}$. 
+\begin{enumerate}
+    \item Ali je  $R=\{(1,2),(2,3), (3,5), (2,4), (5,1)\}$ binarna relacija?
+    \item Za relacijo $R$ najdi ustrezno domeno $\mathcal{D} R$, in zalogo vrednosti $\mathcal{Z} R$.
+    \item 
+  Določi inverzno relacijo $R^{-1}$ in  $\mathcal{D} R^{-1}$ in  $\mathcal{Z} R^{-1}$.
+\end{enumerate}
+
+\item Naj bosta $R=\{(1,1),(2,1), (3,3), (1,5)\}$  in $T=\{(1,4),(2,1), (2,2), (2,5)\}$ binarni relaciji v vesolju $S=\{1,2,3,4,5\}$. \begin{enumerate}
+    \item 
+Določi kompozituma  $R\circ T$ in $T\circ R$. 
+\item Ali velja $R\circ T = T \circ R$?
+\end{enumerate}
+
+\item Naj velja  $S=\{1,2,3,4,5,6,7\}$. Določi
+$$R= \{(x,y)\,|\, x-y \text{ je deljivo z  }  3\} \quad \mathrm{ in } \quad  T= \{(x,y)\,|\, x-y \geq 3\}.$$
+Določi $R,T, R\circ R$.
+
+
+\item V vesolju  $S= \mathbb{R}$  definiramo  relacijo $R$:
+$$(\forall x)(\forall y)(x R y \Leftrightarrow y \geq x +3).$$
+Je $R$ refleksivna, simetrična, tranzitivna, ali sovisna?
+
+\item Naj velja  $S=\{1,2,3,4\}$. Imamo spodnje relacije:
+\begin{enumerate}
+\item[(i)] $R_1= \{(1,1),(1,2),(2,3), (1,3), (4,4)\}$,
+\item[(ii)] $R_2= \{(1,1),(1,2),(2,1), (2,2), (3,3), (4,4)\}$,
+\item[(iii)] $R_3= \{(1,3),(2,1)\}$,
+\item[(iv)] $R_4= \emptyset$,
+\item[(v)] $R_5= S\times S$.
+\end{enumerate}
+Za katere od naštetih relacij velja, da so: refleksivne, simetrične, antisimetrične, tranzitivne? 
+
+\item Naj bosta $R$ in $S$ simetrični relaciji. Pokaži: $R\circ S$ simetrična $\Leftrightarrow R\circ S = S \circ R$.
+
+
+\end{enumerate}
+
 
 \begin{problem}
 V množico $A = \{a, b, c, d, e, f \}$ vpeljemo relaciji
@@ -875,7 +897,7 @@ Relacija ni simetrična, saj je $(f,a)\in S^{-1}\cup R$ in $(a,f)\not\in S^{-1}\
 \qed
 
 
-\subsection{Funkcije}
+\section{Funkcije}
 
 Ključni pojmi:
 \begin{itemize}
@@ -938,8 +960,62 @@ $$g = \{(x,a),(y,b),(z,b)\}$$
 %
 %$i(x) = x$, $i(y) = y$.
 %\end{itemize}
+\begin{enumerate}
 
-\subsection{Strukture urejenosti}
+\item Naj bo $A = \{1,2,3,4\}$, $B = \{x,y,z\}$, $C = \{a,b\}$. Imamo funkciji $f:A\to B$ in $g:B\to C$.
+
+\[ f = \{(1,x),(2,y),(3,y),(4,x)\} \]
+
+\[ g = \{(x,a),(y,b),(z,b)\} \]
+
+(a) Ali je $f$ injektivna?
+
+(b) Ali je $f$ surjektivna?
+
+(c) Ali je $g$ injektivna?
+
+(d) Ali je $g$ surjektivna?
+
+(e) Ali je $g \circ f$ surjektivna?
+
+\item Naj bo $A = \{a,b,c\}$, $B = \{1,2,3\}$, $C = \{x,y\}$. Imamo funkciji $f:A\to B$ in $g:B\to C$.
+
+\[ f = \{(a,1),(b,3),(c,2)\} \]
+
+\[ g = \{(1,x),(2,y),(3,x)\} \]
+
+(a) Ali je $f$ injektivna?
+
+(b) Ali je $f$ surjektivna?
+
+(c) Ali je $g$ injektivna?
+
+(d) Ali je $g$ surjektivna?
+
+(e) Ali je $g \circ f$ surjektivna?
+
+\item Naj bo $A = \{x,y,z\}$, $B = \{1,2,3\}$, $C = \{a,b,c\}$. Imamo funkciji $f:A\to B$ in $g:B\to C$.
+
+\[ f = \{(x,2),(y,1),(z,3)\} \]
+
+\[ g = \{(1,a),(2,b),(3,c)\} \]
+
+(a) Ali je $f$ injektivna?
+
+(b) Ali je $f$ surjektivna?
+
+(c) Ali je $g$ injektivna?
+
+(d) Ali je $g$ surjektivna?
+
+(e) Ali je $g \circ f$ surjektivna?
+
+\end{enumerate}
+
+
+
+
+\section{Strukture urejenosti}
 Ključni pojmi:
 \begin{itemize}
 \item Tranzitivnost, navidezna urejenost, šibka urejenost, delna urejenost,
@@ -951,7 +1027,7 @@ linearna urejenost, stroga delna urejenost, stroga linearna urejenost.
 množica, $R$-omejena množica, $R$-infimum (največja spodnja meja),
 $R$-supremum (najmanjša zgornja meja).
 \end{itemize}
-
+\hrule
 \begin{problem}
 Množica $S=\{1,\ldots,5\}$ je strogo delno urejena z naslednjo relacijo $R$:
 \begin{center}
@@ -991,8 +1067,6 @@ Tedaj je $x\in S$ minimalni element natanko tedaj, ko $x\not\in {\cal Z}R$.}
 \emph{(${\cal D}R$ = domena relacije $R$ = množica vseh prvih koordinat).}
 
 
-\section{Naloge}
-
 \begin{enumerate}
 
 
@@ -1031,23 +1105,31 @@ Za katere od naštetih relacij velja, da so: refleksivne, simetrične, antisimet
 
 \item Naj bosta $R$ in $S$ simetrični relaciji. Pokaži: $R\circ S$ simetrična $\Leftrightarrow R\circ S = S \circ R$.
 
-\item Let $S= \{m\in \mathbb{N}\,|\, 1\leq n \leq 10\}$ in $R=\{(m,n)\in S\times S\,|\, 3|m-n\}$.
-Is $R$ an equivalence relation? If yes, determine the corresponding equivalence classes and the factor set.
 
-\item Let $S = \mathbb{Z}\times \mathbb{Z}$ and define the relation $R$ as follows
-$$(a,b)R(c,d)\Leftrightarrow ad = bc.$$
-Show that $R$ is an equivalence relation  and find the corresponding equivalence classes.
-
-\item Let  $S =  \mathbb{R}^2$ and define the relation $R$ as follows
-$$(x_1,y_1)R(x_2,y_2)\Leftrightarrow x_1^2 + y_1^2 = x_2^2 + y_2^2.$$
-Show that $R$ is an equivalence relation  and find the equivalenec class $R[(7,1)]$.
-
+	\item Naj bo $S=\{ (x,y) \,:\, x, y\in\mathbb{R} \textrm{ in } y\leq 0 \}$ in naj bo $R$ relacija na množici $S$, definirana kot 
+	$$(x_1,y_1)\, R\, (x_2,y_2) \Leftrightarrow  x_1 = x_2 \textrm{ in } y_1\leq y_2.$$
+	\begin{enumerate}
+		\item[(i)] Dokažite, da je $R$ delna urejenost na $S$.
+		\item[(ii)] Najdite vse $R$-minimalne elemente.
+	\end{enumerate}
+	
+	\item Naj bo $S= \{0,\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \ldots, \frac{n}{n+1}, \ldots, 1\}$, in naj bo $R:=<$ relacija na $S$. Ali $R$ dobro ureja $S$?
+	
+	\item Naj bo $S = \mathbb{N}\setminus \{0\}$ in naj bo  $R$ relacija na $S$, definirana kot 
+	$$m\, R\, n \Leftrightarrow  \textrm{ $p< u$ ali ($p=u$ in $q < v$),} $$
+	kjer je $m=2^p(2q+1)$ in $n=2^u(2v+1)$, pri čemer sta $p$ in $u$ maksimalno možna eksponenta.
+	\begin{enumerate}
+		\item[(i)] Dokažite, da $R$ dobro ureja $S$.
+		\item[(ii)] Uredite množico $\{1,2\ldots, 10\}$ glede na $R$.
+		\item[(iii)] Naj bo $C= \{50, 51, 52, \ldots\}$. Najdite $R$-minimalni element množice $C$.
+		\item[(iv)] Najdite neposrednega naslednika števila $96$.
+	\end{enumerate}
 \end{enumerate}
 
-\subsection{Zgledi ekvivalenčnih relacij}
+\section{Ekvivalenčne relacije}
 
 \begin{enumerate}
-  \item \textbf{ Ulomki.}
+  \item \textbf{Zgled: Ulomki.}
 
   V množici ulomkov $$a/b\,,$$
   kjer sta $a$ in $b$ poljubni celi števili in je $b\neq 0$, je definicija enakosti dveh ulomkov
@@ -1063,15 +1145,29 @@ Show that $R$ is an equivalence relation  and find the equivalenec class $R[(7,1
 
   Očitno je takih razredov natanko $m$. Te razrede imenujemo {\em cela števila po modulu $m$}. Faktorska množica je množica celih števil po modulu $m$.
 
-  \item \textbf{ Vzporednost premic.}
+  \item \textbf{Zgled: Vzporednost premic.}
 
 V množici {\em vseh premic} je relacija ``vzporeden'' ekvivalenčna relacija. V vsakem ekvivalenčnem razredu so torej vse premice, ki so med seboj vzporedne, in predstavljajo potemtakem določeno {\em smer}. Faktorska množica je tukaj {\em množica vseh smeri}.
+
+
+
+\item Let $S= \{m\in \mathbb{N}\,|\, 1\leq n \leq 10\}$ in $R=\{(m,n)\in S\times S\,|\, 3|m-n\}$.
+Is $R$ an equivalence relation? If yes, determine the corresponding equivalence classes and the factor set.
+
+\item Let $S = \mathbb{Z}\times \mathbb{Z}$ and define the relation $R$ as follows
+$$(a,b)R(c,d)\Leftrightarrow ad = bc.$$
+Show that $R$ is an equivalence relation  and find the corresponding equivalence classes.
+
+\item Let  $S =  \mathbb{R}^2$ and define the relation $R$ as follows
+$$(x_1,y_1)R(x_2,y_2)\Leftrightarrow x_1^2 + y_1^2 = x_2^2 + y_2^2.$$
+Show that $R$ is an equivalence relation  and find the equivalenece class $R[(7,1)]$.
+
 \end{enumerate}
 
 
 
 
-\subsection{Grafi}
+\section{Grafi}
 \begin{enumerate}
 \item Naj velja $n\ge 3$. Spomnimo definicijo ciklov in polnih grafov
 \[C_{n}=\{[n], E_{1}\}\]
@@ -1137,13 +1233,13 @@ Torej ima že množica vseh funkcij $f:\mathbb{R}\to \{0,1\}$ večjo moč od kon
 \qed
 
 
-\subsection{Zgledi števno neskončnih množic}
+\section{Zgledi števno neskončnih množic}
 
 \bigskip
 {\em Množica celih števil} $\mathbb{Z}$ je števno neskončna (saj je $\mathbb{Z} = \mathbb{N}\cup (-\mathbb{N})$).
 
 \bigskip
-$-----------------$
+\hrule
 \bigskip
 
 Tudi {\em množica racionalnih števil} $\mathbb{Q}$ je števno neskončna!
