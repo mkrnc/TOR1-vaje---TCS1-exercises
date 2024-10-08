@@ -97,7 +97,7 @@ Write the following compound propositions in natural language:
     \item (d) $B \lor \neg A$
 \end{itemize}
 
-\item \textbf{Problem 2:}
+\item 
 The following two propositions are given:
 A: "Janez is rich."
 B: "Janez is happy."
@@ -130,6 +130,52 @@ Is the following reasoning correct?
 \]
 
 For \( A_1(d) = 0 \), \( A_2(d) = 1 \), \( A_3(d) = 0 \), this implication is false. Therefore, the reasoning is incorrect.
+
+
+
+\item
+The following two propositions are given:
+$A$: ``Andrej speaks French.'' and $B$: ``Andrej speaks Danish.''
+Write the following compound propositions in natural language:
+
+(a) $A\ali B$
+
+(b) $A\inn B$
+
+(c) $A\inn \neg B$
+
+(d) $\neg A\ali \neg B$
+
+(e) $\neg \neg A$
+
+(f) $\neg (\neg A\inn \neg B)$
+
+
+\item \label{ex:newspapers} Given the propositions:\\
+$A:$ ``John reads The New York Times.''\\
+$B:$ ``John reads The Wall Street Journal.''\\
+$C:$ ``John reads The Daily Mail.''\\
+\\
+Transcribe the following statements into symbolic propositions:
+\begin{enumerate}
+\item John reads The New York Times, but not The Wall Street Journal.
+\item Either John reads both The New York Times and The Wall Street Journal,
+or he does not read The New York Times and The Wall Street Journal.
+\item It is not true that John reads The New York Times, and does not read
+The Daily Mail.
+\item It is not true that John reads The Daily Mail or The Wall Street Journal,
+and not The New York Times.
+\end{enumerate}
+\item Find the truth tables for the symbolic propositions from Exercise \ref{ex:newspapers}.
+
+
+\item For three lines $p,q,r$ we may construct also geometric propositions.
+Suppose that the following is true:
+\[
+(p||q)\wedge(p\cap q\neq\emptyset)\wedge(q\cap r\neq\emptyset).
+\]
+What can you say about the lines $p,q,r$?
+
 \end{enumerate}
 
 \section{Knights and servants (kneves)}
@@ -147,11 +193,6 @@ Cene: "Bine is a servant."
 
 For each of them, determine whether they are knights or servants!
 
-(ii) Artur: "Cene is a servant or Bine is a servant."
-Bine: "Cene is a knight and Artur is a knight."
-
-For each of them, determine whether they are knights or servants!
-
 \textbf{Solution:}
 Let us denote: $A$ – Arthur is a knight, $B$ – Bine is a knight, $C$ – Cene is a knight.
 
@@ -163,7 +204,15 @@ Let us denote: $A$ – Arthur is a knight, $B$ – Bine is a knight, $C$ – Cen
 
 With the help of the truth table, we see that the statement is true only for the set $A = 1$ and $B = C = 0$.
 
-(ii) The following compound statement holds:
+\item Artur: "Cene is a servant or Bine is a servant."
+Bine: "Cene is a knight and Artur is a knight."
+
+For each of them, determine whether they are knights or servants!
+
+\textbf{Solution:}
+Let us denote: $A$ – Arthur is a knight, $B$ – Bine is a knight, $C$ – Cene is a knight.
+
+The following compound statement holds:
 
 \[
 (A \iff \neg C \lor \neg B) \land (B \iff C \land A)
@@ -244,35 +293,48 @@ From \( B_1 \), we get \( B(d) = 1 \), but the statement \( C_1 \) becomes false
 Thus, \( B \), \( C \), \( D \), and \( E \) are knights, while \( A \) is a servant.
 
 
+
+\item Solve the following exercises about knights and servants:
+\begin{itemize}
+  \item Arthur: ``It is not true that Bine is a servant."
+  \item Bine: ``We are not both of the same kind.''
+\end{itemize}
+
+
+
+
+\item 
+Now Arthur and Bine say the following:
+\begin{itemize}
+ \item Arthur: ``Me and Bine are not of the same kind.''
+ \item Bine: ``Exactly one of us is a knight.''
+\end{itemize}
+
+
+\item Knights and servants! 
+\begin{enumerate}
+
+\item Arthur: Chloe or Bob are servants.
+\item 
+Bob: Cene and Arthur are knights.
+\end{enumerate}
+
+
+
+
 \end{enumerate}
 
 \section{Other exercises}
 (possibly in Slovene)
 \begin{enumerate}
 
-\item (Sklepanje)
-Ali je naslednje sklepanje pravilno?
-
-Mislim, torej sem. Mislim, torej sklepam. Sklep: Sem, torej sklepam.
-
-
-\textbf{Rešitev:}
-
-$A_1$: Mislim.
-
-$A_2$: Sem.
-
-$A_3$: Sklepam.
-
-Zanima nas pravilnost implikacije
-
-$$(A_1\sledi A_2)\inn(A_1\sledi A_3)\sledi(A_2\sledi A_3)$$
-
-Pri določilu $A_1(d) = 0$, $A_2(d) = 1$, $A_3(d) = 0$ je ta implikacija nepravilna!
-(Ne mislim, sem, ne sklepam.)
-Torej je sklepanje napačno.
-
-\bigskip
+\item Express the propositions below with connectives $\wedge$ and $\neg$
+only!
+\begin{enumerate}
+\item $A\vee B$
+\item $A\Rightarrow B$
+\item $A\Leftrightarrow B$
+\end{enumerate}
 
 \item (Sklepanje)
 Ali je naslednje sklepanje pravilno?
@@ -307,160 +369,66 @@ Torej je sklepanje pravilno.\qed
 
 % 8. in 9. predavanje, 4 ure (Istvan), 7. in 8. 11. 2012
 
-%\bigskip
-%Rešitev domače naloge:
-%
-%Dejstva:
-%
-%Barona je umoril eden izmed njegovega osebja: kuharica, strežnik ali šofer.
-%
-%Če je morilka kuharica, je zastrupila hrano.
-%
-%Če je morilec šofer, mu je postavil bombo v avto.
-%
-%Hrana ni bila zastrupljena in strežnik ni morilec.
-%
-%Sklep: Morilec je šofer.
-%
-%\bigskip
-%
-%\textbf{ Rešitev:}
-%
-%$K$: Morilka je kuharica.
-%
-%$S$: Morilec je strežnik.
-%
-%Š: Morilec je šofer.
-%
-%H: Kuharica je zastrupila hrano.
-%
-%B: Šofer je postavil bombo v avto.
-%
-%\medskip
-%Ali je naslednja implikacija tavtologija?
-%
-%$(K\ali S\ali$ \v S$)\inn(K\sledi H)\inn($Š$\sledi B)\inn(\neg H\inn \neg S)\sledi $Š
-%
-%\bigskip
-%Recimo, da ni.
-%
-%(1) $(K\ali S\ali$ \v S$)(d) = 1$
-%
-%(2) $(K\sledi H)(d) = 1$
-%
-%(3) (Š$\sledi B)(d) = 1$
-%
-%(4) $(\neg H\inn \neg S)(d) = 1$
-%
-%(5) Š$(d) = 0$
-%
-%Iz (4) sledi:
-%
-%(5)  $H(d) = S(d) = 0$.
-%
-%Iz (2) in (5) potem sledi
-%
-%(6) $K(d) = 0$.
-%
-%Iz (1), (5) in (6) potem sledi Š$(d) = 1$. Protislovje. Izjava je tavtologija  in sklepanje je pravilno.
-%
+\bigskip
+Rešitev domače naloge:
 
+Dejstva:
 
-\item
-The following two propositions are given:
-$A$: ``Andrej speaks French.'' and $B$: ``Andrej speaks Danish.''
-Write the following compound propositions in natural language:
+Barona je umoril eden izmed njegovega osebja: kuharica, strežnik ali šofer.
 
-(a) $A\ali B$
+Če je morilka kuharica, je zastrupila hrano.
 
-(b) $A\inn B$
+Če je morilec šofer, mu je postavil bombo v avto.
 
-(c) $A\inn \neg B$
+Hrana ni bila zastrupljena in strežnik ni morilec.
 
-(d) $\neg A\ali \neg B$
+Sklep: Morilec je šofer.
 
-(e) $\neg \neg A$
+\bigskip
 
-(f) $\neg (\neg A\inn \neg B)$
+\textbf{ Rešitev:}
+
+$K$: Morilka je kuharica.
+
+$S$: Morilec je strežnik.
+
+Š: Morilec je šofer.
+
+H: Kuharica je zastrupila hrano.
+
+B: Šofer je postavil bombo v avto.
 
 \medskip
-\item
-The following two propositions are given:
-$A$: ``Janez is rich.'' and $B$: ``Janez is happy.''
+Ali je naslednja implikacija tavtologija?
 
-Write the following propositions symbolically:
+$(K\ali S\ali$ \v S$)\inn(K\sledi H)\inn($Š$\sledi B)\inn(\neg H\inn \neg S)\sledi $Š
 
-(a) If Janez is rich, then he is unhappy.
+\bigskip
+Recimo, da ni.
 
-(b) Janez is neither happy nor rich.
+(1) $(K\ali S\ali$ \v S$)(d) = 1$
 
-(c) Janez is happy only if he is poor.
+(2) $(K\sledi H)(d) = 1$
 
-(d) Janez is poor if and only if he is unhappy.
+(3) (Š$\sledi B)(d) = 1$
 
-\item Solve the following exercises about knights and servants:
-\begin{itemize}
-  \item Arthur: ``It is not true that Bine is a servant."~Bine: ``We are not both of the same kind.''
-  \item Arthur: ``It is not true that Cene is servant."~Bine: ``Cene is a knight or I am a knight."~Cene: ``Bine is a servant."
-\end{itemize}
+(4) $(\neg H\inn \neg S)(d) = 1$
 
-\item {A similar exercise:}
-Now Arthur and Bine say the following:
-\begin{itemize}
- \item Arthur: ``Me and Bine are not of the same kind.''
- \item Bine: ``Exactly one of us is a knight.''
-\end{itemize}
-\item Given the propositions:\\
-$A:$ ``It's cold outside''\\
-$B:$ ``It's raining''\\
-express the following propositions in natural language:
-\begin{enumerate}
-\item $\neg A$
-\item $A\wedge B$
-\item $A\vee B$
-\item $B\vee\neg A$
-\end{enumerate}
-\item Given the propositions:\\
-$A:$ ``John reads The New York Times.''\\
-$B:$ ``John reads The Wall Street Journal.''\\
-$C:$ ``John reads The Daily Mail.''\\
-\\
-Transcribe the following statements into symbolic propositions:
-\begin{enumerate}
-\item John reads The New York Times, but not The Wall Street Journal.
-\item Either John reads both The New York Times and The Wall Street Journal,
-or he does not read The New York Times and The Wall Street Journal.
-\item It is not true that John reads The New York Times, and does not read
-The Daily Mail.
-\item It is not true that John reads The Daily Mail or The Wall Street Journal,
-and not The New York Times.
-\end{enumerate}
-\item Find the truth tables for the symbolic propositions from (2).
-\begin{enumerate}
-\item For three lines $p,q,r$ we may construct also geometric propositions.
-Suppose that the following is true:
-\[
-(p||q)\wedge(p\cap q\neq\emptyset)\wedge(q\cap r\neq\emptyset).
-\]
-What can you ay about the lines $p,q,r$?
-\end{enumerate}
-\item Knights and servants! For both cases below (separately) determine
-the roles.
-\begin{enumerate}
-\item Arthur: It's not true that Chloe is a servant.\\
-Bob: Chloe is a knight, or I am a knight.\\
-Chloe: Bob is a servant.
-\item Arthur: Chloe or Bob are servants.\\
-Bob: Cene and Arthur are knights.
-\end{enumerate}
-\item Express the propositions below with connectives $\wedge$ and $\neg$
-only!
-\begin{enumerate}
-\item $A\vee B$
-\item $A\Rightarrow B$
-\item $A\Leftrightarrow B$
-\end{enumerate}
+(5) Š$(d) = 0$
 
+Iz (4) sledi:
+
+(5)  $H(d) = S(d) = 0$.
+
+Iz (2) in (5) potem sledi
+
+(6) $K(d) = 0$.
+
+Iz (1), (5) in (6) potem sledi Š$(d) = 1$. Protislovje. Izjava je tavtologija  in sklepanje je pravilno.
+
+
+
+\medskip
 
 \item Find the canonical disjunctive normal form (DNF) and the canonical conjuctive normal form (CNF) for the following propositions:
 \begin{enumerate}
