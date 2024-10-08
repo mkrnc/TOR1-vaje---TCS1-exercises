@@ -79,97 +79,177 @@ Among most notable student contributors are:
 
 
 \chapter{Mathematical Logic}
-{Those exercises are unfortunately in Slovene language. I still believe it may be of help to some of you. Also feel free to contribute translations!}
-\begin{enumerate}
+
+
+\section{Basic exercises}
+
+\begin{enumerate}[\textbf{Problem} 1.]
     \item 
-    (Naloga o vitezih in oprodah)
-A, B, C, D, E
+The following two propositions are given:
+A: "It is cold outside."
+B: "It is raining outside."
+
+Write the following compound propositions in natural language:
 \begin{itemize}
-  \item A: ``D je oproda in C je oproda."
-  \item B: ``Če sta A in D oprodi, potem je C oproda."
-  \item C: ``Če je B oproda, potem je A vitez."
-  \item D: ``Če je E oproda, potem sta C in B oprodi."
+    \item (a) $\neg A$
+    \item (b) $A \land B$
+    \item (c) $A \lor B$
+    \item (d) $B \lor \neg A$
 \end{itemize}
 
-\medskip
-\textbf{Rešitev:}
+\item \textbf{Problem 2:}
+The following two propositions are given:
+A: "Janez is rich."
+B: "Janez is happy."
 
-Naj bo $A$ izjava: ``A je vitez", itd.
-Iščemo tisto edino določilo $d$, za katerega je izjava $$A_1\inn B_1\inn C_1\inn D_1$$
-pravilna, kjer je:
+Write the following propositions symbolically:
+\begin{itemize}
+    \item (a) If Janez is rich, then he is unhappy.
+    \item (b) Janez is neither happy nor rich.
+    \item (c) Janez is happy only if he is poor.
+    \item (d) Janez is poor if and only if he is unhappy.
+\end{itemize}
 
-$A_1: A\cee (\neg D \inn \neg C)$
-
-$B_1: B\cee (\neg A \inn \neg D\sledi \neg C)$
-
-$C_1: C\cee (\neg B \sledi A)$
-
-$D_1: D\cee (\neg E \sledi \neg C \inn \neg B)$
-
-
-Ker bi pravilnostna tabela vsebovala 32 vrstic, rešimo nalogo
-raje z analizo primerov.
-
-\textbf{1.~primer: $A(d) = 1$.}
-Zaradi $A_1$ je potem $D(d) = 0$ in $C(d) = 0$.
-
-V izjavo $C_1$ vstavimo $A(d) = 1$ in $C(d) = 0$, dobimo:
-$\neg(\neg B\sledi 1)$,
-
-$\neg(B\ali 1)$,
-
-$\neg 1$, to pa je nepravilna izjava.
-
-Torej 1.~primer ni mogoč.
-%
-% torej $B(d) = 1$.
-%
-%V izjavo $B_1$ vstavimo $A(d) = 1$, $B(d) = 1$, $C(d) = 0$ in $D(d) = 0$, dobimo:
-%$1\cee (0\inn 1\sledi 1)$, kar je pravilna izjava.
-%
-%V izjavo $D_1$ vstavimo znane vrednosti, dobimo:
-%$\neg(\neg E \sledi 1 \inn 0)$
-%
-%$\neg(\neg E \sledi 0)$
-%
-%Sledi $\neg E(d) = 1$, torej $E(d) = 0$.
-%
-
-\textbf{2.~primer: $A(d) = 0$.}
-
-Zaradi $A_1$ je bodisi $C(d) = 1$ ali pa $D(d) = 1$.
-
-\textbf{2.1.: $C(d) = 1$}.
-
-Zaradi $C_1$ je $\neg B \sledi 0$, torej je $\neg B = 0$ in posledično $B(d) = 1$.
-
-V izjavo $B_1$ vstavimo $A(d) = 0$, $B(d) = 1$, $C(d) = 1$, dobimo:
-
-$1 \inn \neg D\sledi 0$
-
-$\neg D\sledi 0$
-
-Sledi $\neg D = 0$ oz.~$D(d) = 1$.
-
-Vstavimo v izjavo $D_1$ znane vrednosti:
-
-$(\neg E \sledi 0 \inn 0)$
-
-Sledi $E(d) = 1$.
-
-\bigskip
-
-\textbf{2.2.: $C(d) = 0$ in $D(d) = 1$}.
-
-Iz izjave $B_1$ dobimo $B(d) = 1$.
-
-Izjava $C_1$ pa je sedaj nepravilna:
-$0 \cee (0\sledi 1)$.\qed
-
-Torej so $B$, $C$, $D$ in $E$ vitezi, $A$ pa je oproda.
+\item 
+Find the truth tables for the examples from the previous task.
 
 
-\bigskip
+\item
+Is the following reasoning correct?
+
+\begin{itemize}
+    \item Premise 1: "I think, therefore I am."
+    \item Premise 2: "I think, therefore I reason."
+    \item Conclusion: "I am, therefore I reason."
+\end{itemize}
+
+\textbf{Solution:} The logical implication is:
+
+\[
+(A_1 \Rightarrow A_2) \land (A_1 \Rightarrow A_3) \Rightarrow (A_2 \Rightarrow A_3)
+\]
+
+For \( A_1(d) = 0 \), \( A_2(d) = 1 \), \( A_3(d) = 0 \), this implication is false. Therefore, the reasoning is incorrect.
+\end{enumerate}
+
+\section{Knights and servants (kneves)}
+Knights always tell the truth, while servants always lie.
+
+
+\begin{enumerate}[Problem 1.]
+
+\item 
+ Artur: "It is not true that Cene is a servant."
+ 
+Bine: "Cene is a knight or I am a knight."
+
+Cene: "Bine is a servant."
+
+For each of them, determine whether they are knights or servants!
+
+(ii) Artur: "Cene is a servant or Bine is a servant."
+Bine: "Cene is a knight and Artur is a knight."
+
+For each of them, determine whether they are knights or servants!
+
+\textbf{Solution:}
+Let us denote: $A$ – Arthur is a knight, $B$ – Bine is a knight, $C$ – Cene is a knight.
+
+(i) The following compound statement holds:
+
+\[
+(A \iff C) \land (B \iff C \lor B) \land (C \iff \neg B)
+\]
+
+With the help of the truth table, we see that the statement is true only for the set $A = 1$ and $B = C = 0$.
+
+(ii) The following compound statement holds:
+
+\[
+(A \iff \neg C \lor \neg B) \land (B \iff C \land A)
+\]
+
+With the help of the truth table, we see that the statement is true only for the set $A = 1$ and $B = C = 0$.
+
+    \item Let us analyze the statements made by A, B, C, and D:
+
+\begin{itemize}
+    \item A: "D is a servant and C is a servant."
+    \item B: "If A and D are servants, then C is a servant."
+    \item C: "If B is a servant, then A is a knight."
+    \item D: "If E is a servant, then both C and B are servants."
+\end{itemize}
+
+Solution: Let \( A \) represent "A is a knight", etc. We seek the only solution \( d \) such that the following is true:
+
+\[
+A_1 \land B_1 \land C_1 \land D_1
+\]
+
+where:
+
+\[
+A_1 : A \iff (\neg D \land \neg C)
+\]
+\[
+B_1 : B \iff (\neg A \land \neg D \Rightarrow \neg C)
+\]
+\[
+C_1 : C \iff (\neg B \Rightarrow A)
+\]
+\[
+D_1 : D \iff (\neg E \Rightarrow \neg C \land \neg B)
+\]
+
+Since the truth table would contain 32 rows, we solve this by analyzing cases.
+
+\subsection*{Case 1: \( A(d) = 1 \)}
+
+Given \( A_1 \), \( D(d) = 0 \) and \( C(d) = 0 \). Substituting into \( C_1 \) with \( A(d) = 1 \) and \( C(d) = 0 \), we get:
+
+\[
+\neg (\neg B \Rightarrow 1) \Rightarrow \neg(B \lor 1) \Rightarrow \neg 1
+\]
+
+which is a false statement. Hence, this case is not possible.
+
+\subsection*{Case 2: \( A(d) = 0 \)}
+
+Given \( A_1 \), either \( C(d) = 1 \) or \( D(d) = 1 \).
+
+\subsection*{Case 2.1: \( C(d) = 1 \)}
+
+Since \( C_1 \), \( \neg B \Rightarrow 0 \), implies \( \neg B = 0 \), hence \( B(d) = 1 \).
+
+Substituting into \( B_1 \) with \( A(d) = 0 \), \( B(d) = 1 \), and \( C(d) = 1 \), we get:
+
+\[
+1 \land \neg D \Rightarrow 0 \Rightarrow \neg D = 0
+\]
+
+thus, \( D(d) = 1 \).
+
+Substituting into \( D_1 \), we get:
+
+\[
+\neg E \Rightarrow 0 \land 0
+\]
+
+Hence \( E(d) = 1 \).
+
+\subsection*{Case 2.2: \( C(d) = 0 \) and \( D(d) = 1 \)}
+
+From \( B_1 \), we get \( B(d) = 1 \), but the statement \( C_1 \) becomes false: \( 0 \iff (0 \Rightarrow 1) \).
+
+Thus, \( B \), \( C \), \( D \), and \( E \) are knights, while \( A \) is a servant.
+
+
+\end{enumerate}
+
+\section{Other exercises}
+(possibly in Slovene)
+\begin{enumerate}
+
 \item (Sklepanje)
 Ali je naslednje sklepanje pravilno?
 
