@@ -219,16 +219,16 @@ Bine: "Cene is a knight and Artur is a knight."
 
 For each of them, determine whether they are knights or servants!
 
-\textbf{Solution:}
-Let us denote: $A$ – Arthur is a knight, $B$ – Bine is a knight, $C$ – Cene is a knight.
+% \textbf{Solution:}
+% Let us denote: $A$ – Arthur is a knight, $B$ – Bine is a knight, $C$ – Cene is a knight.
 
-The following compound statement holds:
+% The following compound statement holds:
 
-\[
-(A \iff \neg C \lor \neg B) \land (B \iff C \land A)
-\]
+% \[
+% (A \iff \neg C \lor \neg B) \land (B \iff C \land A)
+% \]
 
-With the help of the truth table, we see that the statement is true only for the set $A = 1$ and $B = C = 0$.
+% With the help of the truth table, we see that the statement is true only for the set $A = 1$ and $B = C = 0$.
 
     \item Let us analyze the statements made by A, B, C, and D:
 
@@ -368,8 +368,6 @@ $$
 
 
 
-\section{Mixed exercises}
-
 \begin{enumerate}[resume, label=\textbf{Problem \arabic*.}]
     \item For the following compound proposition, find a truth table, determine DNF, CNF, and draw the corresponding circuit.
 \[
@@ -383,7 +381,7 @@ is a tautology.
 \end{enumerate}
 
 
-\section{Logical Equivalences}
+\section{Logical Implications}
 
 \begin{enumerate}[resume, label=\textbf{Problem \arabic*.}]
     \item Prove the following logical equivalences:
@@ -402,25 +400,22 @@ is a tautology.
             \item[(12)] $\neg B \Rightarrow (A \Leftrightarrow A \lor B)$
             \item[(13)] $(A \Rightarrow (B \land \neg B)) \Rightarrow \neg A$
         \end{itemize}
-    \item Simplify the following logical equivalence:
+    \item Simplify the following logical proposition:
 \[
 (A \Rightarrow B) \lor (B \Rightarrow C)
 \]
 
-\item Simplify the following logical equivalence
-$$(A\Rightarrow B) \vee (B \Rightarrow C).$$
-
-\emph{Rešitev.} 
-\begin{eqnarray*}
-(A\Rightarrow B) \vee (B \Rightarrow C) &\Leftrightarrow & (\neg A \vee B) \vee (\neg B \vee C)\\
-&\Leftrightarrow & \neg A \vee B \vee \neg B \vee C\\
-&\Leftrightarrow & \neg A \vee (B \vee \neg B) \vee C\\
-&\Leftrightarrow & \neg A \vee 1 \vee C\\
-&\Leftrightarrow & 1.
-\end{eqnarray*}
+% \emph{Solution.} 
+% \begin{eqnarray*}
+% (A\Rightarrow B) \vee (B \Rightarrow C) &\Leftrightarrow & (\neg A \vee B) \vee (\neg B \vee C)\\
+% &\Leftrightarrow & \neg A \vee B \vee \neg B \vee C\\
+% &\Leftrightarrow & \neg A \vee (B \vee \neg B) \vee C\\
+% &\Leftrightarrow & \neg A \vee 1 \vee C\\
+% &\Leftrightarrow & 1.
+% \end{eqnarray*}
 \end{enumerate}
 
-\section{Proofs for logical implications}
+\section{Proofs}
 \begin{enumerate}[resume, label=\textbf{Problem \arabic*.}]
     \item Show that the following propositions are logical implications (i.e., tautologies where the main connective is implication):
         \begin{itemize}
@@ -448,7 +443,7 @@ $$(A\Rightarrow B) \vee (B \Rightarrow C).$$
 \item[(v)] $A \wedge (A \Leftrightarrow B) \Rightarrow B$
 \end{enumerate}
 
-\emph{Rešitev.} (i) Recimo $A \wedge (A \Rightarrow B)$ pravilna, $B$ pa nepravilna. Potem je $A$ pravilna in $A\Rightarrow B$ pravilna. Sledi $B$ pravilna. Protislovje. 
+% \emph{Rešitev.} (i) Recimo $A \wedge (A \Rightarrow B)$ pravilna, $B$ pa nepravilna. Potem je $A$ pravilna in $A\Rightarrow B$ pravilna. Sledi $B$ pravilna. Protislovje. 
 
 
 \item Are the following propositions logical implications?
@@ -465,38 +460,38 @@ $$(A\Rightarrow B) \vee (B \Rightarrow C).$$
 Is the converse also true?
 
 
-\end{enumerate}
-
-
-
-\begin{enumerate}
 
 
 
 
+    \item Use a direct proof of the implication to show: If a real number $x$ is non-negative, then the sum of the number $x$ and its reciprocal is greater than or equal to $2$.
 
+    % \emph{Solution.} We need to show that $x + \frac{1}{x} \geq 2$. Since $x \geq 0$, we can multiply the inequality by $x$ to get
+    % \[
+    % x^2 + 1 \geq 2x
+    % \]
+    % or equivalently,
+    % \[
+    % (x - 1)^2 \geq 0.
+    % \]
+    % This is obviously always true.
 
+    \item Use contradiction to show that there are infinitely many prime numbers.
 
-%Z direktnim dokazom implikacije pokaži: Če je $n$ sodo število, potem je $n^2 +3n$ sodo. Ali je obrat pravilen? 
+    % \emph{Solution.} Suppose there are only finitely many primes $p_1, p_2, \ldots, p_n$. Then the number $p = p_1 p_2 \cdots p_n + 1$ is not divisible by any prime $p_i$ and $p_i \neq p$ for each $i$. By definition, $p$ is therefore a prime number that is different from each of the previous ones. This is a contradiction.
 
-\item Z direktnim dokazom implikacije pokaži: Če je realno število $x$ nenegtivno, potem je vsota  števila $x$  in njegove obratne vrednosti  večja ali enaka $2$.
+    \item Find the error in the following proof.
 
+    \textbf{Statement:} $1$ is the largest natural number.
 
-\emph{ Rešitev.} Pokažimo $x + \frac{1}{x}\geq 2$. Ker $x\geq 0$, pomnožimo neenakost z $x$ in dobimo
-$x^2 + 1 \geq 2x$ oziroma $(x- 1)^2\geq 0$. Slednje je očitno vedno res.
+    \textbf{Proof} (by contradiction):
+    Suppose the opposite. Let $n > 1$ be the largest natural number. Since $n$ is positive, we can multiply the inequality $n > 1$ by $n$, giving
+    \[
+    n > 1 \Leftrightarrow n^2 > n.
+    \]
+    We have found that $n^2$ is greater than $n$, which contradicts the assumption that $n$ is the largest natural number. Therefore, the assumption was incorrect, and $1$ is the largest natural number.
 
-\item S protislovjem pokaži, da je praštevil neskončno.
-
-\emph{ Rešitev.} Recimo, da jih je končno mnogo $p_1,p_2,\ldots, p_n$. Potem  $p=p_1p_2\cdots p_n+1$ ni deljivo z nobenim praštevilom $p_i$ in $p_i\neq p$ za vsak $i$. Po definiciji je torej $p$ praštevilo, ki ni enako nobenemu prejšnjemu. Protislovje.
-
-\item Poišči napako v naslednjem dokazu. 
-
-\textbf{Trditev:} $1$ je največje naravno število. 
-
-\textbf{Dokaz} (s protislovjem):
-Predpostavimo nasprotno. Naj bo $n>1$ največje naravno število. Ker je $n$ pozitivno, lahko neenakost $n>1$ pomnožimo z $n$. Torej $n>1\Leftrightarrow n^2>n$. Dobili smo, da je $n^2$ večje od $n$, kar je v protislovju s predpostavko, da je $n$ največje naravno število. Torej je bila predpostavka napačna in je $1$ največje naravno število.
-
-\emph{ Rešitev.} Nasporotna trdtev je: obstaja naravno število, ki je večje od $1$.
+    % \emph{Solution.} The opposite statement is: there exists a natural number greater than $1$.
 
 
 \item Let  $x$ and $y$ be real numbers such that $x<2y$. 
@@ -505,40 +500,34 @@ By an indirect proof show:
     If $7xy\leq 3x^2 + 2y^2$, then $3x\leq y$.
 \end{quote}
 
-\emph{ Solution (in slovene).} Naj bo $x<2y$, to je, $2y-x>0$. Pokazali bomo: če je $3x> y$, potem je $7xy > 3x^2 + 2y^2$. Predpostavimo torej, da je $3x-y>0$. Potem je $(2y-x)(3x-y)= 7xy - 3x^2 - 2y^2>0$, to je, $7xy > 3x^2 + 2y^2$.
+% \emph{ Solution (in slovene).} Naj bo $x<2y$, to je, $2y-x>0$. Pokazali bomo: če je $3x> y$, potem je $7xy > 3x^2 + 2y^2$. Predpostavimo torej, da je $3x-y>0$. Potem je $(2y-x)(3x-y)= 7xy - 3x^2 - 2y^2>0$, to je, $7xy > 3x^2 + 2y^2$.
 
-\item Dokaži naslednjo ekvivalenco v dveh delih: Naj bosta $m$ in $n$ celi števili. Tedaj sta števili $m$ in $n$ različnih parnosti natanko tedaj, ko je število $m^2- n^2$ liho.
+    \item Prove the following equivalence in two parts: Let $m$ and $n$ be integers. Then $m$ and $n$ have different parities if and only if $m^2 - n^2$ is odd.
 
-\emph{ Rešitev.} ($\Rightarrow$) Predpostavimo, da sta različnih parnosti. Pišimo  $m=2k$ in $n=2l+1$, vstavimo v izraz $m^2- n^2$ in rezultat sledi.
+    % \emph{Solution.} ($\Rightarrow$) Assume that $m$ and $n$ have different parities. Write $m = 2k$ and $n = 2l + 1$, substitute into the expression $m^2 - n^2$, and the result follows.
 
-($\Leftarrow$) Pokažemo indirektno in sicer: Če sta $m$ in $n$ iste parnosti, potem je $m^2- n^2$ sodo. Obravnavaj oba primera.
+    % ($\Leftarrow$) We show indirectly: If $m$ and $n$ have the same parity, then $m^2 - n^2$ is even. Consider both cases.
 
+    \item Using an "if and only if" proof, show that $ac \mid bc \Leftrightarrow a \mid b$.
 
-\item Z uporabo če in samo če dokaza pokaži: $ac\,|\,bc \Leftrightarrow a\,|\,b$.
+    \item Is the following inference correct?
+    \begin{enumerate}[label=(\roman*)]
+        \item If today is Wednesday, I will have a tutorial. Today is Wednesday. Conclusion: I will have a tutorial.
 
-\item Ali je naslednji sklep pravilen?
-\begin{enumerate}
-\item[(i)] Če je danes sreda bom imel vaje. Danes je sreda. Sklep: Imel bom vaje.
+        % \emph{Solution.} $(A \Rightarrow B) \wedge A \Rightarrow B$. This is true.
 
-\emph{ Rešitev.} $(A\Rightarrow B) \wedge A \Rightarrow B$. Res je.
+        \item If I study, I will pass the exam. I did not study. Conclusion: I will not pass the exam.
 
-\item[(ii)] Če se učim, bom opravil izpit. Nisem se učil. Sklep: Ne bom opravil izpita.
+        % \emph{Solution.} $(A \Rightarrow B) \wedge \neg A \Rightarrow \neg B$. This is not necessarily true.
 
-\emph{ Rešitev.} $(A\Rightarrow B) \wedge \neg A \Rightarrow \neg B$. Ni nujno res.
-\end{enumerate}
+        \item A student took the city bus to the exam. He thought, "If the next traffic light is green, I will pass the exam." When the bus reached the next light, it was not green, so the student said to himself, "Darn, I'll fail again."
 
-\item Ali je naslednji premislek pravilen?
-\begin{enumerate}
-\item[(i)] Študent se je z mestni avtobusom odpravil na izpit. Rekel si je: Če bo na naslednjem semaforju zelena luč, bom naredil izpit. No, ko je avtobus pripeljal na naslednji semafor, na semaforju ni svetila zelena luč, študent pa si je dejal: Presneto, spet bom padel.
+        % \emph{Solution.} $((A \Rightarrow B) \wedge \neg A) \Rightarrow \neg B$. This is not necessarily true.
 
-\emph{ Rešitev.} $((A\Rightarrow B) \wedge \neg A) \Rightarrow \neg B$. Ni nujno res.
+        \item An engineer who understands theory always designs a good circuit. A good circuit is economical. Therefore, an engineer who designs an uneconomical circuit does not understand theory.
 
-\item[(ii)] Inženir, ki obvlada teorijo, vedno načrta dobro vezje. Dobro vezje je ekonomično. Torej, inženir, ki načrta neekonomično vezje, ne obvlada teorije. 
-
-\emph{ Rešitev.} $((A\Rightarrow B) \wedge (B\Rightarrow C)) \Rightarrow (\neg C \Rightarrow \neg A)$. Res je.
-\end{enumerate}
-
-
+        % \emph{Solution.} $((A \Rightarrow B) \wedge (B \Rightarrow C)) \Rightarrow (\neg C \Rightarrow \neg A)$. This is true.
+    \end{enumerate}
 
 
 
@@ -550,6 +539,44 @@ By an indirect proof show:
 \item[(iv)] $(\forall x)[x>0 \Rightarrow (\exists y)(y<0 \wedge xy>0)]$.
 \end{enumerate} 
 \end{enumerate} 
+
+\subsection{Proofs by Induction}
+
+% Let $P(n)$ be a statement which depends on an element from  well-ordered set, say $n = 1, 2, 3, \ldots$. Then $P(n)$ is true for all $n$ if:
+% \begin{itemize}
+%     \item $P(1)$ is true (the base case).
+%     \item Prove that $P(k)$ is true implies that $P(k + 1)$ is true. This is sometimes broken into two steps, but they go together: Assume that $P(k)$ is true, then show that with this assumption, $P(k + 1)$ must be true.
+% \end{itemize}
+
+% \section*{Exercises}
+\begin{enumerate}[resume, label=\textbf{Problem \arabic*.}]
+    \item Prove each using induction:
+    \begin{enumerate}
+        \item[(a)] $\sum_{i=1}^n i = \frac{n(n + 1)}{2}$
+        \item[(b)] $\sum_{i=1}^n i^2 = \frac{n(n + 1)(2n + 1)}{6}$
+        \item[(c)] $\sum_{i=1}^n 2^{i-1} = 2^n - 1$
+        \item[(d)] $\sum_{i=1}^n i^3 = \frac{n^2(n + 1)^2}{4}$
+        \item[(e)] $\frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \cdots + \frac{1}{n(n + 1)} = \frac{n}{n + 1}$
+        \item[(f)] $\sum_{i=1}^n \frac{1}{i(i + 1)} = \frac{n}{n + 1}$
+        \item[(g)] $\sum_{i=1}^n (2i - 1) = n^2$
+        \item[(h)] $n! > 2^n$ for $n \geq 4$.
+        \item[(i)] $2^{n+1} > n^2$ for all positive integers.
+    \end{enumerate}
+    \item This exercise refers to the Fibonacci sequence:
+
+\[
+1, 1, 2, 3, 5, 8, 13, 21, 34, \ldots
+\]
+
+The sequence is defined recursively by $f_1 = 1$, $f_2 = 1$, then $f_{n+1} = f_n + f_{n-1}$ for each $n > 2$. As before, prove each of the following using induction. You might investigate each with several examples before you start.
+    \begin{enumerate}
+        \item[(a)] $f_1 + f_2 + \cdots + f_n = f_{n+2} - 1$
+        \item[(b)] $f_1^2 + f_2^2 + \cdots + f_n^2 = f_n f_{n+1}$
+        \item[(c)] $f_1 + f_3 + f_5 + \cdots + f_{2n-1} = f_{2n}$
+    \end{enumerate}
+\end{enumerate}
+
+
 
 \chapter{Set theory}
 \begin{enumerate}
