@@ -638,13 +638,6 @@ Predpostavimo nasprotno. Naj bo $n>1$ najve"cje naravno "stevilo. Ker je $n$ poz
 
 
 
-
-\item Let $A = \{ x \in \mathbb{N}; x < 7\}, B = \{x \in  \mathbb{Z}; |x - 2| < 4\}$ and $C = \{x \in\mathbb{R}; x^3 -  4x = 0\}$.
-\begin{enumerate}
-\item[(i)]  Write down the elements for all three sets.
-\item[(ii)] Find $A \cup C, B \cap C, B \setminus C, (A \setminus B) \setminus C$ and $A \setminus (B \setminus C)$.
-\end{enumerate}
-
 \item Let  $\mathbb{Z}$ be a universal set and let  $P$ denote the set of all prime numbers, and $S$ the set of all even integers. Write the following propositions in terms of set theory:
 \begin{itemize}
 \item[(i)] There exists an even prime number. \quad [$P\cap S \neq \emptyset$]
@@ -655,7 +648,60 @@ Predpostavimo nasprotno. Naj bo $n>1$ najve"cje naravno "stevilo. Ker je $n$ poz
 \item[(vi)] 2 is an even prime number. \quad [$2\in S\cap P$]
 \end{itemize}
 
-\item Let  $A, B, C$ and $D$  be subsets of some universal set  $U$. Simplify the following expression
+\end{enumerate}
+
+\section{Dokaz z indukcijo}
+\begin{enumerate}
+    \item Dokazujte vsako s pomočjo indukcije:
+    \begin{enumerate}
+        \item[(a)] $\sum_{i=1}^n i = \frac{n(n + 1)}{2}$
+        \item[(b)] $\sum_{i=1}^n i^2 = \frac{n(n + 1)(2n + 1)}{6}$
+        \item[(c)] $\sum_{i=1}^n 2^{i-1} = 2^n - 1$
+        \item[(d)] $\sum_{i=1}^n i^3 = \frac{n^2(n + 1)^2}{4}$
+        \item[(e)] $\frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \cdots + \frac{1}{n(n + 1)} = \frac{n}{n + 1}$
+        \item[(f)] $\sum_{i=1}^n \frac{1}{i(i + 1)} = \frac{n}{n + 1}$
+        \item[(g)] $\sum_{i=1}^n (2i - 1) = n^2$
+        \item[(h)] $n! > 2^n$ za $n \geq 4$.
+        \item[(i)] $2^{n+1} > n^2$ za vse pozitivne cele števike.
+    \end{enumerate}
+    \item Ta naloga se nanaša na Fibonaccijevo zaporedje:
+
+\[
+1, 1, 2, 3, 5, 8, 13, 21, 34, \ldots
+\]
+
+Zaporedje je definirano rekurzivno z $f_1 = 1$, $f_2 = 1$, nato $f_{n+1} = f_n + f_{n-1}$ za vsak $n > 2$. Kot prej, dokažite vsako od naslednjih s pomočjo indukcije. Morda bi bilo koristno raziskati več primerov, preden začnete.
+    \begin{enumerate}
+        \item[(a)] $f_1 + f_2 + \cdots + f_n = f_{n+2} - 1$
+        \item[(b)] $f_1^2 + f_2^2 + \cdots + f_n^2 = f_n f_{n+1}$
+        \item[(c)] $f_1 + f_3 + f_5 + \cdots + f_{2n-1} = f_{2n}$
+    \end{enumerate}
+\end{enumerate}
+
+\chapter{Teorija množic}
+
+
+
+Ključni pojmi:
+\begin{itemize}
+  \item Relacija pripadnosti. Enakost množic.
+  \item Presek in unija družine množic. Distributivnost. Razlika dveh množic, komplement.
+  \item Podmnožica, relacija inkluzije. Prava podmnožica. Prazna množica.
+  \item Russellova antinomija.
+  \item De Morganova zakona, princip dualnosti.
+  \item Potenčna množica. Kartezični produkt.
+\end{itemize}
+
+\begin{enumerate}
+
+
+\item Let $A = \{ x \in \mathbb{N}; x < 7\}, B = \{x \in  \mathbb{Z}; |x - 2| < 4\}$ and $C = \{x \in\mathbb{R}; x^3 -  4x = 0\}$.
+\begin{enumerate}
+\item[(i)]  Write down the elements for all three sets.
+\item[(ii)] Find $A \cup C, B \cap C, B \setminus C, (A \setminus B) \setminus C$ and $A \setminus (B \setminus C)$.
+\end{enumerate}
+
+    \item Let  $A, B, C$ and $D$  be subsets of some universal set  $U$. Simplify the following expression
 $$\overline{(\overline{(A\cup B)} \cap \overline{(\overline{A} \cup C)})}\setminus \overline{D}.$$
 
 \item Show that $(A\cup C)\cap (B\setminus C) = (A\cap B)\setminus C$.
@@ -725,22 +771,7 @@ x\in (A\cap B )\setminus B  &\Leftrightarrow & x \in (A\cap B)  \wedge x\notin B
 \item Napa"cna. Vzemi $A=C\neq B$.
 \item Napa"cna. Vzemi tri paroma disjunktne neprazne mno"zice.
 \end{enumerate}
-
 \end{enumerate}
-
-\chapter{Teorija množic}
-
-
-
-Ključni pojmi:
-\begin{itemize}
-  \item Relacija pripadnosti. Enakost množic.
-  \item Presek in unija družine množic. Distributivnost. Razlika dveh množic, komplement.
-  \item Podmnožica, relacija inkluzije. Prava podmnožica. Prazna množica.
-  \item Russellova antinomija.
-  \item De Morganova zakona, princip dualnosti.
-  \item Potenčna množica. Kartezični produkt.
-\end{itemize}
 
 \begin{problem}[Enakost množic]
 Katere naslednjih množic so med seboj enake?
