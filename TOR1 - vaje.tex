@@ -51,6 +51,9 @@
 %\usepackage{fancyhdr}
 \usepackage{enumerate}
 
+\usepackage{answers} 
+
+
 
 \usepackage[slovene]{babel} % slovenske nastavitve (naslovi, deljenje besed ...)
 \usepackage[utf8]{inputenc}
@@ -105,6 +108,21 @@
 \newtheorem*{definicija}{Definicija}
 \newtheorem*{zg}{Zgled}
 
+\newtheorem{ex}{Vaja\hypertarget{sol:\theex}}[chapter]
+% \newtheorem{ex}{\hyperlink{ex:\theex}{Vaja}\hypertarget{sol:\theex}}[chapter]
+\Newassociation{sol}{Odgovor}{ans}
+\renewenvironment{Odgovor}[1]
+{\par\bigskip\noindent{\bfseries \hypertarget{ex:#1}{}\hyperlink{sol:#1}{Re\v sitev za vajo #1:}}\quad}
+{\par\bigskip}
+% \renewenvironment{sol}[1]{\begin{trivlist}\item 
+%  Solution to \emph{#1}}{\end{trivlist}}
+
+% \newenvironment{ex}[1]{\begin{trivlist}\item\emph{#1}
+% \renewcommand{\Currentlabel}{#1}}{\end{trivlist}} 
+% \Newassociation{solution}{sol}{solutions} 
+
+% \renewenvironment{sol}[1]{\begin{trivlist}\item 
+% Solution to \emph{#1}}{\end{trivlist}}
 
 \begin{document}
 \input{Titlepage}
@@ -131,32 +149,51 @@ Morebitna vprašanja in najdene napake, lepo prosim, sporočite na
 
 \tableofcontents
 
+\Opensolutionfile{ans}[ans1] 
 
 \chapter{Matematična logika}
 
-\begin{enumerate}[{Naloga }1.]
-\item Dani sta izjavi $A$: "Zunaj je mrzlo." in $B$: "Zunaj dežuje.". V naravnem jeziku napiši naslednje sestavljene izjave:
+
+\begin{ex}
+Dani sta izjavi 
+\begin{enumerate}[A:]
+    \item \emph{Zunaj je mrzlo.}
+    \item \emph{Zunaj dežuje.}
+\end{enumerate}
+V naravnem jeziku napiši naslednje sestavljene izjave:
 \begin{enumerate}
   \item $\neg A$
   \item $A \land B$
   \item $A \lor B$
   \item $B \lor \neg A$
 \end{enumerate}
+\end{ex}
 
-\item Naj bo $A$: "Janez bere Finance.", $B$: "Janez bere Delo.", in $C$: "Janez bere Večer.".
+\begin{ex}
+ Naj bo $A$: "Janez bere Finance.", $B$: "Janez bere Delo.", in $C$: "Janez bere Večer.".
 Prepiši v simbolne izjave:
 \begin{enumerate}
-  \item Janez bere Finance ali Delo, a ne Večera. \[(A \lor B) \land \neg C\]
-  \item Janez bere Finance in Delo ali pa ne bere Financ in Dela. \[(A \land B) \lor \neg (A \land B)\]
-  \item Ni res, da Janez bere Finance, ne pa Večera. \[\neg (A \land \neg C)\]
-  \item Ni res, da Janez bere Večer ali Delo, ne pa Financ. \[\neg ((B \lor C) \land \neg A)\]
+  \item Janez bere Finance ali Delo, a ne Večera. 
+  \item Janez bere Finance in Delo ali pa ne bere Financ in Dela. 
+  \item Ni res, da Janez bere Finance, ne pa Večera. 
+  \item Ni res, da Janez bere Večer ali Delo, ne pa Financ. 
 \end{enumerate}
+\begin{sol}Rešitve, po vrsti, so:
+    \begin{enumerate}
+        \item $(A \lor B) \land \neg C$
+        \item $(A \land B) \lor \neg (A \land B)$
+        \item $\neg (A \land \neg C)$
+        \item $\neg ((B \lor C) \land \neg A)$
+    \end{enumerate}
+\end{sol}
+\end{ex} \begin{ex} Poišči pravilnostne tabele za primere v prejšnji nalogi.
 
-\item Poišči pravilnostne tabele za primere v prejšnji nalogi.
+\end{ex} \begin{ex} Za tri različne premice $p$, $q$ in $r$ v prostoru velja $(p \parallel r) \land (p \cap q = A) \land (q \cap r = B)$. Kaj lahko sklepaš? 
+\begin{sol}
+ Nariši skico. Premica $q$ leži v ravnini, in jo določata $p$ in $r$.
+\end{sol}
 
-\item Za tri različne premice $p$, $q$ in $r$ v prostoru velja $(p \parallel r) \land (p \cap q = A) \land (q \cap r = B)$. Kaj lahko sklepaš? Rešitev: Nariši skico. Premica $q$ leži v ravnini, in jo določata $p$ in $r$.
-
-\item Vitezi in oprode (vitez vedno govori resnico, oproda vedno lažejo):
+\end{ex} \begin{ex} Vitezi in oprode (vitez vedno govori resnico, oproda vedno lažejo):
 \begin{enumerate}
   \item Artur: Ni res, da je Cene oproda.
   Bine: Cene je vitez ali pa sem jaz vitez.
@@ -167,14 +204,14 @@ Prepiši v simbolne izjave:
   Kdo od njih je vitez in kdo oproda?
 \end{enumerate}
 
-\item Z osnovnima povezavama $\neg$ in $\land$ izrazi naslednje sestavljene izjave:
+\end{ex} \begin{ex} Z osnovnima povezavama $\neg$ in $\land$ izrazi naslednje sestavljene izjave:
 \begin{enumerate}
   \item $A \lor B$
   \item $A \rightarrow B$
   \item $A \iff B$
 \end{enumerate}
 
-\item Prepričaj se, da veljajo naslednje logične ekvivalence:
+\end{ex} \begin{ex} Prepričaj se, da veljajo naslednje logične ekvivalence:
 \begin{enumerate}
   \item $A \land (B \lor C) \iff \neg (A \land B) \rightarrow (A \land C)$
   \item $\neg A \land (A \rightarrow B) \iff A \rightarrow (\neg A \land B)$
@@ -182,7 +219,7 @@ Prepiši v simbolne izjave:
   \item $(A \rightarrow B) \land (B \rightarrow A) \iff (A \land B) \lor (\neg A \land \neg B)$
 \end{enumerate}
 
-    \item 
+    \end{ex} \begin{ex} 
     (Naloga o vitezih in oprodah)
 A, B, C, D, E
 \begin{itemize}
@@ -192,9 +229,7 @@ A, B, C, D, E
   \item D: ``Če je E oproda, potem sta C in B oprodi."
 \end{itemize}
 
-\medskip
-\textbf{Rešitev:}
-
+\begin{sol}
 Naj bo $A$ izjava: ``A je vitez", itd.
 Iščemo tisto edino določilo $d$, za katerega je izjava $$A_1\inn B_1\inn C_1\inn D_1$$
 pravilna, kjer je:
@@ -269,15 +304,14 @@ $0 \cee (0\sledi 1)$.\qed
 
 Torej so $B$, $C$, $D$ in $E$ vitezi, $A$ pa je oproda.
 
+\end{sol}
 
-\bigskip
-\item (Sklepanje)
+\end{ex} \begin{ex} (Sklepanje)
 Ali je naslednje sklepanje pravilno?
 
 Mislim, torej sem. Mislim, torej sklepam. Sklep: Sem, torej sklepam.
 
-
-\textbf{Rešitev:}
+\begin{sol}Označimo:
 
 $A_1$: Mislim.
 
@@ -293,16 +327,16 @@ Pri določilu $A_1(d) = 0$, $A_2(d) = 1$, $A_3(d) = 0$ je ta implikacija nepravi
 (Ne mislim, sem, ne sklepam.)
 Torej je sklepanje napačno.
 
-\bigskip
+\end{sol}
 
-\item (Sklepanje)
+\end{ex} \begin{ex} (Sklepanje)
 Ali je naslednje sklepanje pravilno?
 
 Dojenčki se obnašajo nelogično. Kdor je sposoben ukrotiti krokodila, je spoštovanja vreden.
 Kdor se obnaša nelogično, ni spoštovanja vreden. Sklep: Dojenčki niso sposobni ukrotiti krokodila.
 
 
-\textbf{Rešitev:}
+\begin{sol}Označimo izjave:
 
 $A_1$: Sem dojenček.
 
@@ -325,184 +359,181 @@ Torej je, zaradi (1), $A_1(d) = 1$ in $A_3(d) = 1$. Zaradi (2) je $A_2(d) = 1$.
 Zaradi (4) je $A_4(d) = 0$. To pa je protislovje s (3).
 
 Torej je sklepanje pravilno.\qed
+\end{sol}
 
 % 8. in 9. predavanje, 4 ure (Istvan), 7. in 8. 11. 2012
 
 %\bigskip
 %Rešitev domače naloge:
 %
-%Dejstva:
-%
-%Barona je umoril eden izmed njegovega osebja: kuharica, strežnik ali šofer.
-%
-%Če je morilka kuharica, je zastrupila hrano.
-%
-%Če je morilec šofer, mu je postavil bombo v avto.
-%
-%Hrana ni bila zastrupljena in strežnik ni morilec.
-%
-%Sklep: Morilec je šofer.
-%
-%\bigskip
-%
-%\textbf{ Rešitev:}
-%
-%$K$: Morilka je kuharica.
-%
-%$S$: Morilec je strežnik.
-%
-%Š: Morilec je šofer.
-%
-%H: Kuharica je zastrupila hrano.
-%
-%B: Šofer je postavil bombo v avto.
-%
-%\medskip
-%Ali je naslednja implikacija tavtologija?
-%
-%$(K\ali S\ali$ \v S$)\inn(K\sledi H)\inn($Š$\sledi B)\inn(\neg H\inn \neg S)\sledi $Š
-%
-%\bigskip
-%Recimo, da ni.
-%
-%(1) $(K\ali S\ali$ \v S$)(d) = 1$
-%
-%(2) $(K\sledi H)(d) = 1$
-%
-%(3) (Š$\sledi B)(d) = 1$
-%
-%(4) $(\neg H\inn \neg S)(d) = 1$
-%
-%(5) Š$(d) = 0$
-%
-%Iz (4) sledi:
-%
-%(5)  $H(d) = S(d) = 0$.
-%
-%Iz (2) in (5) potem sledi
-%
-%(6) $K(d) = 0$.
-%
-%Iz (1), (5) in (6) potem sledi Š$(d) = 1$. Protislovje. Izjava je tavtologija  in sklepanje je pravilno.
-%
+\begin{ex}Pri podanih spodnjih dejstvih, preveri pravilnost sklepa:
+\begin{itemize}
+    \item Barona je umoril eden izmed njegovega osebja: kuharica, strežnik ali šofer.
+    \item 
+    Če je morilka kuharica, je zastrupila hrano.
+    \item Če je morilec šofer, mu je postavil bombo v avto.
+    \item Hrana ni bila zastrupljena in strežnik ni morilec.
+\end{itemize}
 
 
-\item
-The following two propositions are given:
-$A$: ``Andrej speaks French.'' and $B$: ``Andrej speaks Danish.''
-Write the following compound propositions in natural language:
+\textbf{Sklep:} Morilec je šofer.
 
-(a) $A\ali B$
+\bigskip
+\begin{sol}Označimo izjave:
 
-(b) $A\inn B$
+$K$: Morilka je kuharica.
 
-(c) $A\inn \neg B$
+$S$: Morilec je strežnik.
 
-(d) $\neg A\ali \neg B$
+Š: Morilec je šofer.
 
-(e) $\neg \neg A$
+H: Kuharica je zastrupila hrano.
 
-(f) $\neg (\neg A\inn \neg B)$
+B: Šofer je postavil bombo v avto.
 
 \medskip
-\item
-The following two propositions are given:
-$A$: ``Janez is rich.'' and $B$: ``Janez is happy.''
+Ali je naslednja implikacija tavtologija?
 
-Write the following propositions symbolically:
+$(K\ali S\ali$ \v S$)\inn(K\sledi H)\inn($Š$\sledi B)\inn(\neg H\inn \neg S)\sledi $Š
 
-(a) If Janez is rich, then he is unhappy.
-
-(b) Janez is neither happy nor rich.
-
-(c) Janez is happy only if he is poor.
-
-(d) Janez is poor if and only if he is unhappy.
-
-\item Solve the following exercises about knights and servants:
-\begin{itemize}
-  \item Arthur: ``It is not true that Bine is a servant."~Bine: ``We are not both of the same kind.''
-  \item Arthur: ``It is not true that Cene is servant."~Bine: ``Cene is a knight or I am a knight."~Cene: ``Bine is a servant."
-\end{itemize}
-
-\item {A similar exercise:}
-Now Arthur and Bine say the following:
-\begin{itemize}
- \item Arthur: ``Me and Bine are not of the same kind.''
- \item Bine: ``Exactly one of us is a knight.''
-\end{itemize}
-\item Given the propositions:\\
-$A:$ ``It's cold outside''\\
-$B:$ ``It's raining''\\
-express the following propositions in natural language:
+Dokazujemo direktno:
+\bigskip
 \begin{enumerate}
-\item $\neg A$
-\item $A\wedge B$
-\item $A\vee B$
-\item $B\vee\neg A$
-\end{enumerate}
-\item Given the propositions:\\
-$A:$ ``John reads The New York Times.''\\
-$B:$ ``John reads The Wall Street Journal.''\\
-$C:$ ``John reads The Daily Mail.''\\
-\\
-Transcribe the following statements into symbolic propositions:
-\begin{enumerate}
-\item John reads The New York Times, but not The Wall Street Journal.
-\item Either John reads both The New York Times and The Wall Street Journal,
-or he does not read The New York Times and The Wall Street Journal.
-\item It is not true that John reads The New York Times, and does not read
-The Daily Mail.
-\item It is not true that John reads The Daily Mail or The Wall Street Journal,
-and not The New York Times.
-\end{enumerate}
-\item Find the truth tables for the symbolic propositions from (2).
-\begin{enumerate}
-\item For three lines $p,q,r$ we may construct also geometric propositions.
-Suppose that the following is true:
-\[
-(p||q)\wedge(p\cap q\neq\emptyset)\wedge(q\cap r\neq\emptyset).
-\]
-What can you ay about the lines $p,q,r$?
-\end{enumerate}
-\item Knights and servants! For both cases below (separately) determine
-the roles.
-\begin{enumerate}
-\item Arthur: It's not true that Chloe is a servant.\\
-Bob: Chloe is a knight, or I am a knight.\\
-Chloe: Bob is a servant.
-\item Arthur: Chloe or Bob are servants.\\
-Bob: Cene and Arthur are knights.
-\end{enumerate}
-\item Express the propositions below with connectives $\wedge$ and $\neg$
-only!
-\begin{enumerate}
-\item $A\vee B$
-\item $A\Rightarrow B$
-\item $A\Leftrightarrow B$
+    \item $(K\ali S\ali $Š$)$\hfill (Predpostavka)
+    \item $(K\sledi H)$\hfill (Predpostavka)
+    \item $($Š$\sledi B)$\hfill (Predpostavka)
+    \item $(\neg H\inn \neg S)$\hfill (Predpostavka)
+    \item $\neg H$\hfill (4)
+    \item $\neg S$\hfill (4)
+    \item $\neg K$\hfill (2,5)
+    \item Š\hfill (1,6,7)
 \end{enumerate}
 
+\end{sol}
+\end{ex}
 
-\item Find the canonical disjunctive normal form (DNF) and the canonical conjuctive normal form (CNF) for the following propositions:
+
+% \item
+% The following two propositions are given:
+% $A$: ``Andrej speaks French.'' and $B$: ``Andrej speaks Danish.''
+% Write the following compound propositions in natural language:
+
+% (a) $A\ali B$
+
+% (b) $A\inn B$
+
+% (c) $A\inn \neg B$
+
+% (d) $\neg A\ali \neg B$
+
+% (e) $\neg \neg A$
+
+% (f) $\neg (\neg A\inn \neg B)$
+
+% \medskip
+% \item
+% The following two propositions are given:
+% $A$: ``Janez is rich.'' and $B$: ``Janez is happy.''
+
+% Write the following propositions symbolically:
+
+% (a) If Janez is rich, then he is unhappy.
+
+% (b) Janez is neither happy nor rich.
+
+% (c) Janez is happy only if he is poor.
+
+% (d) Janez is poor if and only if he is unhappy.
+
+% \item Solve the following exercises about knights and servants:
+% \begin{itemize}
+%   \item Arthur: ``It is not true that Bine is a servant."~Bine: ``We are not both of the same kind.''
+%   \item Arthur: ``It is not true that Cene is servant."~Bine: ``Cene is a knight or I am a knight."~Cene: ``Bine is a servant."
+% \end{itemize}
+
+% \item {A similar exercise:}
+% Now Arthur and Bine say the following:
+% \begin{itemize}
+%  \item Arthur: ``Me and Bine are not of the same kind.''
+%  \item Bine: ``Exactly one of us is a knight.''
+% \end{itemize}
+% \item Given the propositions:\\
+% $A:$ ``It's cold outside''\\
+% $B:$ ``It's raining''\\
+% express the following propositions in natural language:
+% \begin{enumerate}
+% \item $\neg A$
+% \item $A\wedge B$
+% \item $A\vee B$
+% \item $B\vee\neg A$
+% \end{enumerate}
+% \item Given the propositions:\\
+% $A:$ ``John reads The New York Times.''\\
+% $B:$ ``John reads The Wall Street Journal.''\\
+% $C:$ ``John reads The Daily Mail.''\\
+% \\
+% Transcribe the following statements into symbolic propositions:
+% \begin{enumerate}
+% \item John reads The New York Times, but not The Wall Street Journal.
+% \item Either John reads both The New York Times and The Wall Street Journal,
+% or he does not read The New York Times and The Wall Street Journal.
+% \item It is not true that John reads The New York Times, and does not read
+% The Daily Mail.
+% \item It is not true that John reads The Daily Mail or The Wall Street Journal,
+% and not The New York Times.
+% \end{enumerate}
+% \item Find the truth tables for the symbolic propositions from (2).
+% \begin{enumerate}
+% \item For three lines $p,q,r$ we may construct also geometric propositions.
+% Suppose that the following is true:
+% \[
+% (p||q)\wedge(p\cap q\neq\emptyset)\wedge(q\cap r\neq\emptyset).
+% \]
+% What can you ay about the lines $p,q,r$?
+% \end{enumerate}
+% \item Knights and servants! For both cases below (separately) determine
+% the roles.
+% \begin{enumerate}
+% \item Arthur: It's not true that Chloe is a servant.\\
+% Bob: Chloe is a knight, or I am a knight.\\
+% Chloe: Bob is a servant.
+% \item Arthur: Chloe or Bob are servants.\\
+% Bob: Cene and Arthur are knights.
+% \end{enumerate}
+% \item Express the propositions below with connectives $\wedge$ and $\neg$
+% only!
+% \begin{enumerate}
+% \item $A\vee B$
+% \item $A\Rightarrow B$
+% \item $A\Leftrightarrow B$
+% \end{enumerate}
+
+
+\end{ex} \begin{ex} Find the canonical disjunctive normal form (DNF) and the canonical conjuctive normal form (CNF) for the following propositions:
 \begin{enumerate}
 \item[(i)] $\neg(A\wedge B) \Rightarrow (\neg B \Rightarrow A)$
 \item[(ii)] $\neg (A\vee B) \wedge (A \Rightarrow B)$
 \end{enumerate}
+\begin{sol}
 
-\emph{Re"sitev.} (i) Napi"si pravilnostno tabelo. DNO: vzemi vrstice z enicami (pove"zi jih med sabo s konjunkcijo) in jih pove"zi med sabo z disjunkcijo
-$(A\wedge B) \vee (A\wedge \neg B) \vee (\neg A \wedge B)$. KNO: vzemi vrstice z ni"clami (vzemi nasprotne vrednosti in jih pove"zi med sabo z disjunkcijo) in jih pove"zi med sabo s konjunkcijo $(A \vee B)$. (ii) Podobno.
+(i) Napi"si pravilnostno tabelo. DNO: vzemi vrstice z enicami (pove"zi jih med sabo s konjunkcijo) in jih pove"zi med sabo z disjunkcijo
+$(A\wedge B) \vee (A\wedge \neg B) \vee (\neg A \wedge B)$. KNO: vzemi vrstice z ni"clami (vzemi nasprotne vrednosti in jih pove"zi med sabo z disjunkcijo) in jih pove"zi med sabo s konjunkcijo $(A \vee B)$. 
 
-\item For the following compound proposition find  a truth table, determine DNF, CNF and draw the corresponding circuit.
+(ii) Podobno.
+\end{sol}
+\end{ex} 
+\begin{ex} For the following compound proposition find  a truth table, determine DNF, CNF and draw the corresponding circuit.
 $$
 (A \Rightarrow (B\Rightarrow C)) \Rightarrow ((A\Rightarrow B)\Rightarrow (A \Rightarrow C)).
 $$
 
 
-\item Find a compound proposition $\mathcal{I}$ such that
+\end{ex} \begin{ex} Find a compound proposition $\mathcal{I}$ such that
 $$(A\Rightarrow (\mathcal{I} \Rightarrow \neg B))\Rightarrow (A\wedge B) \vee \mathcal{I}$$
 is tautology.
 
-\emph{Re"sitev.} Napi"si pravilnostno tabelo za osnovni izjave $A, B$ skupaj s (sestavljeno) izjavo $\mathcal{I}$. Iz nje razberi, da je pravilnostna tabela za $\mathcal{I}$ enaka
+\begin{sol}
+Napi"si pravilnostno tabelo za osnovni izjave $A, B$ skupaj s (sestavljeno) izjavo $\mathcal{I}$. Iz nje razberi, da je pravilnostna tabela za $\mathcal{I}$ enaka
 \begin{table}[ht!]
 \centering
 \begin{tabular}{c|c|c}
@@ -516,9 +547,9 @@ A & B & $\mathcal{I}$\\
 \end{table}
 
 Torej je $\mathcal{I} \Leftrightarrow \neg A \vee \neg B$ v KNO.
-\pagebreak
+\end{sol}
 
-\item For the following circuits find the  corresponding compound propositions
+\end{ex} \begin{ex} For the following circuits find the  corresponding compound propositions
 
 \noindent (i)
 \begin{center}
@@ -533,13 +564,14 @@ Torej je $\mathcal{I} \Leftrightarrow \neg A \vee \neg B$ v KNO.
 \includegraphics{img/vez3}
 \end{center}
 
+\end{ex}
 
-
-
-\item Simplify the following logical equivalence
+\begin{ex}
+Poenostavi:
 $$(A\Rightarrow B) \vee (B \Rightarrow C).$$
 
-\emph{Re"sitev.} 
+\begin{sol}
+
 \begin{eqnarray*}
 (A\Rightarrow B) \vee (B \Rightarrow C) &\Leftrightarrow & (\neg A \vee B) \vee (\neg B \vee C)\\
 &\Leftrightarrow & \neg A \vee B \vee \neg B \vee C\\
@@ -547,8 +579,13 @@ $$(A\Rightarrow B) \vee (B \Rightarrow C).$$
 &\Leftrightarrow & \neg A \vee 1 \vee C\\
 &\Leftrightarrow & 1.
 \end{eqnarray*}
+ 
+\end{sol}
+\end{ex}
+\section{Dokazovanje}
 
-\item Show that the following propositions are logical implications (a tautology where the main connective is implication).
+\begin{ex}
+Pokaži pravilnost spodnjih implikacij:
 \begin{enumerate}
 \item[(i)] $A \wedge (A \Rightarrow B) \Rightarrow B$
 \item[(ii)] $\neg B \wedge (A \Rightarrow B) \Rightarrow \neg A$
@@ -557,78 +594,96 @@ $$(A\Rightarrow B) \vee (B \Rightarrow C).$$
 \item[(v)] $A \wedge (A \Leftrightarrow B) \Rightarrow B$
 \end{enumerate}
 
-\emph{Re"sitev.} (i) Recimo $A \wedge (A \Rightarrow B)$ pravilna, $B$ pa nepravilna. Potem je $A$ pravilna in $A\Rightarrow B$ pravilna. Sledi $B$ pravilna. Protislovje. 
+% \emph{Re"sitev.} (i) Recimo $A \wedge (A \Rightarrow B)$ pravilna, $B$ pa nepravilna. Potem je $A$ pravilna in $A\Rightarrow B$ pravilna. Sledi $B$ pravilna. Protislovje. 
 
 
-\item Are the following propositions logical implications?
+\end{ex} \begin{ex} Preveri, če so spodnje izjave pravilne, ter utemelji z dokazom oz. s protiprimerom.
 \begin{enumerate}
 \item[(i)] $(A \Rightarrow B ) \wedge (A \Rightarrow C) \wedge A \Rightarrow B \wedge C$
 \item[(ii)] $\neg (A \vee B) \wedge (A\vee C) \wedge (D\Rightarrow C) \Rightarrow D$
 \item[(iii)] $(A\Rightarrow B) \wedge (A\Rightarrow C) \wedge (D\wedge E \Rightarrow F) \wedge (C\Rightarrow E) \Rightarrow F$
 \end{enumerate}
 
-\item Z direktnim dokazom implikacije poka"zi: "Ce je $n$ sodo "stevilo, potem je $n^2 +3n$ sodo. Ali je obrat pravilen? 
+\end{ex} \begin{ex} Z direktnim dokazom implikacije poka"zi: "Ce je $n$ sodo "stevilo, potem je $n^2 +3n$ sodo. Ali je obrat pravilen? 
 
-\item Z direktnim dokazom implikacije poka"zi: "Ce je realno "stevilo $x$ nenegtivno, potem je vsota  "stevila $x$  in njegove obratne vrednosti  ve"cja ali enaka $2$.
+\end{ex} \begin{ex} Z direktnim dokazom implikacije poka"zi: "Ce je realno "stevilo $x$ nenegtivno, potem je vsota  "stevila $x$  in njegove obratne vrednosti  ve"cja ali enaka $2$.
 
-
-\emph{ Re"sitev.} Poka"zimo $x + \frac{1}{x}\geq 2$. Ker $x\geq 0$, pomno"zimo neenakost z $x$ in dobimo
+\begin{sol}
+    Poka"zimo $x + \frac{1}{x}\geq 2$. Ker $x\geq 0$, pomno"zimo neenakost z $x$ in dobimo
 $x^2 + 1 \geq 2x$ oziroma $(x- 1)^2\geq 0$. Slednje je o"citno vedno res.
+\end{sol}
 
-\item S protislovjem poka"zi, da je pra"stevil neskon"cno.
+\end{ex} \begin{ex} S protislovjem poka"zi, da je pra"stevil neskon"cno.
 
-\emph{ Re"sitev.} Recimo, da jih je kon"cno mnogo $p_1,p_2,\ldots, p_n$. Potem  $p=p_1p_2\cdots p_n+1$ ni deljivo z nobenim pra"stevilom $p_i$ in $p_i\neq p$ za vsak $i$. Po definiciji je torej $p$ pra"stevilo, ki ni enako nobenemu prej"snjemu. Protislovje.
+\begin{sol}Recimo, da jih je kon"cno mnogo $p_1,p_2,\ldots, p_n$. Potem  $p=p_1p_2\cdots p_n+1$ ni deljivo z nobenim pra"stevilom $p_i$ in $p_i\neq p$ za vsak $i$. Po definiciji je torej $p$ pra"stevilo, ki ni enako nobenemu prej"snjemu. Protislovje.
+\end{sol}
 
-\item Poi"s"ci napako v naslednjem dokazu. 
+\end{ex} \begin{ex} Poi"s"ci napako v naslednjem dokazu. 
 
+\begin{quote}
 \textbf{Trditev:} $1$ je najve"cje naravno "stevilo. 
 
 \textbf{Dokaz} (s protislovjem):
 Predpostavimo nasprotno. Naj bo $n>1$ najve"cje naravno "stevilo. Ker je $n$ pozitivno, lahko neenakost $n>1$ pomno"zimo z $n$. Torej $n>1\Leftrightarrow n^2>n$. Dobili smo, da je $n^2$ ve"cje od $n$, kar je v protislovju s predpostavko, da je $n$ najve"cje naravno "stevilo. Torej je bila predpostavka napa"cna in je $1$ najve"cje naravno "stevilo.
+\end{quote}
 
-\emph{ Re"sitev.} Nasporotna trdtev je: obstaja naravno "stevilo, ki je ve"cje od $1$.
+
+\begin{sol}
+ Nasporotna trdtev je: obstaja naravno "stevilo, ki je ve"cje od $1$.
+\end{sol}
 
 
-\item Naj bosta $x$ in $y$ realni "stevili, da velja $x<2y$. Z indirektnim dokazom poka"zi: "Ce je $7xy\leq 3x^2 + 2y^2$, potem je $3x\leq y$.
+\end{ex} \begin{ex} Naj bosta $x$ in $y$ realni "stevili, da velja $x<2y$. Z indirektnim dokazom poka"zi: "Ce je $7xy\leq 3x^2 + 2y^2$, potem je $3x\leq y$.
 
-\emph{ Re"sitev.} Naj bo $x<2y$, to je, $2y-x>0$. Pokazali bomo: "ce je $3x> y$, potem je $7xy > 3x^2 + 2y^2$. Predpostavimo torej, da je $3x-y>0$. Potem je $(2y-x)(3x-y)= 7xy - 3x^2 - 2y^2>0$, to je, $7xy > 3x^2 + 2y^2$.
+\begin{sol}Naj bo $x<2y$, to je, $2y-x>0$. Pokazali bomo: "ce je $3x> y$, potem je $7xy > 3x^2 + 2y^2$. Predpostavimo torej, da je $3x-y>0$. Potem je $(2y-x)(3x-y)= 7xy - 3x^2 - 2y^2>0$, to je, $7xy > 3x^2 + 2y^2$.
+\end{sol}
 
-\item Doka"zi naslednjo ekvivalenco v dveh delih: Naj bosta $m$ in $n$ celi "stevili. Tedaj sta "stevili $m$ in $n$ razli"cnih parnosti natanko tedaj, ko je "stevilo $m^2- n^2$ liho.
+\end{ex} \begin{ex} Doka"zi naslednjo ekvivalenco v dveh delih: Naj bosta $m$ in $n$ celi "stevili. Tedaj sta "stevili $m$ in $n$ razli"cnih parnosti natanko tedaj, ko je "stevilo $m^2- n^2$ liho.
 
-\emph{ Re"sitev.} ($\Rightarrow$) Predpostavimo, da sta razli"cnih parnosti. Pi"simo  $m=2k$ in $n=2l+1$, vstavimo v izraz $m^2- n^2$ in rezultat sledi.
+\begin{sol}
+
+ ($\Rightarrow$) Predpostavimo, da sta razli"cnih parnosti. Pi"simo  $m=2k$ in $n=2l+1$, vstavimo v izraz $m^2- n^2$ in rezultat sledi.
 
 ($\Leftarrow$) Poka"zemo indirektno in sicer: "Ce sta $m$ in $n$ iste parnosti, potem je $m^2- n^2$ sodo. Obravnavaj oba primera.
+\end{sol}
 
 
-\item Z uporabo "ce in samo "ce dokaza poka"zi: $ac\,|\,bc \Leftrightarrow a\,|\,b$.
+\end{ex} \begin{ex} Z uporabo "ce in samo "ce dokaza poka"zi: $ac\,|\,bc \Leftrightarrow a\,|\,b$.
 
-\item Ali je naslednji sklep pravilen?
+\end{ex} \begin{ex} Ali je naslednji sklep pravilen?
 \begin{enumerate}
-\item[(i)] "Ce je danes sreda bom imel vaje. Danes je sreda. Sklep: Imel bom vaje.
+\item[(i)] "Ce je danes sreda bom imel vaje. Danes je sreda. \textbf{Sklep:} Imel bom vaje.
 
-\emph{ Re"sitev.} $(A\Rightarrow B) \wedge A \Rightarrow B$. Res je.
 
-\item[(ii)] "Ce se u"cim, bom opravil izpit. Nisem se u"cil. Sklep: Ne bom opravil izpita.
+\item[(ii)] "Ce se u"cim, bom opravil izpit. Nisem se u"cil.\textbf{ Sklep:} Ne bom opravil izpita.
 
-\emph{ Re"sitev.} $(A\Rightarrow B) \wedge \neg A \Rightarrow \neg B$. Ni nujno res.
 \end{enumerate}
+\begin{sol}
+    \begin{enumerate}[(i)]
+        \item $(A\Rightarrow B) \wedge A \Rightarrow B$. Res je.
+        \item $(A\Rightarrow B) \wedge \neg A \Rightarrow \neg B$. Ni nujno res.
+    \end{enumerate}
+\end{sol}
 
-\item Ali je naslednji premislek pravilen?
+\end{ex} \begin{ex} Ali je naslednji premislek pravilen?
 \begin{enumerate}
 \item[(i)] "Student se je z mestni avtobusom odpravil na izpit. Rekel si je: "Ce bo na naslednjem semaforju zelena lu"c, bom naredil izpit. No, ko je avtobus pripeljal na naslednji semafor, na semaforju ni svetila zelena lu"c, "student pa si je dejal: Presneto, spet bom padel.
 
-\emph{ Re"sitev.} $((A\Rightarrow B) \wedge \neg A) \Rightarrow \neg B$. Ni nujno res.
 
 \item[(ii)] In"zenir, ki obvlada teorijo, vedno na"crta dobro vezje. Dobro vezje je ekonomi"cno. Torej, in"zenir, ki na"crta neekonomi"cno vezje, ne obvlada teorije. 
 
-\emph{ Re"sitev.} $((A\Rightarrow B) \wedge (B\Rightarrow C)) \Rightarrow (\neg C \Rightarrow \neg A)$. Res je.
 \end{enumerate}
 
+\begin{sol}
+\begin{itemize}
+\item $((A\Rightarrow B) \wedge \neg A) \Rightarrow \neg B$. Ni nujno res.
+    \item $((A\Rightarrow B) \wedge (B\Rightarrow C)) \Rightarrow (\neg C \Rightarrow \neg A)$. Res je.
+\end{itemize}
 
 
+\end{sol}
 
-
-\item Which of the following propositions are correct where the language of the conversation are real numbers?
+\end{ex} \begin{ex} Predpostavi realna števila kot univerzalno množico (tj. vesolje). Določi, katere izmed spodnjih trditev so pravilne:
 \begin{enumerate}
 \item[(i)] $(\forall x)(\exists y)(x+y=0)$.
 \item[(ii)] $(\exists x)(\forall y)(x+y=0)$.
@@ -636,19 +691,22 @@ Predpostavimo nasprotno. Naj bo $n>1$ najve"cje naravno "stevilo. Ker je $n$ poz
 \item[(iv)] $(\forall x)[x>0 \Rightarrow (\exists y)(y<0 \wedge xy>0)]$.
 \end{enumerate} 
 
+\end{ex}
 
 
-\item Let  $\mathbb{Z}$ be a universal set and let  $P$ denote the set of all prime numbers, and $S$ the set of all even integers. Write the following propositions in terms of set theory:
-\begin{itemize}
-\item[(i)] There exists an even prime number. \quad [$P\cap S \neq \emptyset$]
-\item[(ii)] $0$ is an integer, but it is not natural number. \quad [$0 \in \mathbb{Z}\setminus \mathbb{N}$]
-\item[(iii)] Every natural number is an integer. \quad [$\mathbb{N}\subseteq \mathbb{Z}$]
-\item[(iv)] Not every integer is a natural number. \quad [$\mathbb{Z}\nsubseteq \mathbb{N}$]
-\item[(v)] Every prime number except 2 is odd. \quad [$P\setminus \{2\} \subseteq \overline{S}$]
-\item[(vi)] 2 is an even prime number. \quad [$2\in S\cap P$]
-\end{itemize}
+% \begin{enumerate}[{Naloga }1.]
 
-\end{enumerate}
+% \item Let  $\mathbb{Z}$ be a universal set and let  $P$ denote the set of all prime numbers, and $S$ the set of all even integers. Write the following propositions in terms of set theory:
+% \begin{itemize}
+% \item[(i)] There exists an even prime number. \quad [$P\cap S \neq \emptyset$]
+% \item[(ii)] $0$ is an integer, but it is not natural number. \quad [$0 \in \mathbb{Z}\setminus \mathbb{N}$]
+% \item[(iii)] Every natural number is an integer. \quad [$\mathbb{N}\subseteq \mathbb{Z}$]
+% \item[(iv)] Not every integer is a natural number. \quad [$\mathbb{Z}\nsubseteq \mathbb{N}$]
+% \item[(v)] Every prime number except 2 is odd. \quad [$P\setminus \{2\} \subseteq \overline{S}$]
+% \item[(vi)] 2 is an even prime number. \quad [$2\in S\cap P$]
+% \end{itemize}
+
+% \end{enumerate}
 
 \section{Dokaz z indukcijo}
 \begin{enumerate}
@@ -692,21 +750,29 @@ Ključni pojmi:
   \item Potenčna množica. Kartezični produkt.
 \end{itemize}
 
-\begin{enumerate}
 
-
-\item Let $A = \{ x \in \mathbb{N}; x < 7\}, B = \{x \in  \mathbb{Z}; |x - 2| < 4\}$ and $C = \{x \in\mathbb{R}; x^3 -  4x = 0\}$.
+\begin{ex}
+ Naj bo 
+ 
+ $A = \{ x \in \mathbb{N}; x < 7\}$,
+ 
+ $B = \{x \in  \mathbb{Z}; |x - 2| < 4\}$, in
+ 
+ $C = \{x \in\mathbb{R}; x^3 -  4x = 0\}$.
 \begin{enumerate}
-\item[(i)]  Write down the elements for all three sets.
-\item[(ii)] Find $A \cup C, B \cap C, B \setminus C, (A \setminus B) \setminus C$ and $A \setminus (B \setminus C)$.
+\item[(i)]  Zapiši elemente vseh treh množic.
+\item[(ii)] Najdi $A \cup C, B \cap C, B \setminus C, (A \setminus B) \setminus C$ in $A \setminus (B \setminus C)$.
 \end{enumerate}
-
-    \item Let  $A, B, C$ and $D$  be subsets of some universal set  $U$. Simplify the following expression
+\end{ex}
+\begin{ex}
+Naj bodo  $A, B, C$ in $D$ množice, in naj bo $S$ univerzalna množica. Poenostavi:
 $$\overline{(\overline{(A\cup B)} \cap \overline{(\overline{A} \cup C)})}\setminus \overline{D}.$$
 
-\item Show that $(A\cup C)\cap (B\setminus C) = (A\cap B)\setminus C$.
+\end{ex}
+\begin{ex}
+Dokaži: $$(A\cup C)\cap (B\setminus C) = (A\cap B)\setminus C$$
 
-\emph{ Re"sitev.} 
+\begin{sol}
 \begin{eqnarray*}
 x\in (A\cup C)\cap (B\setminus C) &\Leftrightarrow & (x\in A \vee x\in C) \wedge (x\in B \wedge x\notin C)\\
  &\Leftrightarrow & ((x\in A \vee x\in C) \wedge (x\notin C))\wedge x\notin B\\
@@ -716,18 +782,27 @@ x\in (A\cup C)\cap (B\setminus C) &\Leftrightarrow & (x\in A \vee x\in C) \wedge
 &\Leftrightarrow & x\in A \wedge x\in B  \wedge x\notin C \\
 &\Leftrightarrow & x \in (A\cap B)\setminus C. 
 \end{eqnarray*}
+\end{sol}
 
-\item (Zadnja lastnost pri uniji) Prove that $A\subseteq C  \wedge B\subseteq C \Rightarrow A\cup B\subseteq C$.
+\end{ex}
+\begin{ex}
+Dokaži, da velja $A\subseteq C  \wedge B\subseteq C \Rightarrow A\cup B\subseteq C$.
 
-\emph{ Re"sitev.} Direktno.
+\begin{sol}
+    Direktno.
+\end{sol}
 
-\item (Predzadnja lastnost pri preseku) Prove that $A\subseteq  B \Leftrightarrow A\cap B = A$.
+\end{ex}
+\begin{ex}
+ (Predzadnja lastnost pri preseku) Prove that $A\subseteq  B \Leftrightarrow A\cap B = A$.
 
 \emph{ Re"sitev.} V dveh delih.
 
-\item (Predzadnja lastnost pri kartezi"cnemu produktu) Prove that $A\times (B\cap C) = (A\times B)\cap (A\times C)$.
+\end{ex}
+\begin{ex}
+ (Predzadnja lastnost pri kartezi"cnemu produktu) Dokaži: $A\times (B\cap C) = (A\times B)\cap (A\times C)$.
 
-\emph{ Re"sitev.} 
+\begin{sol}
 \begin{eqnarray*}
 (x,y)\in A\times (B\cap C) &\Leftrightarrow & x \in A \wedge y\in B\cap C\\
 &\Leftrightarrow & x \in A \wedge y\in B  \wedge y\in C\\
@@ -736,8 +811,12 @@ x\in (A\cup C)\cap (B\setminus C) &\Leftrightarrow & (x\in A \vee x\in C) \wedge
 &\Leftrightarrow & (x,y) \in A\times B \wedge  (x,y) \in A\times C\\
 &\Leftrightarrow & (x,y) \in (A\times B)\cap   (A\times C).
 \end{eqnarray*}
+\end{sol}
 
-\item (Predzadnja lastnost pri razliki) Prove that $(A\cap B )\setminus B = \emptyset$.
+
+\end{ex}
+\begin{ex}
+ (Predzadnja lastnost pri razliki) Prove that $(A\cap B )\setminus B = \emptyset$.
 \emph{ Re"sitev.} 
 \begin{eqnarray*}
 x\in (A\cap B )\setminus B  &\Leftrightarrow & x \in (A\cap B)  \wedge x\notin B\\
@@ -746,7 +825,9 @@ x\in (A\cap B )\setminus B  &\Leftrightarrow & x \in (A\cap B)  \wedge x\notin B
 &\Leftrightarrow & x\in \emptyset.
 \end{eqnarray*}
 
-\item Determine the following sets:
+\end{ex}
+\begin{ex}
+ Determine the following sets:
 \begin{enumerate}
 \item[(i)] $\{\emptyset, \{\emptyset\}\}\setminus \emptyset$ \quad [$\{\emptyset, \{\emptyset\}\}$]
 \item[(ii)] $\{\emptyset, \{\emptyset\}\}\setminus \{\emptyset\}$
@@ -754,16 +835,18 @@ x\in (A\cap B )\setminus B  &\Leftrightarrow & x \in (A\cap B)  \wedge x\notin B
 \item[(iv)] $\{1,2,3,\{1\}, \{5\}  \}\setminus \{2,\{3\},5\}$
 \end{enumerate}
 
-\item Which of the following propositions are correct for arbitrary sets $A, B$ and $C$:
+\end{ex}
+\begin{ex}
+Naj bodo $A, B$ in $C$ poljubne množice. Katere od spodnjih trditev so pravilne?
 \begin{enumerate}
-\item If $A\in B$ and $B\in C$, then $A\in C$.
-\item If $A\subseteq B$ and $B\in C$, then $A\in C$.
-\item If $A\cap B\subseteq \overline{C}$ and $A\cup C \subseteq B$, then $A\cap C = \emptyset$.
-\item If $A\neq B$ and $B\neq C$, then $A\neq C$.
-\item If $A\subseteq \overline{(B\cup C)}$ and $B\subseteq \overline{(A\cup C)}$, then $B=\emptyset$.
+\item Če velja $A\in B$ in $B\in C$, potem  $A\in C$.
+\item Če velja $A\subseteq B$ in $B\in C$, potem  $A\in C$.
+\item Če velja $A\cap B\subseteq \overline{C}$ in $A\cup C \subseteq B$, potem  $A\cap C = \emptyset$.
+\item Če velja $A\neq B$ in $B\neq C$, potem  $A\neq C$.
+\item Če velja $A\subseteq \overline{(B\cup C)}$ in $B\subseteq \overline{(A\cup C)}$, potem  $B=\emptyset$.
 \end{enumerate}
 
-\emph{ Re"sitev.}
+\begin{sol}
 \begin{enumerate}
 \item Napa"cna. Vzemi $A=\emptyset$, $B=\{\emptyset\}$, $B=\{\{\emptyset\}\}$.
 \item Napa"cna. Vzemi isti primer kot v (a).
@@ -771,33 +854,37 @@ x\in (A\cap B )\setminus B  &\Leftrightarrow & x \in (A\cap B)  \wedge x\notin B
 \item Napa"cna. Vzemi $A=C\neq B$.
 \item Napa"cna. Vzemi tri paroma disjunktne neprazne mno"zice.
 \end{enumerate}
-\end{enumerate}
+\end{sol}
 
-\begin{problem}[Enakost množic]
+\end{ex}
+
+\begin{ex}[Enakost množic]
 Katere naslednjih množic so med seboj enake?
 $$\{r,s,t\}, \{t,r,s,t\}, \{s,s,r,r,t\}, \{t,s,r\}$$
-\end{problem}
+\end{ex}
+\begin{sol}
+    Vse.
+\end{sol}
 
-Odgovor: Vse.
 
-\bigskip
-\begin{problem}
+\begin{ex}
 Ali obstajajo take množice $A, B, C$, da velja $B\neq C$ in $A\cap B = A\cap C$?
-\end{problem}
-
-Odgovor: Da: lahko vzamemo npr.~$A = \emptyset$ in poljubni različni množici $B\neq C$
+\end{ex}
+\begin{sol}
+    Da: lahko vzamemo npr.~$A = \emptyset$ in poljubni različni množici $B\neq C$
 (potem bo namreč $A\cap B = A\cap C = \emptyset$).
 
 Ali pa: $A = \{1,2\}, B = \{2,3\}, C = \{2,4\}$.
+\end{sol}
 
 
-\begin{problem}
+
+\begin{ex}
 Dana je množica $A$. Poišči vse množice $B$, za katere velja
 $A\backslash B = B\backslash A$.
-\end{problem}
+\end{ex}
 
-\textbf{Rešitev:}
-
+\begin{sol}    
 \textbf{1.~ način}:
 
 Očitno je
@@ -813,18 +900,20 @@ $A\subseteq B$ in $B\subseteq A$. Torej je $B = A$.\qed
 \textbf{2.~ način}:
 
 $A\backslash B = B\backslash A \sledi(A\cap B)\cup (A\backslash B) = (B\cap A)\cup (B\backslash A) \sledi A = B$.\qed
+\end{sol}
 
-\begin{problem}
+\begin{ex}
 Drži ali ne drži?
 
 Za poljubne množice $A$, $B$ in $C$ velja:
 $$A\cup (B\times C) = (A\cup B)\times (A\cup C)\,.$$
-\end{problem}
-
+\end{ex}
+\begin{sol}
 Ne drži. Že zato, ker množica na levi strani ni nujno kartezični produkt dveh množic.
 
 Zgled: $A = \{1\}, B = C = \emptyset$.
 
+\end{sol}
 
 
 
@@ -883,7 +972,7 @@ Za katere od naštetih relacij velja, da so: refleksivne, simetrične, antisimet
 \end{enumerate}
 
 
-\begin{problem}
+\begin{ex}
 V množico $A = \{a, b, c, d, e, f \}$ vpeljemo relaciji
 $R = \{(a, c), (a, d), (d, e), (e, a)\}$ in
 $S = \{(a, c), (a, f), (d, c), (f, d)\}$ .
@@ -895,7 +984,7 @@ $S = \{(a, c), (a, f), (d, c), (f, d)\}$ .
 (c) Ali je relacija $S\cup (S\circ S)$ tranzitivna?
 
 (d) Ali je relacija $S^{-1}\cup R$ simetrična?
-\end{problem}
+\end{ex}
 
 \textbf{Rešitev:}
 
@@ -942,7 +1031,7 @@ Ključni pojmi:
   \item Kanonična dekompozicija funkcije.
 \end{itemize}
 
-\begin{problem}
+\begin{ex}
 Naj bo $A = \{1,2,3,4\}$, $B = \{x,y,z\}$, $C = \{a,b\}$.
 
 Dani sta funkciji $f:A\to B$ in $g:B\to C$.
@@ -963,7 +1052,7 @@ $$g = \{(x,a),(y,b),(z,b)\}$$
 (f) Zapiši množici $f^{-1}(\{x,z\})$ in $g(\{x,z\})$.
 
 (g) Zapiši kanonično dekompozicijo funkcije $f$.
-\end{problem}
+\end{ex}
 
 \textbf{Rešitev:}
 
@@ -1059,7 +1148,7 @@ množica, $R$-omejena množica, $R$-infimum (največja spodnja meja),
 $R$-supremum (najmanjša zgornja meja).
 \end{itemize}
 \hrule
-\begin{problem}
+\begin{ex}
 Množica $S=\{1,\ldots,5\}$ je strogo delno urejena z naslednjo relacijo $R$:
 \begin{center}
 \includegraphics[width=30mm]{img/hasse5}
@@ -1072,7 +1161,7 @@ Množica $S=\{1,\ldots,5\}$ je strogo delno urejena z naslednjo relacijo $R$:
 (c) Ali ima množica $S$ prvi element? Ali ima množica $S$ zadnji element?
 
 (d) Ali je množica $S$ dobro urejena?
-\end{problem}
+\end{ex}
 
 \textbf{Rešitev:}
 
@@ -1249,10 +1338,10 @@ njiju ekvipolentna neki podmnožici druge.
 \item Cantorjev izrek. Domneva kontinuuma.
 \end{itemize}
 
-\begin{problem}
+\begin{ex}
 Pokažite, da ima množica vseh funkcij
 $\{f:\mathbb{R}\to \mathbb{R}\}$ večjo moč kot $\mathbb{R}$.
-\end{problem}
+\end{ex}
 
 
 \bigskip
@@ -1479,6 +1568,9 @@ $\le k$ ničel.
 
 
 
+\Closesolutionfile{ans} 
+\chapter{Rešitve} 
+\input{ans1} 
 
 \end{document}
 

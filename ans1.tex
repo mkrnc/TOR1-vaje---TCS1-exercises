@@ -1,0 +1,295 @@
+\begin{Odgovor}{1.2}
+Rešitve, po vrsti, so:
+    \begin{enumerate}
+        \item $(A \lor B) \land \neg C$
+        \item $(A \land B) \lor \neg (A \land B)$
+        \item $\neg (A \land \neg C)$
+        \item $\neg ((B \lor C) \land \neg A)$
+    \end{enumerate}
+\end{Odgovor}
+\begin{Odgovor}{1.4}
+ Nariši skico. Premica $q$ leži v ravnini, in jo določata $p$ in $r$.
+\end{Odgovor}
+\begin{Odgovor}{1.8}
+Naj bo $A$ izjava: ``A je vitez", itd.
+Iščemo tisto edino določilo $d$, za katerega je izjava $$A_1\inn B_1\inn C_1\inn D_1$$
+pravilna, kjer je:
+
+$A_1: A\cee (\neg D \inn \neg C)$
+
+$B_1: B\cee (\neg A \inn \neg D\sledi \neg C)$
+
+$C_1: C\cee (\neg B \sledi A)$
+
+$D_1: D\cee (\neg E \sledi \neg C \inn \neg B)$
+
+
+Ker bi pravilnostna tabela vsebovala 32 vrstic, rešimo nalogo
+raje z analizo primerov.
+
+\textbf{1.~primer: $A(d) = 1$.}
+Zaradi $A_1$ je potem $D(d) = 0$ in $C(d) = 0$.
+
+V izjavo $C_1$ vstavimo $A(d) = 1$ in $C(d) = 0$, dobimo:
+$\neg(\neg B\sledi 1)$,
+
+$\neg(B\ali 1)$,
+
+$\neg 1$, to pa je nepravilna izjava.
+
+Torej 1.~primer ni mogoč.
+%
+% torej $B(d) = 1$.
+%
+%V izjavo $B_1$ vstavimo $A(d) = 1$, $B(d) = 1$, $C(d) = 0$ in $D(d) = 0$, dobimo:
+%$1\cee (0\inn 1\sledi 1)$, kar je pravilna izjava.
+%
+%V izjavo $D_1$ vstavimo znane vrednosti, dobimo:
+%$\neg(\neg E \sledi 1 \inn 0)$
+%
+%$\neg(\neg E \sledi 0)$
+%
+%Sledi $\neg E(d) = 1$, torej $E(d) = 0$.
+%
+
+\textbf{2.~primer: $A(d) = 0$.}
+
+Zaradi $A_1$ je bodisi $C(d) = 1$ ali pa $D(d) = 1$.
+
+\textbf{2.1.: $C(d) = 1$}.
+
+Zaradi $C_1$ je $\neg B \sledi 0$, torej je $\neg B = 0$ in posledično $B(d) = 1$.
+
+V izjavo $B_1$ vstavimo $A(d) = 0$, $B(d) = 1$, $C(d) = 1$, dobimo:
+
+$1 \inn \neg D\sledi 0$
+
+$\neg D\sledi 0$
+
+Sledi $\neg D = 0$ oz.~$D(d) = 1$.
+
+Vstavimo v izjavo $D_1$ znane vrednosti:
+
+$(\neg E \sledi 0 \inn 0)$
+
+Sledi $E(d) = 1$.
+
+\bigskip
+
+\textbf{2.2.: $C(d) = 0$ in $D(d) = 1$}.
+
+Iz izjave $B_1$ dobimo $B(d) = 1$.
+
+Izjava $C_1$ pa je sedaj nepravilna:
+$0 \cee (0\sledi 1)$.\qed
+
+Torej so $B$, $C$, $D$ in $E$ vitezi, $A$ pa je oproda.
+
+\end{Odgovor}
+\begin{Odgovor}{1.9}
+Označimo:
+
+$A_1$: Mislim.
+
+$A_2$: Sem.
+
+$A_3$: Sklepam.
+
+Zanima nas pravilnost implikacije
+
+$$(A_1\sledi A_2)\inn(A_1\sledi A_3)\sledi(A_2\sledi A_3)$$
+
+Pri določilu $A_1(d) = 0$, $A_2(d) = 1$, $A_3(d) = 0$ je ta implikacija nepravilna!
+(Ne mislim, sem, ne sklepam.)
+Torej je sklepanje napačno.
+
+\end{Odgovor}
+\begin{Odgovor}{1.10}
+Označimo izjave:
+
+$A_1$: Sem dojenček.
+
+$A_2$: Obnašam se nelogično.
+
+$A_3$: Sposoben sem ukrotiti krokodila.
+
+$A_4$: Vreden sem spoštovanja.
+
+$(A_1\sledi A_2)\inn (A_3\sledi A_4) \inn (A_2\sledi \neg A_4)\sledi (A_1\sledi \neg A_3)$
+
+Pa recimo, da je sklep napačen. Tedaj obstaja določilo $d$, da velja
+\begin{enumerate}[(1)]
+  \item $(A_1(d)\sledi \neg A_3(d)) = 0$
+  \item $(A_1(d)\sledi A_2(d)) = 1$
+  \item $(A_3(d)\sledi A_4(d)) = 1$
+  \item $(A_2(d)\sledi \neg A_4(d)) = 1$
+\end{enumerate}
+Torej je, zaradi (1), $A_1(d) = 1$ in $A_3(d) = 1$. Zaradi (2) je $A_2(d) = 1$.
+Zaradi (4) je $A_4(d) = 0$. To pa je protislovje s (3).
+
+Torej je sklepanje pravilno.\qed
+\end{Odgovor}
+\begin{Odgovor}{1.11}
+Označimo izjave:
+
+$K$: Morilka je kuharica.
+
+$S$: Morilec je strežnik.
+
+Š: Morilec je šofer.
+
+H: Kuharica je zastrupila hrano.
+
+B: Šofer je postavil bombo v avto.
+
+\medskip
+Ali je naslednja implikacija tavtologija?
+
+$(K\ali S\ali$ \v S$)\inn(K\sledi H)\inn($Š$\sledi B)\inn(\neg H\inn \neg S)\sledi $Š
+
+Dokazujemo direktno:
+\bigskip
+\begin{enumerate}
+    \item $(K\ali S\ali $Š$)$\hfill (Predpostavka)
+    \item $(K\sledi H)$\hfill (Predpostavka)
+    \item $($Š$\sledi B)$\hfill (Predpostavka)
+    \item $(\neg H\inn \neg S)$\hfill (Predpostavka)
+    \item $\neg H$\hfill (4)
+    \item $\neg S$\hfill (4)
+    \item $\neg K$\hfill (2,5)
+    \item Š\hfill (1,6,7)
+\end{enumerate}
+
+\end{Odgovor}
+\begin{Odgovor}{1.12}
+
+(i) Napi"si pravilnostno tabelo. DNO: vzemi vrstice z enicami (pove"zi jih med sabo s konjunkcijo) in jih pove"zi med sabo z disjunkcijo
+$(A\wedge B) \vee (A\wedge \neg B) \vee (\neg A \wedge B)$. KNO: vzemi vrstice z ni"clami (vzemi nasprotne vrednosti in jih pove"zi med sabo z disjunkcijo) in jih pove"zi med sabo s konjunkcijo $(A \vee B)$.
+
+(ii) Podobno.
+\end{Odgovor}
+\begin{Odgovor}{1.14}
+Napi"si pravilnostno tabelo za osnovni izjave $A, B$ skupaj s (sestavljeno) izjavo $\mathcal{I}$. Iz nje razberi, da je pravilnostna tabela za $\mathcal{I}$ enaka
+\begin{table}[ht!]
+\centering
+\begin{tabular}{c|c|c}
+A & B & $\mathcal{I}$\\
+\hline
+1 & 1 & 0\\
+1 & 0 & 1\\
+0 & 1 & 1\\
+0 & 0 & 1
+\end{tabular}
+\end{table}
+
+Torej je $\mathcal{I} \Leftrightarrow \neg A \vee \neg B$ v KNO.
+\end{Odgovor}
+\begin{Odgovor}{1.16}
+
+\begin{eqnarray*}
+(A\Rightarrow B) \vee (B \Rightarrow C) &\Leftrightarrow & (\neg A \vee B) \vee (\neg B \vee C)\\
+&\Leftrightarrow & \neg A \vee B \vee \neg B \vee C\\
+&\Leftrightarrow & \neg A \vee (B \vee \neg B) \vee C\\
+&\Leftrightarrow & \neg A \vee 1 \vee C\\
+&\Leftrightarrow & 1.
+\end{eqnarray*}
+
+\end{Odgovor}
+\begin{Odgovor}{1.20}
+    Poka"zimo $x + \frac{1}{x}\geq 2$. Ker $x\geq 0$, pomno"zimo neenakost z $x$ in dobimo
+$x^2 + 1 \geq 2x$ oziroma $(x- 1)^2\geq 0$. Slednje je o"citno vedno res.
+\end{Odgovor}
+\begin{Odgovor}{1.21}
+Recimo, da jih je kon"cno mnogo $p_1,p_2,\ldots, p_n$. Potem  $p=p_1p_2\cdots p_n+1$ ni deljivo z nobenim pra"stevilom $p_i$ in $p_i\neq p$ za vsak $i$. Po definiciji je torej $p$ pra"stevilo, ki ni enako nobenemu prej"snjemu. Protislovje.
+\end{Odgovor}
+\begin{Odgovor}{1.22}
+ Nasporotna trdtev je: obstaja naravno "stevilo, ki je ve"cje od $1$.
+\end{Odgovor}
+\begin{Odgovor}{1.23}
+Naj bo $x<2y$, to je, $2y-x>0$. Pokazali bomo: "ce je $3x> y$, potem je $7xy > 3x^2 + 2y^2$. Predpostavimo torej, da je $3x-y>0$. Potem je $(2y-x)(3x-y)= 7xy - 3x^2 - 2y^2>0$, to je, $7xy > 3x^2 + 2y^2$.
+\end{Odgovor}
+\begin{Odgovor}{1.24}
+
+ ($\Rightarrow$) Predpostavimo, da sta razli"cnih parnosti. Pi"simo  $m=2k$ in $n=2l+1$, vstavimo v izraz $m^2- n^2$ in rezultat sledi.
+
+($\Leftarrow$) Poka"zemo indirektno in sicer: "Ce sta $m$ in $n$ iste parnosti, potem je $m^2- n^2$ sodo. Obravnavaj oba primera.
+\end{Odgovor}
+\begin{Odgovor}{1.26}
+    \begin{enumerate}[(i)]
+        \item $(A\Rightarrow B) \wedge A \Rightarrow B$. Res je.
+        \item $(A\Rightarrow B) \wedge \neg A \Rightarrow \neg B$. Ni nujno res.
+    \end{enumerate}
+\end{Odgovor}
+\begin{Odgovor}{1.27}
+\begin{itemize}
+\item $((A\Rightarrow B) \wedge \neg A) \Rightarrow \neg B$. Ni nujno res.
+    \item $((A\Rightarrow B) \wedge (B\Rightarrow C)) \Rightarrow (\neg C \Rightarrow \neg A)$. Res je.
+\end{itemize}
+
+
+\end{Odgovor}
+\begin{Odgovor}{2.3}
+\begin{eqnarray*}
+x\in (A\cup C)\cap (B\setminus C) &\Leftrightarrow & (x\in A \vee x\in C) \wedge (x\in B \wedge x\notin C)\\
+ &\Leftrightarrow & ((x\in A \vee x\in C) \wedge (x\notin C))\wedge x\notin B\\
+&\Leftrightarrow & ((x\in A \wedge x\notin C) \vee (x\in C \wedge x\notin C)) \wedge
+ x\in B\\
+&\Leftrightarrow & x\in A \wedge x\notin C  \wedge x\in B\\
+&\Leftrightarrow & x\in A \wedge x\in B  \wedge x\notin C \\
+&\Leftrightarrow & x \in (A\cap B)\setminus C.
+\end{eqnarray*}
+\end{Odgovor}
+\begin{Odgovor}{2.4}
+    Direktno.
+\end{Odgovor}
+\begin{Odgovor}{2.6}
+\begin{eqnarray*}
+(x,y)\in A\times (B\cap C) &\Leftrightarrow & x \in A \wedge y\in B\cap C\\
+&\Leftrightarrow & x \in A \wedge y\in B  \wedge y\in C\\
+&\Leftrightarrow & x \in A \wedge x \in A\wedge y\in B  \wedge y\in C\\
+&\Leftrightarrow & x \in A \wedge  y\in B  \wedge x \in A\wedge y\in C\\
+&\Leftrightarrow & (x,y) \in A\times B \wedge  (x,y) \in A\times C\\
+&\Leftrightarrow & (x,y) \in (A\times B)\cap   (A\times C).
+\end{eqnarray*}
+\end{Odgovor}
+\begin{Odgovor}{2.9}
+\begin{enumerate}
+\item Napa"cna. Vzemi $A=\emptyset$, $B=\{\emptyset\}$, $B=\{\{\emptyset\}\}$.
+\item Napa"cna. Vzemi isti primer kot v (a).
+\item Pravilna. Dokaz s protislovjem. Recimo, da trditev ni pravilna. Naj bo $A\cap B\subseteq \overline{C}$, $A\cup C\subseteq B$  in naj obstaja $x\in A\cap C$. Torej je $x\in A$ in $x\in C$. Ker je po drugi predpostavki $A\cup C\subseteq B$, je $x\in B$. Sledi $x\in A \cap B$. Ker je po prvi predpostavki $A\cap B\subseteq \overline{C}$, je $x\in \overline{C}$. Protislovje, saj $x\in C$.
+\item Napa"cna. Vzemi $A=C\neq B$.
+\item Napa"cna. Vzemi tri paroma disjunktne neprazne mno"zice.
+\end{enumerate}
+\end{Odgovor}
+\begin{Odgovor}{2}
+    Vse.
+\end{Odgovor}
+\begin{Odgovor}{2}
+    Da: lahko vzamemo npr.~$A = \emptyset$ in poljubni različni množici $B\neq C$
+(potem bo namreč $A\cap B = A\cap C = \emptyset$).
+
+Ali pa: $A = \{1,2\}, B = \{2,3\}, C = \{2,4\}$.
+\end{Odgovor}
+\begin{Odgovor}{2}
+\textbf{1.~ način}:
+
+Očitno je
+$(A\backslash B) \cap (B\backslash A)=\emptyset$.
+Ob upoštevanju predpostavke $A\backslash B = B\backslash A$
+zveza
+$(A\backslash B) \cap (B\backslash A)=\emptyset$
+postane
+$A\backslash B =\emptyset$
+in $B\backslash A =\emptyset$, kar pomeni
+$A\subseteq B$ in $B\subseteq A$. Torej je $B = A$.\qed
+
+\textbf{2.~ način}:
+
+$A\backslash B = B\backslash A \sledi(A\cap B)\cup (A\backslash B) = (B\cap A)\cup (B\backslash A) \sledi A = B$.\qed
+\end{Odgovor}
+\begin{Odgovor}{2}
+Ne drži. Že zato, ker množica na levi strani ni nujno kartezični produkt dveh množic.
+
+Zgled: $A = \{1\}, B = C = \emptyset$.
+
+\end{Odgovor}
