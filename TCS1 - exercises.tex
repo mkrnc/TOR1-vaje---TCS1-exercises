@@ -18,6 +18,7 @@
 \usepackage{color}
 \usepackage{fullpage}
 \usepackage{makecell}
+\usepackage{answers}
 %\usepackage{times}
 %\usepackage{txfonts}
 \def\P {{\cal P}}
@@ -39,6 +40,14 @@
 \theoremstyle{theorem} %theorem
 \newtheorem*{theorem}{Theorem}
 \newtheorem*{proposition}{Proposition}
+
+
+\newtheorem{ex}{Exercise\hypertarget{sol:\theex}}[chapter]
+% \newtheorem{ex}{\hyperlink{ex:\theex}{Vaja}\hypertarget{sol:\theex}}[chapter]
+\Newassociation{sol}{answer}{ans}
+\renewenvironment{answer}[1]
+{\par\bigskip\noindent{\bfseries \hypertarget{ex:#1}{}\hyperlink{sol:#1}{Answer for exercise #1:}}\quad}
+{\par\bigskip}
 
 %vars
 \newcommand{\myTitle}{Theoretical Computer Science\xspace}
@@ -76,16 +85,12 @@ Among most notable student contributors are:
 \input{en/kolofon}
 
 \tableofcontents
-
+\Opensolutionfile{ans}[ans1] 
 
 \chapter{Mathematical Logic}
-
-
 \section{Basic exercises}
-
-\begin{enumerate}[label=\textbf{Problem \arabic*.}]
-    \item 
-The following two propositions are given:
+\begin{ex}
+    The following two propositions are given:
 A: "It is cold outside."
 B: "It is raining outside."
 
@@ -96,8 +101,13 @@ Write the following compound propositions in natural language:
     \item (c) $A \lor B$
     \item (d) $B \lor \neg A$
 \end{itemize}
+\end{ex}
 
-\item 
+
+
+
+
+\begin{ex}     
 The following two propositions are given:
 A: "Janez is rich."
 B: "Janez is happy."
@@ -110,11 +120,12 @@ Write the following propositions symbolically:
     \item (d) Janez is poor if and only if he is unhappy.
 \end{itemize}
 
-\item 
+\end{ex} \begin{ex} 
 Find the truth tables for the examples from the previous task.
 
 
-\item
+\end{ex} 
+\begin{ex}
 Is the following reasoning correct?
 
 \begin{itemize}
@@ -122,18 +133,20 @@ Is the following reasoning correct?
     \item Premise 2: "I think, therefore I reason."
     \item Conclusion: "I am, therefore I reason."
 \end{itemize}
-
-\textbf{Solution:} The logical implication is:
+\begin{sol}
+The logical implication is:
 
 \[
 (A_1 \Rightarrow A_2) \land (A_1 \Rightarrow A_3) \Rightarrow (A_2 \Rightarrow A_3)
 \]
 
 For \( A_1(d) = 0 \), \( A_2(d) = 1 \), \( A_3(d) = 0 \), this implication is false. Therefore, the reasoning is incorrect.
+\end{sol}
 
 
 
-\item
+
+\end{ex} \begin{ex}
 The following two propositions are given:
 $A$: ``Andrej speaks French.'' and $B$: ``Andrej speaks Danish.''
 Write the following compound propositions in natural language:
@@ -151,7 +164,7 @@ Write the following compound propositions in natural language:
 (f) $\neg (\neg A\inn \neg B)$
 
 
-\item \label{ex:newspapers} Given the propositions:\\
+\end{ex} \begin{ex} \label{ex:newspapers} Given the propositions:\\
 $A:$ ``John reads The New York Times.''\\
 $B:$ ``John reads The Wall Street Journal.''\\
 $C:$ ``John reads The Daily Mail.''\\
@@ -166,10 +179,10 @@ The Daily Mail.
 \item It is not true that John reads The Daily Mail or The Wall Street Journal,
 and not The New York Times.
 \end{enumerate}
-\item Find the truth tables for the symbolic propositions from Exercise \ref{ex:newspapers}.
+\end{ex} \begin{ex} Find the truth tables for the symbolic propositions from Exercise \ref{ex:newspapers}.
 
 
-\item For three lines $p,q,r$ we may construct also geometric propositions.
+\end{ex} \begin{ex} For three lines $p,q,r$ we may construct also geometric propositions.
 Suppose that the following is true:
 \[
 (p||q)\wedge(p\cap q\neq\emptyset)\wedge(q\cap r\neq\emptyset).
@@ -178,23 +191,22 @@ What can you say about the lines $p,q,r$?
 
 
 
-\item Express the propositions below with connectives $\wedge$ and $\neg$
+\end{ex}
+\begin{ex} Express the propositions below with connectives $\wedge$ and $\neg$
 only!
 \begin{enumerate}
 \item $A\vee B$
 \item $A\Rightarrow B$
 \item $A\Leftrightarrow B$
 \end{enumerate}
-
-\end{enumerate}
+\end{ex}
 
 \section{Knights and servants (kneves)}
 Knights always tell the truth, while servants always lie.
 
 
-\begin{enumerate}[resume, label=\textbf{Problem \arabic*.}]
 
-\item 
+\begin{ex} 
  Artur: "It is not true that Cene is a servant."
  
 Bine: "Cene is a knight or I am a knight."
@@ -205,24 +217,27 @@ For each of them, determine whether they are knights or servants!
 
 % \textbf{Solut6 0$ and  $B = 1$. 
 
-\item Artur: "Cene is a servant or Bine is a servant."
+\end{ex} \begin{ex} Artur: "Cene is a servant or Bine is a servant."
 
 Bine: "Cene is a knight and Artur is a knight."
 
 For each of them, determine whether they are knights or servants!
 
 % \textbf{Solution:}
-% Let us denote: $A$ – Arthur is a knight, $B$ – Bine is a knight, $C$ – Cene is a knight.
+\begin{sol}
+    
+Let us denote: $A$ – Arthur is a knight, $B$ – Bine is a knight, $C$ – Cene is a knight.
 
-% The following compound statement holds:
+The following compound statement holds:
 
-% \[
-% (A \iff \neg C \lor \neg B) \land (B \iff C \land A)
-% \]
+\[
+(A \iff \neg C \lor \neg B) \land (B \iff C \land A)
+\]
 
-% With the help of the truth table, we see that the statement is true only for the set $A = 1$ and $B = C = 0$.
+With the help of the truth table, we see that the statement is true only for the set $A = 1$ and $B = C = 0$.
+\end{sol}
 
-    \item Let us analyze the statements made by A, B, C, and D:
+    \end{ex} \begin{ex} Let us analyze the statements made by A, B, C, and D:
 
 \begin{itemize}
     \item A: "D is a servant and C is a servant."
@@ -232,72 +247,69 @@ For each of them, determine whether they are knights or servants!
 \end{itemize}
 
 %%solution
-% \textbf{Solution:} Let \( A \) represent "A is a knight", etc. We seek the only solution \( d \) such that the following is true:
+\begin{sol}
+Let \( A \) represent "A is a knight", etc. We seek the only solution \( d \) such that the following is true:
 
-% \[
-% A_1 \land B_1 \land C_1 \land D_1
-% \]
+\[
+A_1 \land B_1 \land C_1 \land D_1
+\]
 
-% where:
-
-% \[
-% A_1 : A \iff (\neg D \land \neg C)
-% \]
-% \[
-% B_1 : B \iff (\neg A \land \neg D \Rightarrow \neg C)
-% \]
-% \[
-% C_1 : C \iff (\neg B \Rightarrow A)
-% \]
-% \[
-% D_1 : D \iff (\neg E \Rightarrow \neg C \land \neg B)
-% \]
-
-% Since the truth table would contain 32 rows, we solve this by analyzing cases.
-
-% \subsection*{Case 1: \( A(d) = 1 \)}
-
-% Given \( A_1 \), \( D(d) = 0 \) and \( C(d) = 0 \). Substituting into \( C_1 \) with \( A(d) = 1 \) and \( C(d) = 0 \), we get:
-
-% \[
-% \neg (\neg B \Rightarrow 1) \Rightarrow \neg(B \lor 1) \Rightarrow \neg 1
-% \]
-
-% which is a false statement. Hence, this case is not possible.
-
-% \subsection*{Case 2: \( A(d) = 0 \)}
-
-% Given \( A_1 \), either \( C(d) = 1 \) or \( D(d) = 1 \).
-
-% \subsection*{Case 2.1: \( C(d) = 1 \)}
-
-% Since \( C_1 \), \( \neg B \Rightarrow 0 \), implies \( \neg B = 0 \), hence \( B(d) = 1 \).
-
-% Substituting into \( B_1 \) with \( A(d) = 0 \), \( B(d) = 1 \), and \( C(d) = 1 \), we get:
-
-% \[
-% 1 \land \neg D \Rightarrow 0 \Rightarrow \neg D = 0
-% \]
-
-% thus, \( D(d) = 1 \).
-
-% Substituting into \( D_1 \), we get:
-
-% \[
-% \neg E \Rightarrow 0 \land 0
-% \]
-
-% Hence \( E(d) = 1 \).
-
-% \subsection*{Case 2.2: \( C(d) = 0 \) and \( D(d) = 1 \)}
-
-% From \( B_1 \), we get \( B(d) = 1 \), but the statement \( C_1 \) becomes false: \( 0 \iff (0 \Rightarrow 1) \).
-
-% Thus, \( B \), \( C \), \( D \), and \( E \) are knights, while \( A \) is a servant.
+where:
+\begin{align*}
+A_1 &: A \iff (\neg D \land \neg C)\\
+B_1 &: B \iff (\neg A \land \neg D \Rightarrow \neg C)\\
+C_1 &: C \iff (\neg B \Rightarrow A)\\
+D_1 &: D \iff (\neg E \Rightarrow \neg C \land \neg B)\\
+\end{align*}
 
 
+Since the truth table would contain 32 rows, we solve this by analyzing cases.
 
-\item Solve the following exercises about knights and servants:
+\subsection*{Case 1: \( A(d) = 1 \)}
+
+Given \( A_1 \), \( D(d) = 0 \) and \( C(d) = 0 \). Substituting into \( C_1 \) with \( A(d) = 1 \) and \( C(d) = 0 \), we get:
+
+\[
+\neg (\neg B \Rightarrow 1) \Rightarrow \neg(B \lor 1) \Rightarrow \neg 1
+\]
+
+which is a false statement. Hence, this case is not possible.
+
+\subsection*{Case 2: \( A(d) = 0 \)}
+
+Given \( A_1 \), either \( C(d) = 1 \) or \( D(d) = 1 \).
+
+\subsection*{Case 2.1: \( C(d) = 1 \)}
+
+Since \( C_1 \), \( \neg B \Rightarrow 0 \), implies \( \neg B = 0 \), hence \( B(d) = 1 \).
+
+Substituting into \( B_1 \) with \( A(d) = 0 \), \( B(d) = 1 \), and \( C(d) = 1 \), we get:
+
+\[
+1 \land \neg D \Rightarrow 0 \Rightarrow \neg D = 0
+\]
+
+thus, \( D(d) = 1 \).
+
+Substituting into \( D_1 \), we get:
+
+\[
+\neg E \Rightarrow 0 \land 0
+\]
+
+Hence \( E(d) = 1 \).
+
+\subsection*{Case 2.2: \( C(d) = 0 \) and \( D(d) = 1 \)}
+
+From \( B_1 \), we get \( B(d) = 1 \), but the statement \( C_1 \) becomes false: \( 0 \iff (0 \Rightarrow 1) \).
+
+Thus, \( B \), \( C \), \( D \), and \( E \) are knights, while \( A \) is a servant.
+
+\end{sol}
+
+
+\end{ex}
+\begin{ex} Solve the following exercises about knights and servants:
 \begin{itemize}
   \item Arthur: ``It is not true that Bine is a servant."
   \item Bine: ``We are not both of the same kind.''
@@ -306,7 +318,8 @@ For each of them, determine whether they are knights or servants!
 
 
 
-\item 
+\end{ex} 
+\begin{ex} 
 Now Arthur and Bine say the following:
 \begin{itemize}
  \item Arthur: ``Me and Bine are not of the same kind.''
@@ -314,69 +327,104 @@ Now Arthur and Bine say the following:
 \end{itemize}
 
 
-\item Knights and servants! 
+\end{ex} 
+\begin{ex} Knights and servants! 
 \begin{enumerate}
 
 \item Arthur: Chloe or Bob are servants.
 \item 
 Bob: Cene and Arthur are knights.
 \end{enumerate}
-
-
-\end{enumerate}
+\end{ex}
 
 
 
 \section{Canonical Forms}
-\begin{enumerate}[resume, label=\textbf{Problem \arabic*.}]
-    \item Find the canonical disjunctive normal form (DNF) and the canonical conjunctive normal form (CNF) for the following propositions:
-    \begin{itemize}
-        \item[(i)] $\neg(A \land B) \Rightarrow (\neg B \Rightarrow A)$
-        \item[(ii)] $\neg(A \lor B) \land (A \Rightarrow B)$
-    \end{itemize}
+     \begin{ex} Find the canonical disjunctive normal form (DNF) and the canonical conjunctive normal form (CNF) for the following propositions:
+    \begin{enumerate}[label=(\roman*)]
+        \item $\neg(A \land B) \Rightarrow (\neg B \Rightarrow A)$
+        \item $\neg(A \lor B) \land (A \Rightarrow B)$
+        \item \((A \lor \neg B) \land (B \Rightarrow A)\)
+    \item \((\neg A \lor B) \Rightarrow (\neg B \lor A)\)
+    \item \(\neg((A \lor B) \land (\neg A \lor \neg C))\)
+    \end{enumerate}
 
-
-
-
-\item For the following compound proposition find  a truth table, determine DNF, CNF and draw the corresponding circuit.
+\end{ex}
+\begin{ex} For the following compound proposition find  a truth table, determine DNF, CNF and draw the corresponding circuit.
 $$
 (A \Rightarrow (B\Rightarrow C)) \Rightarrow ((A\Rightarrow B)\Rightarrow (A \Rightarrow C)).
 $$
+\end{ex}
 
-\end{enumerate}
+
+
+\begin{ex}
+For the following compound proposition, create a truth table, determine the DNF and CNF, and draw the corresponding circuit diagram:
+\[
+\neg((A \land B) \Rightarrow (\neg C \lor D)).
+\]
+\end{ex}
+
+\begin{ex}
+Determine if the following logical equivalences hold. Justify your answers by transforming each side into its canonical form:
+\begin{itemize}
+    \item[(i)] \((A \Rightarrow B) \lor (\neg A \land \neg B) \sim \neg B \Rightarrow \neg A\)
+    \item[(ii)] \((A \land (B \lor C)) \Rightarrow (A \land B) \sim (\neg A \lor B)\)
+\end{itemize}
+\end{ex}
+
+\begin{ex}
+Prove or disprove the validity of the following compound proposition using truth tables, DNF, or CNF:
+\[
+(\neg A \lor B) \land (B \Rightarrow C) \sim (\neg A \lor C).
+\]
+\end{ex}
+
+\begin{ex}
+Simplify the following compound proposition using the laws of logic, and then find its canonical DNF and CNF:
+\[
+(\neg A \land (B \lor C)) \lor (A \land \neg B \land \neg C).
+\]
+\end{ex}
+
+\begin{ex}
+Find DNF and CNF (if they exist) for the following proposition:
+\[
+(A \lor B) \land (\neg A \lor C) \land (\neg B \lor \neg C).
+\]
+\end{ex}
+
 \section{Switching circuits}
-\begin{enumerate}[resume, label=\textbf{Problem \arabic*.}]
-    \item For the circuits in Figure \ref{fig:circuits}, find the corresponding compound propositions.\label{ex:circuits}
-\end{enumerate}
+
+     \begin{ex} For the circuits in Figure \ref{fig:circuits}, find the corresponding compound propositions.\label{ex:circuits}
+
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.6\linewidth]{img/vez1.pdf}
-    \includegraphics[width=0.7\linewidth]{img/vez2.pdf}
-    \includegraphics[width=0.8\linewidth]{img/vez3.pdf}
-    \caption{Switching circuits for \ref{ex:circuits}}
+    \includegraphics[width=0.26\linewidth]{img/vez1.pdf}
+    \includegraphics[width=0.35\linewidth]{img/vez2.pdf}
+    \includegraphics[width=0.36\linewidth]{img/vez3.pdf}
+    \caption{Switching circuits for Exercise \ref{ex:circuits}.}
     \label{fig:circuits}
 \end{figure}
 
 
 
-\begin{enumerate}[resume, label=\textbf{Problem \arabic*.}]
-    \item For the following compound proposition, find a truth table, determine DNF, CNF, and draw the corresponding circuit.
+    \end{ex} \begin{ex} For the following compound proposition, find a truth table, determine DNF, CNF, and draw the corresponding circuit.
 \[
 (A \Rightarrow (B \Rightarrow C)) \Rightarrow ((A \Rightarrow B) \Rightarrow (A \Rightarrow C))
 \]
-    \item Find a compound proposition $I$ such that
+    \end{ex} \begin{ex} Find a compound proposition $I$ such that
 \[
 (A \Rightarrow (I \Rightarrow \neg B)) \Rightarrow (A \land B) \lor I
 \]
 is a tautology.
-\end{enumerate}
+\end{ex}
 
 
 \section{Logical Implications}
 
-\begin{enumerate}[resume, label=\textbf{Problem \arabic*.}]
-    \item Prove the following logical equivalences:
+     \begin{ex} \label{ex:logical-implications}Prove the following logical equivalences:
         \begin{itemize}
             \item[(1)] $(A \Rightarrow B) \land (B \Rightarrow C) \Rightarrow (A \Rightarrow C)$
             \item[(2)] $(A \Rightarrow B) \Rightarrow ((C \Rightarrow A) \Rightarrow (C \Rightarrow B))$
@@ -392,24 +440,28 @@ is a tautology.
             \item[(12)] $\neg B \Rightarrow (A \Leftrightarrow A \lor B)$
             \item[(13)] $(A \Rightarrow (B \land \neg B)) \Rightarrow \neg A$
         \end{itemize}
-    \item Simplify the following logical proposition:
+    \end{ex} \begin{ex} Simplify the following logical proposition:
 \[
 (A \Rightarrow B) \lor (B \Rightarrow C)
 \]
+\begin{sol}
+    
+\begin{eqnarray*}
+(A\Rightarrow B) \vee (B \Rightarrow C) &\Leftrightarrow & (\neg A \vee B) \vee (\neg B \vee C)\\
+&\Leftrightarrow & \neg A \vee B \vee \neg B \vee C\\
+&\Leftrightarrow & \neg A \vee (B \vee \neg B) \vee C\\
+&\Leftrightarrow & \neg A \vee 1 \vee C\\
+&\Leftrightarrow & 1.
+\end{eqnarray*}
+\end{sol}
 
-% \emph{Solution.} 
-% \begin{eqnarray*}
-% (A\Rightarrow B) \vee (B \Rightarrow C) &\Leftrightarrow & (\neg A \vee B) \vee (\neg B \vee C)\\
-% &\Leftrightarrow & \neg A \vee B \vee \neg B \vee C\\
-% &\Leftrightarrow & \neg A \vee (B \vee \neg B) \vee C\\
-% &\Leftrightarrow & \neg A \vee 1 \vee C\\
-% &\Leftrightarrow & 1.
-% \end{eqnarray*}
-\end{enumerate}
+ \end{ex}
 
 \section{Proofs}
-\begin{enumerate}[resume, label=\textbf{Problem \arabic*.}]
-    \item Show that the following propositions are logical implications (i.e., tautologies where the main connective is implication):
+\begin{ex}
+    Use direct or indirect proof to show every property from Exercise \ref{ex:logical-implications}. 
+\end{ex}
+    \begin{ex} Show that the following propositions are logical implications (i.e., tautologies where the main connective is implication):
         \begin{itemize}
             \item[(i)] $A \land (A \Rightarrow B) \Rightarrow B$
             \item[(ii)] $\neg B \land (A \Rightarrow B) \Rightarrow \neg A$
@@ -417,16 +469,16 @@ is a tautology.
             \item[(iv)] $(A \Rightarrow B) \land (B \Rightarrow C) \Rightarrow (A \Rightarrow C)$
             \item[(v)] $A \land (A \Leftrightarrow B) \Rightarrow B$
         \end{itemize}
-    \item Are the following propositions logical implications?
+    \end{ex} 
+    \begin{ex} Are the following propositions logical implications?
 \begin{itemize}
     \item[(i)] $(A \Rightarrow B) \land (A \Rightarrow C) \land A \Rightarrow B \land C$
     \item[(ii)] $\neg(A \lor B) \land (A \lor C) \land (D \Rightarrow C) \Rightarrow D$
     \item[(iii)] $(A \Rightarrow B) \land (A \Rightarrow C) \land (D \land E \Rightarrow F) \land (C \Rightarrow E) \Rightarrow F$
 \end{itemize}
+\end{ex}
 
-
-
-\item Show that the following propositions are logical implications (a tautology where the main connective is implication).
+\begin{ex} Show that the following propositions are logical implications (a tautology where the main connective is implication).
 \begin{enumerate}
 \item[(i)] $A \wedge (A \Rightarrow B) \Rightarrow B$
 \item[(ii)] $\neg B \wedge (A \Rightarrow B) \Rightarrow \neg A$
@@ -438,14 +490,14 @@ is a tautology.
 % \emph{Rešitev.} (i) Recimo $A \wedge (A \Rightarrow B)$ pravilna, $B$ pa nepravilna. Potem je $A$ pravilna in $A\Rightarrow B$ pravilna. Sledi $B$ pravilna. Protislovje. 
 
 
-\item Are the following propositions logical implications?
+\end{ex} \begin{ex} Are the following propositions logical implications?
 \begin{enumerate}
 \item[(i)] $(A \Rightarrow B ) \wedge (A \Rightarrow C) \wedge A \Rightarrow B \wedge C$
 \item[(ii)] $\neg (A \vee B) \wedge (A\vee C) \wedge (D\Rightarrow C) \Rightarrow D$
 \item[(iii)] $(A\Rightarrow B) \wedge (A\Rightarrow C) \wedge (D\wedge E \Rightarrow F) \wedge (C\Rightarrow E) \Rightarrow F$
 \end{enumerate}
 
-\item With a direct proof show:
+\end{ex} \begin{ex} With a direct proof show:
 \begin{quote}
     If $n$ is even, then so is $n^2 +3n$.
 \end{quote}
@@ -456,23 +508,24 @@ Is the converse also true?
 
 
 
-    \item Use a direct proof of the implication to show: If a real number $x$ is non-negative, then the sum of the number $x$ and its reciprocal is greater than or equal to $2$.
+    \end{ex} \begin{ex} Use a direct proof of the implication to show: If a real number $x$ is non-negative, then the sum of the number $x$ and its reciprocal is greater than or equal to $2$.
+\begin{sol}
+    We need to show that $x + \frac{1}{x} \geq 2$. Since $x \geq 0$, we can multiply the inequality by $x$ to get
+    \[
+    x^2 + 1 \geq 2x
+    \]
+    or equivalently,
+    \[
+    (x - 1)^2 \geq 0.
+    \]
+    This is obviously always true.
+\end{sol}
 
-    % \emph{Solution.} We need to show that $x + \frac{1}{x} \geq 2$. Since $x \geq 0$, we can multiply the inequality by $x$ to get
-    % \[
-    % x^2 + 1 \geq 2x
-    % \]
-    % or equivalently,
-    % \[
-    % (x - 1)^2 \geq 0.
-    % \]
-    % This is obviously always true.
-
-    \item Use contradiction to show that there are infinitely many prime numbers.
-
-    % \emph{Solution.} Suppose there are only finitely many primes $p_1, p_2, \ldots, p_n$. Then the number $p = p_1 p_2 \cdots p_n + 1$ is not divisible by any prime $p_i$ and $p_i \neq p$ for each $i$. By definition, $p$ is therefore a prime number that is different from each of the previous ones. This is a contradiction.
-
-    \item Find the error in the following proof.
+    \end{ex} \begin{ex} Use contradiction to show that there are infinitely many prime numbers.
+\begin{sol}
+    Suppose there are only finitely many primes $p_1, p_2, \ldots, p_n$. Then the number $p = p_1 p_2 \cdots p_n + 1$ is not divisible by any prime $p_i$ and $p_i \neq p$ for each $i$. By definition, $p$ is therefore a prime number that is different from each of the previous ones. This is a contradiction.
+\end{sol}
+    \end{ex} \begin{ex} Find the error in the following proof.
 
     \textbf{Statement:} $1$ is the largest natural number.
 
@@ -482,11 +535,12 @@ Is the converse also true?
     n > 1 \Leftrightarrow n^2 > n.
     \]
     We have found that $n^2$ is greater than $n$, which contradicts the assumption that $n$ is the largest natural number. Therefore, the assumption was incorrect, and $1$ is the largest natural number.
+\begin{sol}
+    The opposite statement is: there exists a natural number greater than $1$.
+\end{sol}
 
-    % \emph{Solution.} The opposite statement is: there exists a natural number greater than $1$.
 
-
-\item Let  $x$ and $y$ be real numbers such that $x<2y$. 
+\end{ex} \begin{ex} Let  $x$ and $y$ be real numbers such that $x<2y$. 
 By an indirect proof show: 
 \begin{quote}
     If $7xy\leq 3x^2 + 2y^2$, then $3x\leq y$.
@@ -494,43 +548,50 @@ By an indirect proof show:
 
 % \emph{ Solution (in slovene).} Naj bo $x<2y$, to je, $2y-x>0$. Pokazali bomo: če je $3x> y$, potem je $7xy > 3x^2 + 2y^2$. Predpostavimo torej, da je $3x-y>0$. Potem je $(2y-x)(3x-y)= 7xy - 3x^2 - 2y^2>0$, to je, $7xy > 3x^2 + 2y^2$.
 
-    \item Prove the following equivalence in two parts: Let $m$ and $n$ be integers. Then $m$ and $n$ have different parities if and only if $m^2 - n^2$ is odd.
+    \end{ex} 
+    \begin{ex} Prove the following equivalence in two parts: Let $m$ and $n$ be integers. Then $m$ and $n$ have different parities if and only if $m^2 - n^2$ is odd.
+\begin{sol}We prove both directions separately:
 
-    % \emph{Solution.} ($\Rightarrow$) Assume that $m$ and $n$ have different parities. Write $m = 2k$ and $n = 2l + 1$, substitute into the expression $m^2 - n^2$, and the result follows.
+($\Rightarrow$) Assume that $m$ and $n$ have different parities. Write $m = 2k$ and $n = 2l + 1$, substitute into the expression $m^2 - n^2$, and the result follows.
 
-    % ($\Leftarrow$) We show indirectly: If $m$ and $n$ have the same parity, then $m^2 - n^2$ is even. Consider both cases.
+    ($\Leftarrow$) We show indirectly: If $m$ and $n$ have the same parity, then $m^2 - n^2$ is even. Consider both cases.
+\end{sol}
 
-    \item Using an "if and only if" proof, show that $ac \mid bc \Leftrightarrow a \mid b$.
 
-    \item Is the following inference correct?
+    \end{ex} \begin{ex} Using an "if and only if" proof, show that $ac \mid bc \Leftrightarrow a \mid b$.
+
+    \end{ex}
+    \begin{ex} Is the following inference correct?
     \begin{enumerate}[label=(\roman*)]
         \item If today is Wednesday, I will have a tutorial. Today is Wednesday. Conclusion: I will have a tutorial.
 
-        % \emph{Solution.} $(A \Rightarrow B) \wedge A \Rightarrow B$. This is true.
 
         \item If I study, I will pass the exam. I did not study. Conclusion: I will not pass the exam.
 
-        % \emph{Solution.} $(A \Rightarrow B) \wedge \neg A \Rightarrow \neg B$. This is not necessarily true.
 
         \item A student took the city bus to the exam. He thought, "If the next traffic light is green, I will pass the exam." When the bus reached the next light, it was not green, so the student said to himself, "Darn, I'll fail again."
 
-        % \emph{Solution.} $((A \Rightarrow B) \wedge \neg A) \Rightarrow \neg B$. This is not necessarily true.
-
         \item An engineer who understands theory always designs a good circuit. A good circuit is economical. Therefore, an engineer who designs an uneconomical circuit does not understand theory.
 
-        % \emph{Solution.} $((A \Rightarrow B) \wedge (B \Rightarrow C)) \Rightarrow (\neg C \Rightarrow \neg A)$. This is true.
     \end{enumerate}
 
+\begin{sol}
+    \begin{enumerate}[label=(\roman*)]
+        \item $(A \Rightarrow B) \wedge A \Rightarrow B$. This is true.
+        \item  $(A \Rightarrow B) \wedge \neg A \Rightarrow \neg B$. This is not necessarily true.
+        \item $((A \Rightarrow B) \wedge \neg A) \Rightarrow \neg B$. This is not necessarily true.
+        \item $((A \Rightarrow B) \wedge (B \Rightarrow C)) \Rightarrow (\neg C \Rightarrow \neg A)$. This is true.
+    \end{enumerate}
+\end{sol}
 
-
-\item Which of the following propositions are correct where the language of the conversation are real numbers?
+\end{ex} \begin{ex} Which of the following propositions are correct where the language of the conversation are real numbers?
 \begin{enumerate}
 \item[(i)] $(\forall x)(\exists y)(x+y=0)$.
 \item[(ii)] $(\exists x)(\forall y)(x+y=0)$.
 \item[(iii)] $(\exists x)(\exists y)(x^2+y^2 =-1)$.
 \item[(iv)] $(\forall x)[x>0 \Rightarrow (\exists y)(y<0 \wedge xy>0)]$.
-\end{enumerate} 
-\end{enumerate} 
+\end{enumerate}
+\end{ex}
 
 \section{Proofs by Induction}
 
@@ -541,8 +602,8 @@ By an indirect proof show:
 % \end{itemize}
 
 % \section*{Exercises}
-\begin{enumerate}[resume, label=\textbf{Problem \arabic*.}]
-    \item Prove each using induction:
+
+    \begin{ex} Prove each using induction:
     \begin{enumerate}
         \item[(a)] $\sum_{i=1}^n i = \frac{n(n + 1)}{2}$
         \item[(b)] $\sum_{i=1}^n i^2 = \frac{n(n + 1)(2n + 1)}{6}$
@@ -554,7 +615,7 @@ By an indirect proof show:
         \item[(h)] $n! > 2^n$ for $n \geq 4$.
         \item[(i)] $2^{n+1} > n^2$ for all positive integers.
     \end{enumerate}
-    \item This exercise refers to the Fibonacci sequence:
+    \end{ex} \begin{ex} This exercise refers to the Fibonacci sequence:
 
 \[
 1, 1, 2, 3, 5, 8, 13, 21, 34, \ldots
@@ -566,35 +627,42 @@ The sequence is defined recursively by $f_1 = 1$, $f_2 = 1$, then $f_{n+1} = f_n
         \item[(b)] $f_1^2 + f_2^2 + \cdots + f_n^2 = f_n f_{n+1}$
         \item[(c)] $f_1 + f_3 + f_5 + \cdots + f_{2n-1} = f_{2n}$
     \end{enumerate}
-\end{enumerate}
+    \end{ex}
 
-
+    
 
 \chapter{Set theory}
-\begin{enumerate}
 
-\item Let $A = \{ x \in \mathbb{N}; x < 7\}, B = \{x \in  \mathbb{Z}; |x - 2| < 4\}$ and $C = \{x \in\mathbb{R}; x^3 -  4x = 0\}$.
+ \begin{ex}Let $A = \{ x \in \mathbb{N}; x < 7\}, B = \{x \in  \mathbb{Z}; |x - 2| < 4\}$ and $C = \{x \in\mathbb{R}; x^3 -  4x = 0\}$.
 \begin{enumerate}
 \item[(i)]  Write down the elements for all three sets.
 \item[(ii)] Find $A \cup C, B \cap C, B \setminus C, (A \setminus B) \setminus C$ and $A \setminus (B \setminus C)$.
 \end{enumerate}
 
-\item Let  $\mathbb{Z}$ be a universal set and let  $P$ denote the set of all prime numbers, and $S$ the set of all even integers. Write the following propositions in terms of set theory:
+\end{ex} \begin{ex}Let  $\mathbb{Z}$ be a universal set and let  $P$ denote the set of all prime numbers, and $S$ the set of all even integers. Write the following propositions in terms of set theory:
 \begin{itemize}
-\item[(i)] There exists an even prime number. \quad [$P\cap S \neq \emptyset$]
-\item[(ii)] $0$ is an integer, but it is not natural number. \quad [$0 \in \mathbb{Z}\setminus \mathbb{N}$]
-\item[(iii)] Every natural number is an integer. \quad [$\mathbb{N}\subseteq \mathbb{Z}$]
-\item[(iv)] Not every integer is a natural number. \quad [$\mathbb{Z}\nsubseteq \mathbb{N}$]
-\item[(v)] Every prime number except 2 is odd. \quad [$P\setminus \{2\} \subseteq \overline{S}$]
-\item[(vi)] 2 is an even prime number. \quad [$2\in S\cap P$]
+\item[(i)] There exists an even prime number. 
+\item[(ii)] $0$ is an integer, but it is not natural number. 
+\item[(iii)] Every natural number is an integer. 
+\item[(iv)] Not every integer is a natural number. 
+\item[(v)] Every prime number except 2 is odd. 
+\item[(vi)] 2 is an even prime number. 
 \end{itemize}
-
-\item Let  $A, B, C$ and $D$  be subsets of some universal set  $U$. Simplify the following expression
+\begin{sol}
+    \begin{enumerate}[label=(\roman*)]
+        \item $P\cap S \neq \emptyset$
+        \item $0 \in \mathbb{Z}\setminus \mathbb{N}$
+        \item $\mathbb{N}\subseteq \mathbb{Z}$
+        \item $\mathbb{Z}\nsubseteq \mathbb{N}$
+        \item $P\setminus \{2\} \subseteq \overline{S}$
+        \item $2\in S\cap P$
+    \end{enumerate}
+\end{sol}
+\end{ex} \begin{ex}Let  $A, B, C$ and $D$  be subsets of some universal set  $U$. Simplify the following expression
 $$\overline{(\overline{(A\cup B)} \cap \overline{(\overline{A} \cup C)})}\setminus \overline{D}.$$
 
-\item Show that $(A\cup C)\cap (B\setminus C) = (A\cap B)\setminus C$.
-
-\emph{ Rešitev.} 
+\end{ex} \begin{ex}Show that $(A\cup C)\cap (B\setminus C) = (A\cap B)\setminus C$.
+\begin{sol}
 \begin{eqnarray*}
 x\in (A\cup C)\cap (B\setminus C) &\Leftrightarrow & (x\in A \vee x\in C) \wedge (x\in B \wedge x\notin C)\\
  &\Leftrightarrow & ((x\in A \vee x\in C) \wedge (x\notin C))\wedge x\notin B\\
@@ -604,18 +672,29 @@ x\in (A\cup C)\cap (B\setminus C) &\Leftrightarrow & (x\in A \vee x\in C) \wedge
 &\Leftrightarrow & x\in A \wedge x\in B  \wedge x\notin C \\
 &\Leftrightarrow & x \in (A\cap B)\setminus C. 
 \end{eqnarray*}
+\end{sol}
 
-\item (Zadnja lastnost pri uniji) Prove that $A\subseteq C  \wedge B\subseteq C \Rightarrow A\cup B\subseteq C$.
+\end{ex}
+\begin{ex}Prove that $A\subseteq C  \wedge B\subseteq C \Rightarrow A\cup B\subseteq C$.
 
-\emph{ Rešitev.} Direktno.
+\begin{sol}
+    Use direct proof.
+\end{sol}
 
-\item (Predzadnja lastnost pri preseku) Prove that $A\subseteq  B \Leftrightarrow A\cap B = A$.
+\end{ex}
+\begin{ex} Prove that $A\subseteq  B \Leftrightarrow A\cap B = A$.
 
-\emph{ Rešitev.} V dveh delih.
+\begin{sol}
+    Prove separately each direction.
+\end{sol}
 
-\item (Predzadnja lastnost pri kartezičnemu produktu) Prove that $A\times (B\cap C) = (A\times B)\cap (A\times C)$.
+\end{ex}
+\begin{ex}
+Prove that $A\times (B\cap C) = (A\times B)\cap (A\times C)$.
 
-\emph{ Rešitev.} 
+
+\begin{sol}
+    
 \begin{eqnarray*}
 (x,y)\in A\times (B\cap C) &\Leftrightarrow & x \in A \wedge y\in B\cap C\\
 &\Leftrightarrow & x \in A \wedge y\in B  \wedge y\in C\\
@@ -624,17 +703,22 @@ x\in (A\cup C)\cap (B\setminus C) &\Leftrightarrow & (x\in A \vee x\in C) \wedge
 &\Leftrightarrow & (x,y) \in A\times B \wedge  (x,y) \in A\times C\\
 &\Leftrightarrow & (x,y) \in (A\times B)\cap   (A\times C).
 \end{eqnarray*}
+\end{sol}
 
-\item (Predzadnja lastnost pri razliki) Prove that $(A\cap B )\setminus B = \emptyset$.
-\emph{ Rešitev.} 
+\end{ex} 
+\begin{ex}Prove that $(A\cap B )\setminus B = \emptyset$.
+\begin{sol}
+    
 \begin{eqnarray*}
 x\in (A\cap B )\setminus B  &\Leftrightarrow & x \in (A\cap B)  \wedge x\notin B\\
 &\Leftrightarrow & (x\in A\wedge x\in  B ) \wedge x\notin B\\
 &\Leftrightarrow & x\in A\wedge (x\in  B  \wedge x\notin B)\\
 &\Leftrightarrow & x\in \emptyset.
 \end{eqnarray*}
+\end{sol}
 
-\item Determine the following sets:
+\end{ex}
+\begin{ex}Determine the following sets:
 \begin{enumerate}
 \item[(i)] $\{\emptyset, \{\emptyset\}\}\setminus \emptyset$ \quad [$\{\emptyset, \{\emptyset\}\}$]
 \item[(ii)] $\{\emptyset, \{\emptyset\}\}\setminus \{\emptyset\}$
@@ -642,7 +726,7 @@ x\in (A\cap B )\setminus B  &\Leftrightarrow & x \in (A\cap B)  \wedge x\notin B
 \item[(iv)] $\{1,2,3,\{1\}, \{5\}  \}\setminus \{2,\{3\},5\}$
 \end{enumerate}
 
-\item Which of the following propositions are correct for arbitrary sets $A, B$ and $C$:
+\end{ex} \begin{ex}Which of the following propositions are correct for arbitrary sets $A, B$ and $C$:
 \begin{enumerate}
 \item If $A\in B$ and $B\in C$, then $A\in C$.
 \item If $A\subseteq B$ and $B\in C$, then $A\in C$.
@@ -651,7 +735,8 @@ x\in (A\cap B )\setminus B  &\Leftrightarrow & x \in (A\cap B)  \wedge x\notin B
 \item If $A\subseteq \overline{(B\cup C)}$ and $B\subseteq \overline{(A\cup C)}$, then $B=\emptyset$.
 \end{enumerate}
 
-\emph{ Rešitev.}
+\begin{sol} (In slovene.)
+    
 \begin{enumerate}
 \item Napačna. Vzemi $A=\emptyset$, $B=\{\emptyset\}$, $B=\{\{\emptyset\}\}$.
 \item Napačna. Vzemi isti primer kot v (a).
@@ -660,9 +745,10 @@ x\in (A\cap B )\setminus B  &\Leftrightarrow & x \in (A\cap B)  \wedge x\notin B
 \item Napačna. Vzemi tri paroma disjunktne neprazne množice.
 \end{enumerate}
 
-\item Find $\mathcal{P}(A)$, where $A=\{a,b,c,d\}$.
+\end{sol}
+\end{ex} \begin{ex}Find $\mathcal{P}(A)$, where $A=\{a,b,c,d\}$.
 
-\item Let $A=\{\{1,2,3\}, \{4,5\}, \{6,7,8\}\}$.
+\end{ex} \begin{ex}Let $A=\{\{1,2,3\}, \{4,5\}, \{6,7,8\}\}$.
 \begin{enumerate}
 \item[(i)] Write down the elements of  $A$.
 \item[(ii)] Is it true?\\
@@ -671,34 +757,43 @@ x\in (A\cap B )\setminus B  &\Leftrightarrow & x \in (A\cap B)  \wedge x\notin B
 \end{enumerate}
 
 
-\item  Show that $A\times (B\cap C) = (A\times B)\cap (A\times C)$.
+\end{ex} 
+\begin{ex} Show that $A\times (B\cap C) = (A\times B)\cap (A\times C)$.
 
+\end{ex} 
 
+\begin{ex}
+    Let $A$ and $B$ be arbitrary subsets of the universal set $U= A \cup B$. Show that $A\setminus B \subseteq \overline{B}$.
+\end{ex}
+\begin{ex}
+    Let $A, B$ in $C$ be arbitrary subsets of the universal set $U= A \cup B \cup C$. Show that $A\cap B \subseteq C \Leftrightarrow A\subseteq \overline{B} \cup C$.
+\end{ex}
+\begin{ex}
+    Show that $(A\setminus B)\cap B = \emptyset $.
+\end{ex}
 
-\item Let $A, B$ in $C$ be arbitrary subsets of the universal set $U= A \cup B \cup C$. Show the following propositions:
-\begin{enumerate}
-\item  $A\setminus B \subseteq \overline{B}$.
-\item  $(A\setminus B)\cap B = \emptyset $.
-\item  $A\cap B \subseteq C \Leftrightarrow A\subseteq \overline{B} \cup C$.
-\item  $(A\setminus B) \cup B = A \Leftrightarrow B \subseteq A$.
-\item  If $B\subseteq A$, then$B\times B = (B\times A)\cap (A\times B)$.
-\item Let $A$ be a nonempty set. Which of the following sets 
+\begin{ex}
+    Show that $(A\setminus B) \cup B = A \Leftrightarrow B \subseteq A$.
+\end{ex}
+\begin{ex}
+    Show that, if $B\subseteq A$, then $B\times B = (B\times A)\cap (A\times B)$.
+\end{ex}
+\begin{ex}
+    Let $A$ be a nonempty set. Which of the following sets 
 $$\emptyset,\{\emptyset\}, A, \{A\}, \{A,\emptyset\}$$
 are elements and which are subsets of (i) $\mathcal{P}(A)$ and (ii) $\mathcal{P}(\mathcal{P}(A))$?
-\item  Is it true that  $\mathcal{P}(A\times B) = \mathcal{P}(A) \times \mathcal{P}(B)$?
-\end{enumerate}
-
-
-\end{enumerate}
-
+\end{ex}
+\begin{ex}
+    Is it true that  $\mathcal{P}(A\times B) = \mathcal{P}(A) \times \mathcal{P}(B)$?
+\end{ex}
 
 
 \chapter{Relations}
 
-\begin{enumerate}
 
-
-\item Let $S=\{1,2,3,4,5\}$. 
+    
+\begin{ex} 
+Let $S=\{1,2,3,4,5\}$. 
 \begin{enumerate}
     \item Is $R=\{(1,2),(2,3), (3,5), (2,4), (5,1)\}$ a binary relation?
     \item Find the domain $\mathcal{D} R$ and the range $\mathcal{Z} R$ of $R$.
@@ -706,17 +801,118 @@ are elements and which are subsets of (i) $\mathcal{P}(A)$ and (ii) $\mathcal{P}
   Determine the inverse relation $R^{-1}$ and  $\mathcal{D} R^{-1}$ and  $\mathcal{Z} R^{-1}$.
 \end{enumerate}
 
-\item Let $R=\{(1,1),(2,1), (3,3), (1,5)\}$  and $T=\{(1,4),(2,1), (2,2), (2,5)\}$ be binary relations. \begin{enumerate}
+\end{ex}\begin{ex}
+Define binary relations:
+\begin{align*}
+    R&=\{(1,1),(2,1), (3,3), (1,5)\},\\
+    T&=\{(1,4),(2,1), (2,2), (2,5)\}.
+\end{align*}
+\begin{enumerate}
     \item 
 Determine the compositions $R\circ T$ and $T\circ R$. 
 \item Is it true that $R\circ T = T \circ R$?
 \end{enumerate}
 
-\item Let  $S=\{1,2,3,4,5,6,7\}$. Define
+\end{ex}\begin{ex}
+ Let  $S=\{1,2,3,4,5,6,7\}$. Define
 $$R= \{(x,y)\,|\, x-y \textrm{ is divisible by  }  3\} \quad \mathrm{ in } \quad  T= \{(x,y)\,|\, x-y \geq 3\}.$$
 Determine $R,T, R\circ R$.
 
+\end{ex}
+\begin{ex}\label{ex:domainRange}
+    Determine the Domain and Range of the following relations:
+    \begin{enumerate}
+    \item \(R = \{(1, 2), (2, 3), (3, 4)\}\)
+    \item \(R = \{(1, 5), (2, 3), (3, 3), (4, 9)\}\)
+    \item \(R = \{(1, 2), (3, 5), (4, 5)\}\)
+    \item \(R = \{(-1, -1), (2, 2), (3, 3)\}\)
+    \item \(R = \{(2, 0), (9, 0)\}\)
+\end{enumerate}
+\begin{sol}
+    \begin{enumerate}
+    \item Domain: \(\{1, 2, 3\}\), Range: \(\{2, 3, 4\}\)
+    \item Domain: \(\{1, 2, 3, 4\}\), Range: \(\{5, 3, 9\}\)
+    \item Domain: \(\{1, 3, 4\}\), Range: \(\{2, 5\}\)
+    \item Domain: \(\{-1, 2, 3\}\), Range: \(\{-1, 2, 3\}\)
+    \item Domain: \(\{2, 9\}\), Range: \(\{0\}\)
+\end{enumerate}
 
+\end{sol}
+\end{ex}
+\begin{ex}
+    For relations from Exercise \ref{ex:domainRange} determine their inverses.
+\end{ex}
+
+\begin{ex}
+    Let \(R_1 = \{(1, 2), (2, 3), (3, 4)\}\) and \(R_2 = \{(2, 4), (3, 5), (4, 6)\}\). Compute \(R_2 \circ R_1\) and \(R_1 \circ R_2\). Are they equal?
+
+    \begin{sol}
+        For \(R_1 = \{(1, 2), (2, 3), (3, 4)\}\) and \(R_2 = \{(2, 4), (3, 5), (4, 6)\}\):
+    \[
+    R_2 \circ R_1 = \{(1, 4), (2, 5), (3, 6)\}, \quad R_1 \circ R_2 = \{(2, 4), (3, 5)\}.
+    \]
+    They are \textbf{not equal} because composition is not commutative.
+    \end{sol}
+\end{ex}
+
+\begin{ex}For relations below, compute the corresponding compositions.
+\begin{enumerate}
+    \item \(R_1 = \{(1, 2), (2, 3), (3, 4)\}\), \(R_2 = \{(1, 4), (2, 6), (3, 4)\}\),\\ 
+    \(R_2 \circ R_1 = ?\)
+    \item \(R_1 = \{(1, 2), (2, 3), (3, 4)\}\), \(R_2 = \{(2, 4), (3, 6), (4, 4)\}\), \\
+    \(R_2 \circ R_1 = ?\)
+    \item \(R_1 = \{(4, 3), (5, 4), (6, 5)\}\), \(R_2 = \{(3, 4), (4, 5), (5, 6)\}\), \\
+    \(R_2 \circ R_1 = ?\)
+    \item \(R_1 = \{(4, 3), (5, 4), (6, 5)\}\), \\
+    \(R_1 \circ R_1 = ?\)
+    
+\end{enumerate}
+\begin{sol}
+    \begin{enumerate}
+        \item \(R_2 \circ R_1 = \{(1, 6), (2, 4)\}\)
+        \item \(R_2 \circ R_1 = \{(1, 4), (2, 6), (3, 4)\}\)
+        \item \(R_2 \circ R_1 = \{(4, 5), (5, 6), (6, 4)\}\)
+        \item \(R_1 \circ R_1 = \{(4, 4), (5, 5), (6, 6)\}\)
+    \end{enumerate}
+\end{sol}
+\end{ex}
+
+\begin{ex}
+    In the universe $S=\mathbb Z$, we are given \(R_1 = \{(x, y) \mid x + 1 = y\}\) and \(R_2 = \{(y, z) \mid y + 2 = z\}\). Find \(R_2 \circ R_1\).
+
+    \begin{sol}
+    \(R_1 = \{(x, y) \mid y = x + 1\}\), \(R_2 = \{(y, z) \mid z = y + 2\}\):
+    \[
+    R_2 \circ R_1 = \{(x, z) \mid z = x + 3, \, x, z \in \mathbb{Z}\}.
+    \]
+    \end{sol}
+\end{ex}
+\begin{ex}
+    Let \(S = \{1, 2, 3, 4\}\) and \(R = \{(1, 2), (2, 3), (3, 4)\}\). Compute \(R \circ R\) and \(R \circ R \circ R\), and \(R \circ R \circ R \circ R \circ R\).
+    \begin{sol}
+        For \(R = \{(1, 2), (2, 3), (3, 4)\}\):
+    \[
+    R \circ R = \{(1, 3), (2, 4)\}, \quad R \circ R \circ R = \{(1, 4)\},
+    \]
+    while \(R \circ R \circ R \circ R \circ R=\emptyset\)
+    \end{sol}
+\end{ex}
+
+\section{Properties of relations}
+\begin{ex}
+    Prove or disprove: If \(R\) is symmetric, then \(R \circ R\) is also symmetric.
+\end{ex}
+\begin{ex}
+    For \(S = \{1, 2, 3\}\), \(R = \{(1, 1), (1, 2), (2, 3)\}\). Is \(R\) transitive? Explain.
+    \begin{sol}
+        To check transitivity:  
+If \((x, y) \in R\) and \((y, z) \in R\), then \((x, z) \in R\).  
+Here, \((1, 2) \in R\) and \((2, 3) \in R\), but \((1, 3) \notin R\).  
+Thus, \(R\) is \textbf{not transitive}.
+
+    \end{sol}
+\end{ex}
+\begin{enumerate}
 \item Let  $S= \mathbb{R}$. On $S$ we define the relation $R$ as follows
 $$(\forall x)(\forall y)(x R y \Leftrightarrow y \geq x +3).$$
 Is $R$ reflexive, symmetric, transitive or strict total?
@@ -823,8 +1019,10 @@ and define
 \end{itemize}
 
 \end{enumerate}
-\
 
+\Closesolutionfile{ans} 
+
+\chapter{Solutions}\input{ans1} 
 
 
 \end{document}

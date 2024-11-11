@@ -110,8 +110,8 @@
 
 \newtheorem{ex}{Vaja\hypertarget{sol:\theex}}[chapter]
 % \newtheorem{ex}{\hyperlink{ex:\theex}{Vaja}\hypertarget{sol:\theex}}[chapter]
-\Newassociation{sol}{Odgovor}{ans}
-\renewenvironment{Odgovor}[1]
+\Newassociation{sol}{answer}{ans}
+\renewenvironment{answer}[1]
 {\par\bigskip\noindent{\bfseries \hypertarget{ex:#1}{}\hyperlink{sol:#1}{Re\v sitev za vajo #1:}}\quad}
 {\par\bigskip}
 % \renewenvironment{sol}[1]{\begin{trivlist}\item 
@@ -149,7 +149,7 @@ Morebitna vprašanja in najdene napake, lepo prosim, sporočite na
 
 \tableofcontents
 
-\Opensolutionfile{ans}[ans1] 
+\Opensolutionfile{ans}[res1] 
 
 \chapter{Matematična logika}
 
@@ -709,8 +709,8 @@ Predpostavimo nasprotno. Naj bo $n>1$ najve"cje naravno "stevilo. Ker je $n$ poz
 % \end{enumerate}
 
 \section{Dokaz z indukcijo}
-\begin{enumerate}
-    \item Dokazujte vsako s pomočjo indukcije:
+\begin{ex}
+    Dokazujte vsako s pomočjo indukcije:
     \begin{enumerate}
         \item[(a)] $\sum_{i=1}^n i = \frac{n(n + 1)}{2}$
         \item[(b)] $\sum_{i=1}^n i^2 = \frac{n(n + 1)(2n + 1)}{6}$
@@ -722,7 +722,9 @@ Predpostavimo nasprotno. Naj bo $n>1$ najve"cje naravno "stevilo. Ker je $n$ poz
         \item[(h)] $n! > 2^n$ za $n \geq 4$.
         \item[(i)] $2^{n+1} > n^2$ za vse pozitivne cele števike.
     \end{enumerate}
-    \item Ta naloga se nanaša na Fibonaccijevo zaporedje:
+\end{ex}
+\begin{ex}
+    Ta naloga se nanaša na Fibonaccijevo zaporedje:
 
 \[
 1, 1, 2, 3, 5, 8, 13, 21, 34, \ldots
@@ -734,11 +736,10 @@ Zaporedje je definirano rekurzivno z $f_1 = 1$, $f_2 = 1$, nato $f_{n+1} = f_n +
         \item[(b)] $f_1^2 + f_2^2 + \cdots + f_n^2 = f_n f_{n+1}$
         \item[(c)] $f_1 + f_3 + f_5 + \cdots + f_{2n-1} = f_{2n}$
     \end{enumerate}
-\end{enumerate}
+\end{ex}
+
 
 \chapter{Teorija množic}
-
-
 
 Ključni pojmi:
 \begin{itemize}
@@ -1570,7 +1571,7 @@ $\le k$ ničel.
 
 \Closesolutionfile{ans} 
 \chapter{Rešitve} 
-\input{ans1} 
+\input{res1} 
 
 \end{document}
 
