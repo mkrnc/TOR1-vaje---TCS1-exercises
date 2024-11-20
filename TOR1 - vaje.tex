@@ -931,10 +931,9 @@ sovisnost, stroga sovisnost.
 \item Ekvivalenčna relacija. Faktorska množica $S/R$.
 \end{itemize}
 \hrule
-\begin{enumerate}
+\begin{ex}
 
-
-\item Naj velja $S=\{1,2,3,4,5\}$. 
+ Naj velja $S=\{1,2,3,4,5\}$. 
 \begin{enumerate}
     \item Ali je  $R=\{(1,2),(2,3), (3,5), (2,4), (5,1)\}$ binarna relacija?
     \item Za relacijo $R$ najdi ustrezno domeno $\mathcal{D} R$, in zalogo vrednosti $\mathcal{Z} R$.
@@ -942,22 +941,30 @@ sovisnost, stroga sovisnost.
   Določi inverzno relacijo $R^{-1}$ in  $\mathcal{D} R^{-1}$ in  $\mathcal{Z} R^{-1}$.
 \end{enumerate}
 
-\item Naj bosta $R=\{(1,1),(2,1), (3,3), (1,5)\}$  in $T=\{(1,4),(2,1), (2,2), (2,5)\}$ binarni relaciji v vesolju $S=\{1,2,3,4,5\}$. \begin{enumerate}
+\end{ex}
+\begin{ex}
+ Naj bosta $R=\{(1,1),(2,1), (3,3), (1,5)\}$  in $T=\{(1,4),(2,1), (2,2), (2,5)\}$ binarni relaciji v vesolju $S=\{1,2,3,4,5\}$. \begin{enumerate}
     \item 
 Določi kompozituma  $R\circ T$ in $T\circ R$. 
 \item Ali velja $R\circ T = T \circ R$?
 \end{enumerate}
 
-\item Naj velja  $S=\{1,2,3,4,5,6,7\}$. Določi
+\end{ex}
+\begin{ex}
+ Naj velja  $S=\{1,2,3,4,5,6,7\}$. Določi
 $$R= \{(x,y)\,|\, x-y \text{ je deljivo z  }  3\} \quad \mathrm{ in } \quad  T= \{(x,y)\,|\, x-y \geq 3\}.$$
 Določi $R,T, R\circ R$.
 
 
-\item V vesolju  $S= \mathbb{R}$  definiramo  relacijo $R$:
+\end{ex}
+\begin{ex}
+ V vesolju  $S= \mathbb{R}$  definiramo  relacijo $R$:
 $$(\forall x)(\forall y)(x R y \Leftrightarrow y \geq x +3).$$
 Je $R$ refleksivna, simetrična, tranzitivna, ali sovisna?
 
-\item Naj velja  $S=\{1,2,3,4\}$. Imamo spodnje relacije:
+\end{ex}
+\begin{ex}
+ Naj velja  $S=\{1,2,3,4\}$. Imamo spodnje relacije:
 \begin{enumerate}
 \item[(i)] $R_1= \{(1,1),(1,2),(2,3), (1,3), (4,4)\}$,
 \item[(ii)] $R_2= \{(1,1),(1,2),(2,1), (2,2), (3,3), (4,4)\}$,
@@ -967,10 +974,12 @@ Je $R$ refleksivna, simetrična, tranzitivna, ali sovisna?
 \end{enumerate}
 Za katere od naštetih relacij velja, da so: refleksivne, simetrične, antisimetrične, tranzitivne? 
 
-\item Naj bosta $R$ in $S$ simetrični relaciji. Pokaži: $R\circ S$ simetrična $\Leftrightarrow R\circ S = S \circ R$.
+\end{ex}
+\begin{ex}
+ Naj bosta $R$ in $S$ simetrični relaciji. Pokaži: $R\circ S$ simetrična $\Leftrightarrow R\circ S = S \circ R$.
 
+\end{ex}
 
-\end{enumerate}
 
 
 \begin{ex}
@@ -985,10 +994,8 @@ $S = \{(a, c), (a, f), (d, c), (f, d)\}$ .
 (c) Ali je relacija $S\cup (S\circ S)$ tranzitivna?
 
 (d) Ali je relacija $S^{-1}\cup R$ simetrična?
-\end{ex}
-
-\textbf{Rešitev:}
-
+\begin{sol}
+    
 (a)
 $R\circ R = \{(a,e), (d,a), (e,c), (e,d)\}$.
 
@@ -1015,7 +1022,9 @@ $S^{-1}\cup R = \{(c, a), (f, a), (c, d), (d, f),
 (a, c), (a, d), (d, e), (e, a)\}$ .
 
 Relacija ni simetrična, saj je $(f,a)\in S^{-1}\cup R$ in $(a,f)\not\in S^{-1}\cup R$.
-\qed
+\end{sol}
+\end{ex}
+
 
 
 \section{Funkcije}
