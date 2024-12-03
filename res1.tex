@@ -293,6 +293,40 @@ Ne drži. Že zato, ker množica na levi strani ni nujno kartezični produkt dve
 Zgled: $A = \{1\}, B = C = \emptyset$.
 
 \end{answer}
+\begin{answer}{2.14}
+    \begin{enumerate}
+\item Poka"zimo najprej inplikacijo v desno. Naj bo $A\subseteq B$. Poka"zimo, da tedaj velja $A\cap \overline{B} = \emptyset$. Po predpostavki velja
+\begin{equation}\label{eq:4}
+(\forall x)(x\in A \Rightarrow x\in B).
+\end{equation}
+Recimo, da obstaja $x\in A\cap \overline{B}$. Potem
+\begin{eqnarray*}
+x\in A\cap \overline{B} &\Rightarrow & x\in A \wedge x\in \overline{B}\\
+						&\Rightarrow & x\in A \wedge x \notin B\\
+						&\Rightarrow & x\in B \wedge x \notin B \quad (\textrm{zaradi } (\ref{eq:4})),
+\end{eqnarray*}
+protislovje. Torej velja $A\cap \overline{B}=\emptyset$.
+
+"Se obratna inkluzija. Naj bo $A\cap \overline{B}=\emptyset$. Poka"zimo, da velja $A\subseteq B$. Vzemimo poljuben $x\in A$. Potem $x\notin \overline{B}$, saj je $A\cap \overline{B}=\emptyset$. Torej $x\in B$. Ker je bil $x$ poljuben, sledi $A\subseteq B$.
+
+
+\item
+\begin{eqnarray*}
+A\setminus B & = & \{x\, ;\, x\in A \wedge x\notin B \}\\
+             & = & \{x\, ;\, x\notin \overline{A} \wedge x  \in \overline{B} \}\\
+             & = & \{x\, ; x\,  \in \overline{B} \wedge  x\notin \overline{A} \}\\
+             & = & \overline{B} \setminus \overline{A}.
+\end{eqnarray*}
+
+\end{enumerate}
+
+\end{answer}
+\begin{answer}{3.6}
+     ($\Rightarrow$) $x(R\circ S)y \Rightarrow y(R\circ S)x \Rightarrow (\exists z) ((y,z)\in S \wedge (z,x)\in R) \Rightarrow (z,y)\in S \wedge (x,z)\in R \Leftrightarrow (x,z)\in R \wedge (z,y)\in S \Rightarrow x(S\circ R)x$. Podobno $x(S\circ R) \Rightarrow x(R\circ S)y$.
+
+$(\Leftarrow)$ $x(R\circ S)y \Leftrightarrow x(S\circ R)y \Leftrightarrow (\exists z)((x,z)\in R \wedge (z,y)\in S)\Rightarrow (\exists z)((z,x)\in R \wedge (y,z)\in S)\Rightarrow (y,x) \in R\circ S$.
+
+\end{answer}
 \begin{answer}{3.7}
 
 (a)

@@ -738,7 +738,6 @@ Zaporedje je definirano rekurzivno z $f_1 = 1$, $f_2 = 1$, nato $f_{n+1} = f_n +
     \end{enumerate}
 \end{ex}
 
-
 \chapter{Teorija množic}
 
 Ključni pojmi:
@@ -917,6 +916,43 @@ Zgled: $A = \{1\}, B = C = \emptyset$.
 \end{sol}
 
 
+\begin{ex}
+     Naj bodo $A, B$ in $C$ Množice. Pokaži:
+\begin{enumerate}
+\item  $A\subseteq B \Leftrightarrow A \cap \overline{B} = \emptyset$.
+\item  $A\setminus B = \overline{B}\setminus \overline{A}$.
+\end{enumerate}
+\begin{sol}
+    \begin{enumerate}
+\item Poka"zimo najprej inplikacijo v desno. Naj bo $A\subseteq B$. Poka"zimo, da tedaj velja $A\cap \overline{B} = \emptyset$. Po predpostavki velja 
+\begin{equation}\label{eq:4}
+(\forall x)(x\in A \Rightarrow x\in B).
+\end{equation}
+Recimo, da obstaja $x\in A\cap \overline{B}$. Potem
+\begin{eqnarray*}
+x\in A\cap \overline{B} &\Rightarrow & x\in A \wedge x\in \overline{B}\\
+						&\Rightarrow & x\in A \wedge x \notin B\\
+						&\Rightarrow & x\in B \wedge x \notin B \quad (\textrm{zaradi } (\ref{eq:4})),
+\end{eqnarray*}
+protislovje. Torej velja $A\cap \overline{B}=\emptyset$.
+
+"Se obratna inkluzija. Naj bo $A\cap \overline{B}=\emptyset$. Poka"zimo, da velja $A\subseteq B$. Vzemimo poljuben $x\in A$. Potem $x\notin \overline{B}$, saj je $A\cap \overline{B}=\emptyset$. Torej $x\in B$. Ker je bil $x$ poljuben, sledi $A\subseteq B$.
+
+
+\item
+\begin{eqnarray*}
+A\setminus B & = & \{x\, ;\, x\in A \wedge x\notin B \}\\
+             & = & \{x\, ;\, x\notin \overline{A} \wedge x  \in \overline{B} \}\\
+             & = & \{x\, ; x\,  \in \overline{B} \wedge  x\notin \overline{A} \}\\
+             & = & \overline{B} \setminus \overline{A}.
+\end{eqnarray*}
+
+\end{enumerate}
+
+\end{sol}
+
+\end{ex}
+
 
 \chapter{Relacije}
 Ključni pojmi:
@@ -977,7 +1013,12 @@ Za katere od naštetih relacij velja, da so: refleksivne, simetrične, antisimet
 \end{ex}
 \begin{ex}
  Naj bosta $R$ in $S$ simetrični relaciji. Pokaži: $R\circ S$ simetrična $\Leftrightarrow R\circ S = S \circ R$.
+\begin{sol}
+     ($\Rightarrow$) $x(R\circ S)y \Rightarrow y(R\circ S)x \Rightarrow (\exists z) ((y,z)\in S \wedge (z,x)\in R) \Rightarrow (z,y)\in S \wedge (x,z)\in R \Leftrightarrow (x,z)\in R \wedge (z,y)\in S \Rightarrow x(S\circ R)x$. Podobno $x(S\circ R) \Rightarrow x(R\circ S)y$.
 
+$(\Leftarrow)$ $x(R\circ S)y \Leftrightarrow x(S\circ R)y \Leftrightarrow (\exists z)((x,z)\in R \wedge (z,y)\in S)\Rightarrow (\exists z)((z,x)\in R \wedge (y,z)\in S)\Rightarrow (y,x) \in R\circ S$.
+
+\end{sol}
 \end{ex}
 
 
@@ -1024,6 +1065,58 @@ $S^{-1}\cup R = \{(c, a), (f, a), (c, d), (d, f),
 Relacija ni simetrična, saj je $(f,a)\in S^{-1}\cup R$ in $(a,f)\not\in S^{-1}\cup R$.
 \end{sol}
 \end{ex}
+
+\begin{ex}
+    Dokaži, da je relacija $R$ tranzitivna natanko takrat ko velje $R\circ R\subseteq R$.
+\end{ex}
+
+\begin{ex}
+    Naj bo $R\subset S\times S$ relacija. Dokaži, da velja
+    \[
+    R\circ R^{-1} =I \iff R \text{ je refleksivna in antisimetrična.}
+    \]
+\end{ex}
+
+\section{Ekvivalenčne relacije}
+\begin{ex}
+    Naj bo $S = \mathbb{Z}\times \mathbb{Z}$ in definirajmo relacijo $R$ na naslednji način:  
+$$(a,b)R(c,d)\Leftrightarrow ad = bc.$$  
+Pokaži, da je $R$ ekvivalenčna relacija, in poišči ustrezne ekvivalenčne razrede.
+
+\end{ex}
+\begin{enumerate}
+  \item \textbf{Zgled: Ulomki.}
+
+  V množici ulomkov $$a/b\,,$$
+  kjer sta $a$ in $b$ poljubni celi števili in je $b\neq 0$, je definicija enakosti dveh ulomkov
+  $$a/b = c/d \cee ad = bc$$
+  očitno ekvivalenčna relacija. Vsak ekvivalenčni razred glede na to relacijo druži vse med seboj enake ulomke in predstavlja tedaj ustrezno {\em racionalno število}. Prirejena faktorska množica je {\em množica racionalnih števil}.
+  \item \textbf{ Kongruence.}
+
+
+  V množici {\em celih števil} je relacija {\em kongruence po modulu $m$}, kjer je $m> 0$ poljubno pozitivno celo število, $$a\equiv b \textrm{ (mod $m$)}\cee m \textrm{ deli }a-b\,,$$
+  ekvivalenčna relacija.
+
+  Ekvivalenčni razredi so v tem primeru {\em razredi ostankov} po modulu $m$. V vsakem ekvivalenčnem razredu so vsa tista števila, ki dajo pri deljenju z $m$ isti ostanek.
+
+  Očitno je takih razredov natanko $m$. Te razrede imenujemo {\em cela števila po modulu $m$}. Faktorska množica je množica celih števil po modulu $m$.
+
+  \item \textbf{Zgled: Vzporednost premic.}
+
+V množici {\em vseh premic} je relacija ``vzporeden'' ekvivalenčna relacija. V vsakem ekvivalenčnem razredu so torej vse premice, ki so med seboj vzporedne, in predstavljajo potemtakem določeno {\em smer}. Faktorska množica je tukaj {\em množica vseh smeri}.
+
+
+
+\item Let $S= \{m\in \mathbb{N}\,|\, 1\leq n \leq 10\}$ in $R=\{(m,n)\in S\times S\,|\, 3|m-n\}$.
+Is $R$ an equivalence relation? If yes, determine the corresponding equivalence classes and the factor set.
+
+
+\item Let  $S =  \mathbb{R}^2$ and define the relation $R$ as follows
+$$(x_1,y_1)R(x_2,y_2)\Leftrightarrow x_1^2 + y_1^2 = x_2^2 + y_2^2.$$
+Show that $R$ is an equivalence relation  and find the equivalenece class $R[(7,1)]$.
+
+\end{enumerate}
+
 
 
 
@@ -1140,6 +1233,52 @@ $$g = \{(x,a),(y,b),(z,b)\}$$
 
 (e) Ali je $g \circ f$ surjektivna?
 
+
+\item Pokaži da je  $f=\{(x,y)\in \mathbb{R}\times \mathbb{R}; x= y^3\}$ funkcija oblike  $f:\mathbb{R}\mapsto \mathbb{R}$. 
+
+\item Ali je $g= \{(x,y)\in [-5,5]\times \mathbb{R}: x^2 + y^2 = 25 \}$ funkcija oblike  $g:[-5,5]\mapsto \mathbb{R}$.
+\item Pokaži da spodnje relacije niso funkcije z domeno $\mathbb{R}$:
+\begin{enumerate}
+\item[(i)] $\{(x,y)\in \mathbb{R}\times \mathbb{R}: x^2 = y^2 \}$,
+\item[(ii)] $\{(x,y)\in \mathbb{R}\times \mathbb{R}: x = \cos(y) \}$,
+\item[(iii)] $\{(x,y)\in \mathbb{R}\times \mathbb{R}: y^2 = \sqrt{x} \}$.
+\end{enumerate}
+
+
+\item Katere od spodnjih funkcij so injektivne ali surjektivne:
+\begin{enumerate}
+\item[(i)] $f\colon \mathbb{R} \to \mathbb{R}; f(x) = x^2$,
+\item[(ii)] $f\colon \mathbb{R} \to \mathbb{Z}; f(x) =\lfloor x\rfloor$,
+\item[(iii)] $f\colon \mathbb{R}^+ \to \mathbb{R}^+; f(x) =\sqrt{x}$,
+\item[(iv)] $f\colon \mathbb{Z} \to \mathbb{N}; f(x) = |x|$.
+\end{enumerate}
+\item Podane imamo naslednje funkcije
+\begin{enumerate}
+\item[(i)] $f\colon \mathbb{N} \to \mathbb{N}, f(n) =    \begin{cases}
+      2n,& n \textrm{ sodo } \\
+      3n -1,& n \textrm{ liho},
+    \end{cases}$
+\item[(ii)] $f\colon \mathbb{Z}  \to \mathbb{Z}\times \mathbb{Z} , f(x) = (x^2, x^3)$.
+\end{enumerate}
+Najdi
+\begin{enumerate}
+\item[(a)]  slike $f(\{1,2,3\})$ ter $f(\mathbb{N})$.
+\item[(b)]   praslike (oz. inverze) $f^{-1}(\{1,2,3,4\})$ ter $f^{-1}(\{(1,-1), (4,8)\})$ (tam kjer so definirane).
+\end{enumerate}
+
+
+\item Naj bosta $f\colon X \to Y$ ter $g\colon X\to Z$ dve bijektivni funkciji. Ali je funkcija  $h\colon X \to Y \times Z$ definirana z 
+$$h(x) = (f(x),g(x)),$$
+(i) injektivna, (ii) surjektivna?
+\item Naj bodo $A, B$ in $C$ poljubne množice,
+ in naj bosta $g\colon A\to B$ ter $f\colon B\to C$  funkciji. Pokaži:
+\begin{enumerate}
+\item[(i)] če sta $f, g$  injektivni, potem je tudi $f\circ g$  injektivna,
+\item[(ii)] če sta $f, g$ are surjektivni, potem je tudi $f\circ g$  surjektivna.
+\end{enumerate}
+
+
+
 \end{enumerate}
 
 
@@ -1254,44 +1393,6 @@ Za katere od naštetih relacij velja, da so: refleksivne, simetrične, antisimet
 		\item[(iii)] Naj bo $C= \{50, 51, 52, \ldots\}$. Najdite $R$-minimalni element množice $C$.
 		\item[(iv)] Najdite neposrednega naslednika števila $96$.
 	\end{enumerate}
-\end{enumerate}
-
-\section{Ekvivalenčne relacije}
-
-\begin{enumerate}
-  \item \textbf{Zgled: Ulomki.}
-
-  V množici ulomkov $$a/b\,,$$
-  kjer sta $a$ in $b$ poljubni celi števili in je $b\neq 0$, je definicija enakosti dveh ulomkov
-  $$a/b = c/d \cee ad = bc$$
-  očitno ekvivalenčna relacija. Vsak ekvivalenčni razred glede na to relacijo druži vse med seboj enake ulomke in predstavlja tedaj ustrezno {\em racionalno število}. Prirejena faktorska množica je {\em množica racionalnih števil}.
-  \item \textbf{ Kongruence.}
-
-
-  V množici {\em celih števil} je relacija {\em kongruence po modulu $m$}, kjer je $m> 0$ poljubno pozitivno celo število, $$a\equiv b \textrm{ (mod $m$)}\cee m \textrm{ deli }a-b\,,$$
-  ekvivalenčna relacija.
-
-  Ekvivalenčni razredi so v tem primeru {\em razredi ostankov} po modulu $m$. V vsakem ekvivalenčnem razredu so vsa tista števila, ki dajo pri deljenju z $m$ isti ostanek.
-
-  Očitno je takih razredov natanko $m$. Te razrede imenujemo {\em cela števila po modulu $m$}. Faktorska množica je množica celih števil po modulu $m$.
-
-  \item \textbf{Zgled: Vzporednost premic.}
-
-V množici {\em vseh premic} je relacija ``vzporeden'' ekvivalenčna relacija. V vsakem ekvivalenčnem razredu so torej vse premice, ki so med seboj vzporedne, in predstavljajo potemtakem določeno {\em smer}. Faktorska množica je tukaj {\em množica vseh smeri}.
-
-
-
-\item Let $S= \{m\in \mathbb{N}\,|\, 1\leq n \leq 10\}$ in $R=\{(m,n)\in S\times S\,|\, 3|m-n\}$.
-Is $R$ an equivalence relation? If yes, determine the corresponding equivalence classes and the factor set.
-
-\item Let $S = \mathbb{Z}\times \mathbb{Z}$ and define the relation $R$ as follows
-$$(a,b)R(c,d)\Leftrightarrow ad = bc.$$
-Show that $R$ is an equivalence relation  and find the corresponding equivalence classes.
-
-\item Let  $S =  \mathbb{R}^2$ and define the relation $R$ as follows
-$$(x_1,y_1)R(x_2,y_2)\Leftrightarrow x_1^2 + y_1^2 = x_2^2 + y_2^2.$$
-Show that $R$ is an equivalence relation  and find the equivalenece class $R[(7,1)]$.
-
 \end{enumerate}
 
 
