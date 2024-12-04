@@ -1284,6 +1284,56 @@ $$h(x) = (f(x),g(x)),$$
 
 
 
+\section{Teorija grafov}
+\begin{ex}
+    Naj bo $G=(V,E)$ graf iz slike. potem ga nariši, ter določi
+	\begin{enumerate}
+    \item Nariši graf.
+		\item Določi največjo in najmanjšo stopnjo, tj. $\Delta(G)$, $\delta(G)$.
+		\item Določi velikost največje klike, tj. $\omega(G)$.
+		\item Določi ožino grafa, tj. $g(G)$.
+		\item Določi velikost največje neodvisne množice, tj. $\alpha(G)$.
+		\item Določi minimalno število barv, potrebnih za barvanje grafa, tj. $\chi(G)$.
+	\end{enumerate}
+    \begin{figure}
+  	\centering
+  	\includegraphics[scale=0.5]{smallGraphs/g_2C4.png}
+  	\includegraphics[scale=0.5]{smallGraphs/g_4fan.png}
+  	\includegraphics[scale=0.5]{smallGraphs/g_antenna.png}
+  	\includegraphics[scale=0.5]{smallGraphs/g_butterflyUK1.png}
+  	\includegraphics[scale=0.5]{smallGraphs/g_butterfly.png}
+  	\caption{Primeri grafov.}
+  	\label{fig:enter-label}
+  \end{figure}
+\end{ex}
+
+\begin{enumerate}
+\item Naj velja $n\ge 3$. Spomnimo definicijo ciklov in polnih grafov
+\[C_{n}=\{[n], E_{1}\}\]
+\[K_{n}=\{[n], E_{2}\}\]
+ter definirajmo 
+\[G_{n}=\{[n], E_{2} \setminus E_{1}\}\]
+\begin{itemize}
+    \item Nariši \(H, G_{4}, G_{5}, G_{6}, C_{5}, C_{6}, \overline{C_{i}}\)
+    \item Za  vse zgornje grafe določi \(\Delta(G_{i}), \delta(G_{i}), \alpha(G_{i}), \omega(G_{i}), \chi(G_{i}), g(G_{i})\)
+    \item
+Dokaži \((\forall i \geq 3) (G_{i} \simeq \overline{C_{i}})\)
+\end{itemize}
+
+
+\item
+Naj bo \(G = ([n], E)\) graf.
+\begin{itemize}
+\item
+Dokaži: \(\chi (G) \geq \omega (G)\)
+
+\item
+Dokaži: \(\chi (G) \geq \frac{n}{\alpha(G)}\)
+\end{itemize}
+
+\end{enumerate}
+
+
 \section{Strukture urejenosti}
 Ključni pojmi:
 \begin{itemize}
@@ -1396,34 +1446,6 @@ Za katere od naštetih relacij velja, da so: refleksivne, simetrične, antisimet
 \end{enumerate}
 
 
-
-
-\section{Grafi}
-\begin{enumerate}
-\item Naj velja $n\ge 3$. Spomnimo definicijo ciklov in polnih grafov
-\[C_{n}=\{[n], E_{1}\}\]
-\[K_{n}=\{[n], E_{2}\}\]
-ter definirajmo 
-\[G_{n}=\{[n], E_{2} \setminus E_{1}\}\]
-\begin{itemize}
-    \item Nariši \(H, G_{4}, G_{5}, G_{6}, C_{5}, C_{6}, \overline{C_{i}}\)
-    \item Za  vse zgornje grafe določi \(\Delta(G_{i}), \delta(G_{i}), \alpha(G_{i}), \omega(G_{i}), \chi(G_{i}), g(G_{i})\)
-    \item
-Dokaži \((\forall i \geq 3) (G_{i} \simeq \overline{C_{i}})\)
-\end{itemize}
-
-
-\item
-Naj bo \(G = ([n], E)\) graf.
-\begin{itemize}
-\item
-Dokaži: \(\chi (G) \geq \omega (G)\)
-
-\item
-Dokaži: \(\chi (G) \geq \frac{n}{\alpha(G)}\)
-\end{itemize}
-
-\end{enumerate}
 
 \chapter{Končne in neskončne množice}
 
