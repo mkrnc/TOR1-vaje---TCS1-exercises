@@ -5,6 +5,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[style=arsclassica, parts=false, eulermath=false, palatino=true, eulerchapternumbers=true]{classicthesis}
 
+\usepackage[Export]{adjustbox}
+
 
 %\documentclass[11pt,a5paper,footinclude,headinclude]{scrbook} % KOMA-Script book
 
@@ -826,7 +828,6 @@ A\setminus B & = & \{x\, ;\, x\in A \wedge x\notin B \}\\
 
 \chapter{Relations}
 
-
     
 \begin{ex} 
 Let $S=\{1,2,3,4,5\}$. 
@@ -1227,7 +1228,7 @@ Prove that the following two statements about a function \( f : X \to Y \) are e
 \end{ex}
 
 \begin{ex}
-Prove that in everyday mathematics, the number of elements of a set is understood in an intuitive sense and no definition is usually given. In the logical foundations of mathematics, however, the number of elements 
+In everyday mathematics, the number of elements of a set is understood in an intuitive sense and no definition is usually given. In the logical foundations of mathematics, however, the number of elements 
 is defined via bijections: 
 $|X| = n$ means that there exists a bijection
 from $X$ to the set $\{1, 2, . . . , n\}$.\footnote{Also other alternative definitions of
@@ -1242,6 +1243,42 @@ according to this definition. Be careful not to use the intuitive notion
 of “size” but only the definition via bijections. Proceed by induction.
 \end{enumerate}
 
+\end{ex}
+
+
+\section{Graph theory}
+\begin{ex}
+    Let $G$ be any graph from Section \ref{ch:listofGraphs}.
+    Determine:
+	\begin{enumerate}
+	\item Order and size of the graph, that is, number of vertices and number of edges in $G$;
+        \item The maximum and minimum degree, i.e., \( \Delta(G) \), \( \delta(G) \)
+		\item The size of the largest clique, i.e., \( \omega(G) \),
+		\item The girth of the graph, i.e., \( g(G) \)
+		\item The size of the largest independent set, i.e., \( \alpha(G) \), and
+		\item The minimum number of colors needed for coloring the graph, i.e., \( \chi(G) \).
+	\end{enumerate}
+\end{ex}
+
+\begin{ex}
+    Let $n\ge 3$. Recall the definition of cycles and complete graphs:
+\[C_{n}=\{[n], E_{1}\}\]
+\[K_{n}=\{[n], E_{2}\}\]
+and define
+\[G_{n}=\{[n], E_{2} \setminus E_{1}\}\]
+\begin{itemize}
+    \item Draw \(H, G_{4}, G_{5}, G_{6}, C_{5}, C_{6}, \overline{C_{i}}\)
+    \item For all the above graphs, determine \(\Delta(G_{i}), \delta(G_{i}), \alpha(G_{i}), \omega(G_{i}), \chi(G_{i}), g(G_{i})\)
+    \item Prove \((\forall i \geq 3) (G_{i} \simeq \overline{C_{i}})\)
+\end{itemize}
+
+\end{ex}
+\begin{ex}
+ Let \(G = ([n], E)\) be a graph.
+\begin{itemize}
+\item Prove: \(\chi (G) \geq \omega (G)\)
+\item Prove: \(\chi (G) \geq \frac{n}{\alpha(G)}\)
+\end{itemize}
 \end{ex}
 
 
@@ -1281,31 +1318,361 @@ where $m=2^p(2q+1)$ and $n=2^u(2v+1)$ with $p$ and $u$ maximal possible exponent
 
 
 \end{enumerate}
+\appendix
 
-
-\section{Graph theory}
-
-
-
-\begin{enumerate}
-\item Let $n\ge 3$. Recall the definition of cycles and complete graphs:
-\[C_{n}=\{[n], E_{1}\}\]
-\[K_{n}=\{[n], E_{2}\}\]
-and define
-\[G_{n}=\{[n], E_{2} \setminus E_{1}\}\]
-\begin{itemize}
-    \item Draw \(H, G_{4}, G_{5}, G_{6}, C_{5}, C_{6}, \overline{C_{i}}\)
-    \item For all the above graphs, determine \(\Delta(G_{i}), \delta(G_{i}), \alpha(G_{i}), \omega(G_{i}), \chi(G_{i}), g(G_{i})\)
-    \item Prove \((\forall i \geq 3) (G_{i} \simeq \overline{C_{i}})\)
-\end{itemize}
-
-\item Let \(G = ([n], E)\) be a graph.
-\begin{itemize}
-\item Prove: \(\chi (G) \geq \omega (G)\)
-\item Prove: \(\chi (G) \geq \frac{n}{\alpha(G)}\)
-\end{itemize}
-
-\end{enumerate}
+\chapter{List of Graphs}
+\label{ch:listofGraphs}
+\adjustboxset{margin=2ex}
+  	\centering
+  	\includegraphics[scale=0.5,frame]{smallGraphs/g_2C4.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_2K1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_2K2.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_2K3.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_2P3.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_3K1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_3K2.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_4K1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_4fan.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_5K1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_5pan.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_6fan.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_A.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_AUK1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_BW3.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_BW4.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_C4.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_C4U2K1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_C4UP2.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_C5.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_C6.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_E.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_H.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_K14.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_K2.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_K23.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_K2Uclaw.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_K33+e.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_K33-e.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_K33.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_K3U2K1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_K3U3K1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_K3UP3.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_K4.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_K4UK1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_K5-e.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_K5.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_P.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_P2UP3.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_P2UP4.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_P3.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_P3U2K1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_P3UP4.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_P4.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_P5.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_P6.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_R.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_S3.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_S4.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_T3.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_W4.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_W4UK1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_W5.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_W6.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X10.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X100.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X101.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X102.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X103.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X104.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X105.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X106.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X107.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X11.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X111.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X12.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X120.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X127.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X13.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X130.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X131.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X132.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X139.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X14.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X140.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X141.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X143.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X146.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X15.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X151.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X153.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X154.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X155.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X158.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X159.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X166.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X167.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X168.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X169.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X17.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X170.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X171.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X172.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X173.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X175.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X176.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X177.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X179.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X18.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X184.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X186.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X195.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X197.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X198.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X199.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X20.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X200.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X205.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X208.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X209.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X21.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X213.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X214.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X23.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X24.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X27.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X29.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X3.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X30.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X31.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X32.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X33.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X34.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X36.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X37.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X38.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X39.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X40.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X42.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X45.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X46.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X5.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X50.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X51.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X58.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X59.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X7.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X71.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X74.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X75.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X79.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X82.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X84.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X85.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X86.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X87.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X88.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X89.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X9.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X90.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X92.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X93.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X95.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X97.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X98.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_X99.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_XC2.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_XC3.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_XC5.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_XC6.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_XC8.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_XC9.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_XZ11.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_XZ13.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_XZ14.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_antenna.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_bull.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_butterfly.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_butterflyUK1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_claw.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_clawU3K1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_clawUK1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-2P3.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-3K2.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-4fan.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-5pan.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-6fan.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-A.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-BW3.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-BW4.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-C4U2K1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-C4UP2.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-C6.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-E.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-H.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-K23.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-K2Uclaw.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-K33-e.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-K3U2K1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-K3U3K1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-K5-e.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-P.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-P2UP3.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-P2UP4.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-P3.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-P3U2K1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-P3UP4.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-P6.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-P7.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-R.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-W4.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-W4UK1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-W5.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-W6.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X10.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X100.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X101.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X102.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X103.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X104.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X105.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X106.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X107.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X111.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X115.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X117.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X12.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X120.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X126.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X127.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X128.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X129.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X13.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X130.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X132.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X139.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X14.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X140.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X141.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X142.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X146.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X15.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X151.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X155.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X158.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X159.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X163.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X164.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X166.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X167.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X169.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X17.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X170.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X171.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X172.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X173.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X175.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X176.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X177.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X179.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X18.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X184.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X191.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X192.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X194.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X195.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X197.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X198.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X199.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X20.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X205.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X209.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X23.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X24.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X27.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X29.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X3.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X30.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X31.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X32.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X33.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X34.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X37.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X38.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X39.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X40.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X41.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X43.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X45.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X46.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X47.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X5.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X50.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X52.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X58.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X6.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X7.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X70.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X74.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X79.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X8.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X82.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X84.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X85.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X86.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X87.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X88.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X89.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X9.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X90.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X92.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X93.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X95.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X96.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X97.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X98.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-X99.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-antenna.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-butterfly.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-butterflyUK1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-claw.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-clawU3K1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-clawUK1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-cricket.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-cross.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-dart.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-diamond.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-domino.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-fish.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-gem.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-gemUK1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-kiteUK1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-longhorn.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-paw.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-skewstar.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-twin-house.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_co-twinC5.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_cricket.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_cross.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_dart.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_diamond.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_domino.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_fish.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_fork.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_gem.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_gemUK1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_house.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_kite.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_kiteUK1.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_longhorn.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_net.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_parachute.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_parapluie.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_paw.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_skewstar.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_triangle.png}     
+\includegraphics[scale=0.5,frame]{smallGraphs/g_twinC5.png}     
 
 \Closesolutionfile{ans} 
 
