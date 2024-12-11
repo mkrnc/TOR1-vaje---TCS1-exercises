@@ -1078,6 +1078,48 @@ Relacija ni simetrična, saj je $(f,a)\in S^{-1}\cup R$ in $(a,f)\not\in S^{-1}\
     \]
 \end{ex}
 
+\begin{ex}
+    Naj velja $S=\{1,2,3,4,5\}$. 
+\begin{enumerate}
+    \item Ali je  $R=\{(1,2),(2,3), (3,5), (2,4), (5,1)\}$ binarna relacija?
+    \item Za relacijo $R$ najdi ustrezno domeno $\mathcal{D} R$, in zalogo vrednosti $\mathcal{Z} R$.
+    \item 
+  Določi inverzno relacijo $R^{-1}$ in  $\mathcal{D} R^{-1}$ in  $\mathcal{Z} R^{-1}$.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+    Naj bosta $R=\{(1,1),(2,1), (3,3), (1,5)\}$  in $T=\{(1,4),(2,1), (2,2), (2,5)\}$ binarni relaciji v vesolju $S=\{1,2,3,4,5\}$. \begin{enumerate}
+    \item 
+Določi kompozituma  $R\circ T$ in $T\circ R$. 
+\item Ali velja $R\circ T = T \circ R$?
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+ Naj velja  $S=\{1,2,3,4,5,6,7\}$. Določi
+$$R= \{(x,y)\,|\, x-y \text{ je deljivo z  }  3\} \quad \mathrm{ in } \quad  T= \{(x,y)\,|\, x-y \geq 3\}.$$
+Določi $R,T, R\circ R$.
+
+
+\end{ex} \begin{ex} V vesolju  $S= \mathbb{R}$  definiramo  relacijo $R$:
+$$(\forall x)(\forall y)(x R y \Leftrightarrow y \geq x +3).$$
+Je $R$ refleksivna, simetrična, tranzitivna, ali sovisna?
+
+\end{ex} \begin{ex} Naj velja  $S=\{1,2,3,4\}$. Imamo spodnje relacije:
+\begin{enumerate}
+\item[(i)] $R_1= \{(1,1),(1,2),(2,3), (1,3), (4,4)\}$,
+\item[(ii)] $R_2= \{(1,1),(1,2),(2,1), (2,2), (3,3), (4,4)\}$,
+\item[(iii)] $R_3= \{(1,3),(2,1)\}$,
+\item[(iv)] $R_4= \emptyset$,
+\item[(v)] $R_5= S\times S$.
+\end{enumerate}
+Za katere od naštetih relacij velja, da so: refleksivne, simetrične, antisimetrične, tranzitivne? 
+
+\end{ex} \begin{ex} Naj bosta $R$ in $S$ simetrični relaciji. Pokaži: $R\circ S$ simetrična $\Leftrightarrow R\circ S = S \circ R$.
+
+
+	\end{ex} 
 \section{Ekvivalenčne relacije}
 \begin{ex}
     Naj bo $S = \mathbb{Z}\times \mathbb{Z}$ in definirajmo relacijo $R$ na naslednji način:  
@@ -1339,7 +1381,7 @@ množica, $R$-omejena množica, $R$-infimum (največja spodnja meja),
 $R$-supremum (najmanjša zgornja meja).
 \end{itemize}
 \hrule
-\begin{ex}
+\begin{ex}\label{ex:hasse5}
 Množica $S=\{1,\ldots,5\}$ je strogo delno urejena z naslednjo relacijo $R$:
 \begin{center}
 \includegraphics[width=30mm]{img/hasse5}
@@ -1351,11 +1393,10 @@ Množica $S=\{1,\ldots,5\}$ je strogo delno urejena z naslednjo relacijo $R$:
 
 (c) Ali ima množica $S$ prvi element? Ali ima množica $S$ zadnji element?
 
-(d) Ali je množica $S$ dobro urejena?
 \end{ex}
 
-\textbf{Rešitev:}
-
+\begin{sol}
+    
 (a) $R = \{(5,2),(5,1),(4,2),(4,1),(5,3),(4,1),(2,1),(3,1)\}$.
 
 (b) Noben element ni pod elementoma 4 in 5, torej sta 4 in 5 minimalna elementa.
@@ -1366,67 +1407,24 @@ od njiju ni pod drugim. Množica $S$ pa ima zadnji element: to je element 1, saj
 pod njim.
 
 (d) Ne, saj ni sovisna: Elementa 2 in 3 nista primerljiva: $(2,3)\not\in R$, $(3,2)\not\in R$.\qed
-
-\bigskip
-\textbf{Opomba:} \emph{Naj relacija $R$ strogo delno ureja množico $S$.
-Tedaj je $x\in S$ minimalni element natanko tedaj, ko $x\not\in {\cal Z}R$.}
-
-\emph{(${\cal Z}R$ = zaloga vrednosti relacije $R$ = množica vseh drugih koordinat).}
-
-\emph{$x\in S$ pa je maksimalen element natanko tedaj, ko $x\not\in {\cal D}R$.}
-
-\emph{(${\cal D}R$ = domena relacije $R$ = množica vseh prvih koordinat).}
+\end{sol}
 
 
-\begin{enumerate}
-
-
-\item Naj velja $S=\{1,2,3,4,5\}$. 
-\begin{enumerate}
-    \item Ali je  $R=\{(1,2),(2,3), (3,5), (2,4), (5,1)\}$ binarna relacija?
-    \item Za relacijo $R$ najdi ustrezno domeno $\mathcal{D} R$, in zalogo vrednosti $\mathcal{Z} R$.
-    \item 
-  Določi inverzno relacijo $R^{-1}$ in  $\mathcal{D} R^{-1}$ in  $\mathcal{Z} R^{-1}$.
-\end{enumerate}
-
-\item Naj bosta $R=\{(1,1),(2,1), (3,3), (1,5)\}$  in $T=\{(1,4),(2,1), (2,2), (2,5)\}$ binarni relaciji v vesolju $S=\{1,2,3,4,5\}$. \begin{enumerate}
-    \item 
-Določi kompozituma  $R\circ T$ in $T\circ R$. 
-\item Ali velja $R\circ T = T \circ R$?
-\end{enumerate}
-
-\item Naj velja  $S=\{1,2,3,4,5,6,7\}$. Določi
-$$R= \{(x,y)\,|\, x-y \text{ je deljivo z  }  3\} \quad \mathrm{ in } \quad  T= \{(x,y)\,|\, x-y \geq 3\}.$$
-Določi $R,T, R\circ R$.
-
-
-\item V vesolju  $S= \mathbb{R}$  definiramo  relacijo $R$:
-$$(\forall x)(\forall y)(x R y \Leftrightarrow y \geq x +3).$$
-Je $R$ refleksivna, simetrična, tranzitivna, ali sovisna?
-
-\item Naj velja  $S=\{1,2,3,4\}$. Imamo spodnje relacije:
-\begin{enumerate}
-\item[(i)] $R_1= \{(1,1),(1,2),(2,3), (1,3), (4,4)\}$,
-\item[(ii)] $R_2= \{(1,1),(1,2),(2,1), (2,2), (3,3), (4,4)\}$,
-\item[(iii)] $R_3= \{(1,3),(2,1)\}$,
-\item[(iv)] $R_4= \emptyset$,
-\item[(v)] $R_5= S\times S$.
-\end{enumerate}
-Za katere od naštetih relacij velja, da so: refleksivne, simetrične, antisimetrične, tranzitivne? 
-
-\item Naj bosta $R$ in $S$ simetrični relaciji. Pokaži: $R\circ S$ simetrična $\Leftrightarrow R\circ S = S \circ R$.
-
-
-	\item Naj bo $S=\{ (x,y) \,:\, x, y\in\mathbb{R} \textrm{ in } y\leq 0 \}$ in naj bo $R$ relacija na množici $S$, definirana kot 
+\begin{ex} Naj bo $S=\{ (x,y) \,:\, x, y\in\mathbb{R} \textrm{ in } y\leq 0 \}$ in naj bo $R$ relacija na množici $S$, definirana kot 
 	$$(x_1,y_1)\, R\, (x_2,y_2) \Leftrightarrow  x_1 = x_2 \textrm{ in } y_1\leq y_2.$$
 	\begin{enumerate}
 		\item[(i)] Dokažite, da je $R$ delna urejenost na $S$.
 		\item[(ii)] Najdite vse $R$-minimalne elemente.
 	\end{enumerate}
 	
-	\item Naj bo $S= \{0,\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \ldots, \frac{n}{n+1}, \ldots, 1\}$, in naj bo $R:=<$ relacija na $S$. Ali $R$ dobro ureja $S$?
+	\end{ex} 
+    \subsection{Dobra urejenost}
+    \begin{ex}
+        Ali je relacija iz Vaje \ref{ex:hasse5} dobro urejena? 
+    \end{ex}
+    \begin{ex} Naj bo $S= \{0,\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \ldots, \frac{n}{n+1}, \ldots, 1\}$, in naj bo $R=\{(a,b)\mid a<b\}$ relacija na $S$. Ali $R$ dobro ureja $S$?
 	
-	\item Naj bo $S = \mathbb{N}\setminus \{0\}$ in naj bo  $R$ relacija na $S$, definirana kot 
+	\end{ex} \begin{ex} Naj bo $S = \mathbb{N}\setminus \{0\}$ in naj bo  $R$ relacija na $S$, definirana kot 
 	$$m\, R\, n \Leftrightarrow  \textrm{ $p< u$ ali ($p=u$ in $q < v$),} $$
 	kjer je $m=2^p(2q+1)$ in $n=2^u(2v+1)$, pri čemer sta $p$ in $u$ maksimalno možna eksponenta.
 	\begin{enumerate}
@@ -1435,7 +1433,8 @@ Za katere od naštetih relacij velja, da so: refleksivne, simetrične, antisimet
 		\item[(iii)] Naj bo $C= \{50, 51, 52, \ldots\}$. Najdite $R$-minimalni element množice $C$.
 		\item[(iv)] Najdite neposrednega naslednika števila $96$.
 	\end{enumerate}
-\end{enumerate}
+\end{ex}
+
 
 
 

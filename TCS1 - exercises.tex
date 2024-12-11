@@ -1285,27 +1285,24 @@ and define
 
 \section{Order structures}
 \begin{ex}
-Let $R$ be as from from Exercise \ref{ex:powerset2}.
+Let \(P(A) = \{\emptyset, \{1\}, \{2\}, \{1, 2\}\}\) be the power set of \(A = \{1, 2\}\). Define a relation \(R \subseteq P(A) \times P(A)\) such that \((X, Y) \in R\) if and only if \(X \subseteq Y\).
     Prove that \(R\) is a partial order. 
 \end{ex}
 
-\begin{enumerate}
-
-
-
-\item Let $S=\{ (x,y) \,:\, x, y\in\mathbb{R} \textrm{ and } y\leq 0 \}$  and let $R$ be the relation on $S$ defined by 
+\begin{ex}
+    Let $S=\{ (x,y) \,:\, x, y\in\mathbb{R} \textrm{ and } y\leq 0 \}$  and let $R$ be the relation on $S$ defined by 
 $$(x_1,y_1)\, R\, (x_2,y_2) \Leftrightarrow  x_1 = x_2 \textrm{ and } y_1\leq y_2.$$
 \begin{enumerate}
 \item[(i)] Show that $R$ is a partial order on $S$.
 \item[(ii)] Find all $R$-minimal elements.
 \end{enumerate}
+\end{ex}
 
-
-
-\item Let  $S= \{0,\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \ldots, \frac{n}{n+1}, \ldots, 1\}$, and let $R:=<$ the relation on $S$. Does $R$ well order $S$?
-
-
-\item Let $S = \mathbb{N}\setminus \{0\}$ and let  $R$ be the relation on $S$ defined by 
+\begin{ex}
+     Let  $S= \{0,\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \ldots, \frac{n}{n+1}, \ldots, 1\}$, and let $R:=<$ the relation on $S$. Does $R$ well order $S$?
+\end{ex}
+\begin{ex}
+    Let $S = \mathbb{N}\setminus \{0\}$ and let  $R$ be the relation on $S$ defined by 
 $$m\, R\, n \Leftrightarrow  \textrm{ $p< u$ or ($p=u$ and $q < v$),} $$
 where $m=2^p(2q+1)$ and $n=2^u(2v+1)$ with $p$ and $u$ maximal possible exponents.
 \begin{enumerate}
@@ -1314,10 +1311,7 @@ where $m=2^p(2q+1)$ and $n=2^u(2v+1)$ with $p$ and $u$ maximal possible exponent
 \item[(iii)] Let $C= \{50, 51, 52, \ldots\}$. Find $R$-minimal element of $C$.
 \item[(iv)] Find an immediate successor of $96$.
 \end{enumerate}
-
-
-
-\end{enumerate}
+\end{ex} 
 \appendix
 
 \chapter{List of Graphs}
