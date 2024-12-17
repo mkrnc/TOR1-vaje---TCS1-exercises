@@ -1,4 +1,4 @@
-\RequirePackage{silence} % :-\
+\texttt{}\RequirePackage{silence} % :-\
     \WarningFilter{scrbook}{Usage of package `titlesec'}
     \WarningFilter{titlesec}{Non standard sectioning command detected}
 \documentclass[11pt,paper=b5,footinclude,headinclude]{scrbook} % KOMA-Script book
@@ -2045,6 +2045,190 @@ $\le k$ ničel.
 \includegraphics[scale=0.5,frame]{smallGraphs/g_twinC5.png}     
 
 \Closesolutionfile{ans} 
+
+\chapter{Seznam Hassejevih diagramov}
+
+	% Define a macro to draw a Hasse diagram
+	\newcommand{\HasseDiagram}[1]{%
+    \vspace{1mm}
+    \fbox{
+		\begin{tikzpicture}[scale=0.8, every node/.style={draw, circle, inner sep=1.5pt}]
+			#1
+		\end{tikzpicture}}%
+	}
+	% First diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,1) {};
+		\node (c) at (2,0) {};
+		\draw (a) -- (b) -- (c);
+	}
+	% Second diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (0,1) {};
+		\node (c) at (0,2) {};
+		\node (d) at (1,1) {};
+		\draw (a) -- (b) -- (c);
+		\draw (b) -- (d);
+	}
+	% Third diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,1) {};
+		\node (c) at (2,0) {};
+		\node (d) at (1,-1) {};
+		\draw (a) -- (b) -- (c);
+		\draw (a) -- (d);
+	}
+	% Fourth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,0.5) {};
+		\node (c) at (2,1) {};
+		\node (d) at (3,0.5) {};
+		\node (e) at (4,0) {};
+		\draw (a) -- (b) -- (c) -- (d) -- (e);
+	}
+	% Fifth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (0,1) {};
+		\node (c) at (1,0.5) {};
+		\node (d) at (2,1) {};
+		\node (e) at (2,0) {};
+		\draw (a) -- (b);
+		\draw (b) -- (c) -- (d);
+		\draw (c) -- (e);
+	}
+	% Sixth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,1) {};
+		\node (c) at (2,0) {};
+		\node (d) at (1,-1) {};
+		\node (e) at (1,0) {};
+		\draw (a) -- (b) -- (c);
+		\draw (a) -- (d);
+		\draw (b) -- (e);
+	}
+	% Seventh diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,0.5) {};
+		\node (c) at (2,1) {};
+		\node (d) at (2,0) {};
+		\node (e) at (3,0.5) {};
+		\draw (a) -- (b) -- (c);
+		\draw (b) -- (d);
+		\draw (c) -- (e);
+		\draw (d) -- (e);
+	}
+	% Eighth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (0,1) {};
+		\node (c) at (1,0.5) {};
+		\node (d) at (2,1) {};
+		\node (e) at (2,0) {};
+		\node (f) at (3,0.5) {};
+		\draw (a) -- (b);
+		\draw (b) -- (c) -- (d);
+		\draw (c) -- (e) -- (f);
+	}
+	% Ninth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (0,1) {};
+		\node (c) at (0,2) {};
+		\node (d) at (1,2) {};
+		\node (e) at (1,0) {};
+		\node (f) at (2,1) {};
+		\node (g) at (2,2) {};
+		\draw (a) -- (b) -- (c);
+		\draw (b) -- (d) -- (f);
+		\draw (d) -- (e);
+		\draw (f) -- (g);
+	}
+	% Tenth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,1) {};
+		\node (c) at (2,2) {};
+		\node (d) at (3,1) {};
+		\node (e) at (2,0) {};
+		\node (f) at (1,-1) {};
+		\node (g) at (3,-1) {};
+		\draw (a) -- (b) -- (c) -- (d) -- (e) -- (f);
+		\draw (e) -- (g);
+	}
+	% Eleventh diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (0,1) {};
+		\node (c) at (1,1.5) {};
+		\node (d) at (2,1) {};
+		\node (e) at (1,0) {};
+		\node (f) at (2,0.5) {};
+		\node (g) at (2,-0.5) {};
+		\draw (a) -- (b) -- (c) -- (d);
+		\draw (b) -- (e);
+		\draw (e) -- (f) -- (g);
+	}
+	% Twelfth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,1) {};
+		\node (c) at (2,2) {};
+		\node (d) at (3,3) {};
+		\node (e) at (3,1) {};
+		\node (f) at (2,0) {};
+		\node (g) at (1,-1) {};
+		\draw (a) -- (b) -- (c) -- (d);
+		\draw (c) -- (e) -- (f);
+		\draw (f) -- (g);
+	}
+	% Thirteenth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (0,1) {};
+		\node (c) at (1,0.5) {};
+		\node (d) at (1.5,1.5) {};
+		\node (e) at (2,0.5) {};
+		\node (f) at (3,0) {};
+		\node (g) at (2.5,-0.5) {};
+		\draw (a) -- (b) -- (c) -- (d) -- (e);
+		\draw (e) -- (f);
+		\draw (f) -- (g);
+	}
+	% Fourteenth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,1) {};
+		\node (c) at (2,2) {};
+		\node (d) at (3,1) {};
+		\node (e) at (4,0) {};
+		\node (f) at (2,0) {};
+		\node (g) at (1,-1) {};
+		\draw (a) -- (b) -- (c) -- (d);
+		\draw (d) -- (e);
+		\draw (c) -- (f);
+		\draw (f) -- (g);
+	}
+	% Fifteenth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,1) {};
+		\node (c) at (1.5,2) {};
+		\node (d) at (2,1.5) {};
+		\node (e) at (3,1) {};
+		\node (f) at (2,0.5) {};
+		\node (g) at (1.5,0) {};
+		\draw (a) -- (b) -- (c);
+		\draw (c) -- (d) -- (e);
+		\draw (d) -- (f) -- (g);
+	}
+	
 \chapter{Rešitve} 
 \input{res1} 
 

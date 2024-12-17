@@ -5,6 +5,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[style=arsclassica, parts=false, eulermath=false, palatino=true, eulerchapternumbers=true]{classicthesis}
 
+\usepackage[framemethod=TikZ]{mdframed}
+
 \usepackage[Export]{adjustbox}
 
 
@@ -1290,6 +1292,26 @@ Let \(P(A) = \{\emptyset, \{1\}, \{2\}, \{1, 2\}\}\) be the power set of \(A = \
 \end{ex}
 
 \begin{ex}
+    Choose a diagram from Section \ref{sec:hasse}, and arbitrarily label its universe $S$ with labels $S=\{1,2,\dots\}$.
+    Let $A=\{1,3\}$, $B=\{1,2,3\}$, $C=S$, and $D=\emptyset$. 
+    \begin{enumerate}
+        \item 
+    For the sets $A,B,C$ and $D$, fill in the following table:
+
+    \begin{tabular}{c|c|c|c|c}
+         &$R$-lower bounds &$R$-upper bounds & $R$-infimum
+         & $R$-supremum \\\hline
+         $A$ &&&&\\
+         $B$ &&&&\\
+         $C$ &&&&\\
+         $D$ &&&&
+    \end{tabular}
+\item Detemine whether the poset is a lattice. If not, determine the corresponding set which does not admit infimum or supremum.
+    \end{enumerate}
+
+\end{ex}
+
+\begin{ex}
     Let $S=\{ (x,y) \,:\, x, y\in\mathbb{R} \textrm{ and } y\leq 0 \}$  and let $R$ be the relation on $S$ defined by 
 $$(x_1,y_1)\, R\, (x_2,y_2) \Leftrightarrow  x_1 = x_2 \textrm{ and } y_1\leq y_2.$$
 \begin{enumerate}
@@ -1668,9 +1690,323 @@ where $m=2^p(2q+1)$ and $n=2^u(2v+1)$ with $p$ and $u$ maximal possible exponent
 \includegraphics[scale=0.5,frame]{smallGraphs/g_triangle.png}     
 \includegraphics[scale=0.5,frame]{smallGraphs/g_twinC5.png}     
 
-\Closesolutionfile{ans} 
 
-\chapter{Solutions}\input{ans1} 
+\chapter{List of Hasse diagrams\label{sec:hasse}}
+\section{Unlabeled diagrams\hfill}
+
+	% Define a macro to draw a Hasse diagram
+	\newcommand{\HasseDiagram}[1]{%
+    \vspace{1mm}
+    \fbox{
+		\begin{tikzpicture}[scale=0.8, every node/.style={draw, circle, inner sep=1.5pt}]
+			#1
+		\end{tikzpicture}}%
+	}
+	% First diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,1) {};
+		\node (c) at (2,0) {};
+		\draw (a) -- (b) -- (c);
+	}
+	% Second diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (0,1) {};
+		\node (c) at (0,2) {};
+		\node (d) at (1,2) {};
+		\draw (a) -- (b) -- (c);
+		\draw (b) -- (d);
+	}
+	% Third diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,1) {};
+		\node (c) at (2,0) {};
+		\node (d) at (1,-1) {};
+		\draw (a) -- (b) -- (c);
+		\draw (a) -- (d);
+	}
+	% Fourth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,0.5) {};
+		\node (c) at (2,1) {};
+		\node (d) at (3,0.5) {};
+		\node (e) at (4,0) {};
+		\draw (a) -- (b) -- (c) -- (d) -- (e);
+	}
+	% Fifth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (0,1) {};
+		\node (c) at (1,0.5) {};
+		\node (d) at (2,1) {};
+		\node (e) at (2,0) {};
+		\draw (a) -- (b);
+		\draw (b) -- (c) -- (d);
+		\draw (c) -- (e);
+	}
+	% Sixth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,1) {};
+		\node (c) at (2,0) {};
+		\node (d) at (1,-1) {};
+		\node (e) at (1,0) {};
+		\draw (a) -- (b) -- (c);
+		\draw (a) -- (d);
+		\draw (b) -- (e);
+	}
+	% Seventh diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,0.5) {};
+		\node (c) at (2,1) {};
+		\node (d) at (2,0) {};
+		\node (e) at (3,0.5) {};
+		\draw (a) -- (b) -- (c);
+		\draw (b) -- (d);
+		\draw (c) -- (e);
+		\draw (d) -- (e);
+	}
+	% Eighth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (0,1) {};
+		\node (c) at (1,0.5) {};
+		\node (d) at (2,1) {};
+		\node (e) at (2,0) {};
+		\node (f) at (3,0.5) {};
+		\draw (a) -- (b);
+		\draw (b) -- (c) -- (d);
+		\draw (c) -- (e) -- (f);
+	}
+	% Ninth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (0,1) {};
+		\node (c) at (0,2) {};
+		\node (d) at (1,2) {};
+		\node (e) at (1,0) {};
+		\node (f) at (2,1) {};
+		\node (g) at (2,2) {};
+		\draw (a) -- (b) -- (c);
+		\draw (b) -- (d) -- (f);
+		\draw (d) -- (e);
+		\draw (f) -- (g);
+	}
+	% Tenth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,1) {};
+		\node (c) at (2,2) {};
+		\node (d) at (3,1) {};
+		\node (e) at (2,0) {};
+		\node (f) at (1,-1) {};
+		\node (g) at (3,-1) {};
+		\draw (a) -- (b) -- (c) -- (d) -- (e) -- (f);
+		\draw (e) -- (g);
+	}
+	% Eleventh diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (0,1) {};
+		\node (c) at (1,1.5) {};
+		\node (d) at (2,1) {};
+		\node (e) at (1,0) {};
+		\node (f) at (2,0.5) {};
+		\node (g) at (2,-0.5) {};
+		\draw (a) -- (b) -- (c) -- (d);
+		\draw (b) -- (e);
+		\draw (e) -- (f) -- (g);
+	}
+	% Twelfth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,1) {};
+		\node (c) at (2,2) {};
+		\node (d) at (3,3) {};
+		\node (e) at (3,1) {};
+		\node (f) at (2,0) {};
+		\node (g) at (1,-1) {};
+		\draw (a) -- (b) -- (c) -- (d);
+		\draw (c) -- (e) -- (f);
+		\draw (f) -- (g);
+	}
+	% Thirteenth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (0,1) {};
+		\node (c) at (1,0.5) {};
+		\node (d) at (1.5,1.5) {};
+		\node (e) at (2,0.5) {};
+		\node (f) at (3,0) {};
+		\node (g) at (2.5,-0.5) {};
+		\draw (a) -- (b) -- (c) -- (d) -- (e);
+		\draw (e) -- (f);
+		\draw (f) -- (g);
+	}
+	% Fourteenth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,1) {};
+		\node (c) at (2,2) {};
+		\node (d) at (3,1) {};
+		\node (e) at (4,0) {};
+		\node (f) at (2,0) {};
+		\node (g) at (1,-1) {};
+		\draw (a) -- (b) -- (c) -- (d);
+		\draw (d) -- (e);
+		\draw (c) -- (f);
+		\draw (f) -- (g);
+	}
+	% Fifteenth diagram
+	\HasseDiagram{
+		\node (a) at (0,0) {};
+		\node (b) at (1,1) {};
+		\node (c) at (1.5,2) {};
+		\node (d) at (2,1.5) {};
+		\node (e) at (3,1) {};
+		\node (f) at (2,0.5) {};
+		\node (g) at (1.5,0) {};
+		\draw (a) -- (b) -- (c);
+		\draw (c) -- (d) -- (e);
+		\draw (d) -- (f) -- (g);
+	}
+	
+\section{Labeled diagrams\hfill}
+
+	\begin{table}[h!]
+		\centering
+		\renewcommand{\arraystretch}{2}
+		\setlength{\tabcolsep}{12pt}
+		\begin{tabular}{ccc}
+			\HasseDiagram{
+				\node (a) at (0,0) [label=below:a] {};
+				\node (b) at (-1,1) [label=left:b] {};
+				\node (c) at (1,1) [label=right:c] {};
+				\node (d) at (-1,2) [label=left:d] {};
+				\node (e) at (1,2) [label=right:e] {};
+				\draw (a) -- (b) -- (d);
+				\draw (a) -- (c) -- (e);
+			} &
+			\HasseDiagram{
+				\node (a) at (0,0) [label=below:a] {};
+				\node (b) at (-1,1) [label=left:b] {};
+				\node (c) at (1,1) [label=right:c] {};
+				\node (d) at (0,2) [label=above:d] {};
+				\node (e) at (-1,3) [label=left:e] {};
+				\node (f) at (1,3) [label=right:f] {};
+				\draw (a) -- (b) -- (d);
+				\draw (a) -- (c) -- (d);
+				\draw (d) -- (e);
+				\draw (d) -- (f);
+			} &
+			\HasseDiagram{
+				\node (a) at (0,0) [label=below:a] {};
+				\node (b) at (-1,1) [label=left:b] {};
+				\node (c) at (1,1) [label=right:c] {};
+				\node (d) at (0,2) [label=above:d] {};
+				\node (e) at (-1.5,3) [label=left:e] {};
+				\node (f) at (1.5,3) [label=right:f] {};
+				\draw (a) -- (b) -- (d);
+				\draw (a) -- (c) -- (d);
+				\draw (d) -- (e);
+				\draw (d) -- (f);
+			} \\
+			\HasseDiagram{
+				\node (a) at (0,0) [label=below:a] {};
+				\node (b) at (-1,1) [label=left:b] {};
+				\node (c) at (1,1) [label=right:c] {};
+				\node (d) at (-1.5,2) [label=left:d] {};
+				\node (e) at (0,2) [label=above:e] {};
+				\node (f) at (1.5,2) [label=right:f] {};
+				\node (g) at (-1.5,3) [label=left:g] {};
+				\node (h) at (1.5,3) [label=right:h] {};
+				\draw (a) -- (b) -- (d);
+				\draw (a) -- (c) -- (f);
+				\draw (b) -- (e);
+				\draw (c) -- (e);
+				\draw (d) -- (g);
+				\draw (f) -- (h);
+				\draw (e) -- (g);
+				\draw (e) -- (h);
+			} &
+			\HasseDiagram{
+				\node (a) at (0,0) [label=below:a] {};
+				\node (b) at (-1,1) [label=left:b] {};
+				\node (c) at (1,1) [label=right:c] {};
+				\node (d) at (0,2) [label=above:d] {};
+				\node (e) at (-1,3) [label=left:e] {};
+				\node (f) at (1,3) [label=right:f] {};
+				\node (g) at (0,4) [label=left:g] {};
+				\draw (a) -- (b) -- (d);
+				\draw (a) -- (c) -- (d);
+				\draw (d) -- (e);
+				\draw (d) -- (f);
+				\draw (e) -- (g);
+				\draw (f) -- (g);
+			} &
+			\HasseDiagram{
+				\node (a) at (0,0) [label=below:a] {};
+				\node (b) at (-1,1) [label=left:b] {};
+				\node (c) at (1,1) [label=right:c] {};
+				\node (d) at (0,2) [label=above:d] {};
+				\node (e) at (-1,3) [label=left:e] {};
+				\node (f) at (1,3) [label=right:f] {};
+				\node (g) at (0,4) [label=above:g] {};
+				\draw (a) -- (b) -- (d);
+				\draw (a) -- (c) -- (d);
+				\draw (b) -- (e);
+				\draw (c) -- (f);
+				\draw (d) -- (e);
+				\draw (d) -- (f);
+				\draw (e) -- (g);
+				\draw (f) -- (g);
+			} \\
+			\HasseDiagram{
+				\node (a) at (0,0) [label=below:a] {};
+				\node (b) at (-1,1) [label=left:b] {};
+				\node (c) at (1,1) [label=right:c] {};
+				\node (d) at (-0.5,2) [label=left:d] {};
+				\node (e) at (0.5,2) [label=right:e] {};
+				\node (f) at (-1.5,2) [label=left:f] {};
+				\node (g) at (1.5,2) [label=right:g] {};
+				\node (h) at (0,3) [label=above:h] {};
+				\draw (a) -- (b) -- (d);
+				\draw (a) -- (c) -- (e);
+				\draw (b) -- (f);
+				\draw (c) -- (g);
+				\draw (d) -- (h);
+				\draw (e) -- (h);
+				\draw (f) -- (h);
+				\draw (g) -- (h);
+			} &
+			\HasseDiagram{
+				\node (a) at (0,0) [label=below:a] {};
+				\node (b) at (-0.5,1) [label=left:b] {};
+				\node (c) at (0.5,1) [label=right:c] {};
+				\node (d) at (-1,2) [label=left:d] {};
+				\node (e) at (1,2) [label=right:e] {};
+				\node (f) at (0,2) [label=above:f] {};
+				\node (g) at (-0.5,3) [label=left:g] {};
+				\node (h) at (0.5,3) [label=right:h] {};
+				\draw (a) -- (b) -- (d);
+				\draw (a) -- (c) -- (e);
+				\draw (b) -- (f);
+				\draw (c) -- (f);
+				\draw (d) -- (g);
+				\draw (e) -- (h);
+				\draw (f) -- (g);
+				\draw (f) -- (h);
+			}
+		\end{tabular}
+		\caption{List of Hasse diagrams.}
+	\end{table}
+\chapter{Solutions}
+\Closesolutionfile{ans} 
+\input{ans1} 
 
 
 \end{document}
