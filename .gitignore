@@ -5,3 +5,5 @@
 *.log
 .DS_Store
 *.toc
+TCS1 - exercises.fdb_latexmk
+TCS1 - exercises.fls
