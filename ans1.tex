@@ -171,11 +171,11 @@ x\in (A\cap B )\setminus B  &\Leftrightarrow & x \in (A\cap B)  \wedge x\notin B
  (In slovene.)
 
 \begin{enumerate}
-\item Napačna. Vzemi $A=\emptyset$, $B=\{\emptyset\}$, $B=\{\{\emptyset\}\}$.
-\item Napačna. Vzemi isti primer kot v (a).
-\item Pravilna. Dokaz s protislovjem. Recimo, da trditev ni pravilna. Naj bo $A\cap B\subseteq \overline{C}$, $A\cup C\subseteq B$  in naj obstaja $x\in A\cap C$. Torej je $x\in A$ in $x\in C$. Ker je po drugi predpostavki $A\cup C\subseteq B$, je $x\in B$. Sledi $x\in A \cap B$. Ker je po prvi predpostavki $A\cap B\subseteq \overline{C}$, je $x\in \overline{C}$. Protislovje, saj $x\in C$.
-\item Napačna. Vzemi $A=C\neq B$.
-\item Napačna. Vzemi tri paroma disjunktne neprazne množice.
+    \item \textbf{Incorrect.} Take $A=\emptyset$, $B=\{\emptyset\}$, $C=\{\{\emptyset\}\}$.
+    \item \textbf{Incorrect.} Take the same example as in (a).
+    \item \textbf{Correct.} Proof by contradiction. Suppose the statement is not correct. Let $A\cap B\subseteq \overline{C}$, $A\cup C\subseteq B$ and let there exist $x\in A\cap C$. Thus, $x\in A$ and $x\in C$. Since $A\cup C\subseteq B$ by the second assumption, $x\in B$. It follows that $x\in A \cap B$. Since $A\cap B\subseteq \overline{C}$ by the first assumption, $x\in \overline{C}$. Contradiction, since $x\in C$.
+    \item \textbf{Incorrect.} Take $A=C\neq B$.
+    \item \textbf{Incorrect.} Take three pairwise disjoint non-empty sets.
 \end{enumerate}
 
 \end{answer}

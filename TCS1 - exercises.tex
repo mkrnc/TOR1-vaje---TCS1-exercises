@@ -724,13 +724,14 @@ x\in (A\cap B )\setminus B  &\Leftrightarrow & x \in (A\cap B)  \wedge x\notin B
 \end{ex}
 \begin{ex}Determine the following sets:
 \begin{enumerate}
-\item[(i)] $\{\emptyset, \{\emptyset\}\}\setminus \emptyset$ \quad [$\{\emptyset, \{\emptyset\}\}$]
+\item[(i)] $\{\emptyset, \{\emptyset\}\}\setminus \emptyset$ 
 \item[(ii)] $\{\emptyset, \{\emptyset\}\}\setminus \{\emptyset\}$
-\item[(iii)] $\{\emptyset, \{\emptyset\}\}\setminus \{\}\emptyset\}\}$
+\item[(iii)] $\{\emptyset, \{\emptyset\}\}\setminus \{\emptyset\}$
 \item[(iv)] $\{1,2,3,\{1\}, \{5\}  \}\setminus \{2,\{3\},5\}$
 \end{enumerate}
 
-\end{ex} \begin{ex}Which of the following propositions are correct for arbitrary sets $A, B$ and $C$:
+\end{ex} 
+\begin{ex}Which of the following propositions are correct for arbitrary sets $A, B$ and $C$:
 \begin{enumerate}
 \item If $A\in B$ and $B\in C$, then $A\in C$.
 \item If $A\subseteq B$ and $B\in C$, then $A\in C$.
@@ -742,11 +743,11 @@ x\in (A\cap B )\setminus B  &\Leftrightarrow & x \in (A\cap B)  \wedge x\notin B
 \begin{sol} (In slovene.)
     
 \begin{enumerate}
-\item Napačna. Vzemi $A=\emptyset$, $B=\{\emptyset\}$, $B=\{\{\emptyset\}\}$.
-\item Napačna. Vzemi isti primer kot v (a).
-\item Pravilna. Dokaz s protislovjem. Recimo, da trditev ni pravilna. Naj bo $A\cap B\subseteq \overline{C}$, $A\cup C\subseteq B$  in naj obstaja $x\in A\cap C$. Torej je $x\in A$ in $x\in C$. Ker je po drugi predpostavki $A\cup C\subseteq B$, je $x\in B$. Sledi $x\in A \cap B$. Ker je po prvi predpostavki $A\cap B\subseteq \overline{C}$, je $x\in \overline{C}$. Protislovje, saj $x\in C$. 
-\item Napačna. Vzemi $A=C\neq B$.
-\item Napačna. Vzemi tri paroma disjunktne neprazne množice.
+    \item \textbf{Incorrect.} Take $A=\emptyset$, $B=\{\emptyset\}$, $C=\{\{\emptyset\}\}$.
+    \item \textbf{Incorrect.} Take the same example as in (a).
+    \item \textbf{Correct.} Proof by contradiction. Suppose the statement is not correct. Let $A\cap B\subseteq \overline{C}$, $A\cup C\subseteq B$ and let there exist $x\in A\cap C$. Thus, $x\in A$ and $x\in C$. Since $A\cup C\subseteq B$ by the second assumption, $x\in B$. It follows that $x\in A \cap B$. Since $A\cap B\subseteq \overline{C}$ by the first assumption, $x\in \overline{C}$. Contradiction, since $x\in C$.
+    \item \textbf{Incorrect.} Take $A=C\neq B$.
+    \item \textbf{Incorrect.} Take three pairwise disjoint non-empty sets.
 \end{enumerate}
 
 \end{sol}
