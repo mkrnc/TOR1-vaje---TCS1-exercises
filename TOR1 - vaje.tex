@@ -517,8 +517,8 @@ Dokazujemo direktno:
 \end{enumerate}
 \begin{sol}
 
-(i) Napi"si pravilnostno tabelo. DNO: vzemi vrstice z enicami (poveži jih med sabo s konjunkcijo) in jih poveži med sabo z disjunkcijo
-$(A\wedge B) \vee (A\wedge \neg B) \vee (\neg A \wedge B)$. KNO: vzemi vrstice z ničlami (vzemi nasprotne vrednosti in jih poveži med sabo z disjunkcijo) in jih poveži med sabo s konjunkcijo $(A \vee B)$. 
+(i) Napiši pravilnostno tabelo. DNO: vzemi vrstice z enicami (poveži jih med sabo s konjunkcijo) in jih poveži med sabo z disjunkcijo
+$(A\wedge B) \vee (A\wedge \neg B) \vee (\neg A \wedge B)$. KNO: vzemi vrstice z ni"clami (vzemi nasprotne vrednosti in jih poveži med sabo z disjunkcijo) in jih poveži med sabo s konjunkcijo $(A \vee B)$. 
 
 (ii) Podobno.
 \end{sol}
@@ -534,7 +534,7 @@ $$(A\Rightarrow (\mathcal{I} \Rightarrow \neg B))\Rightarrow (A\wedge B) \vee \m
 is tautology.
 
 \begin{sol}
-Napi"si pravilnostno tabelo za osnovni izjave $A, B$ skupaj s (sestavljeno) izjavo $\mathcal{I}$. Iz nje razberi, da je pravilnostna tabela za $\mathcal{I}$ enaka
+Napiši pravilnostno tabelo za osnovni izjave $A, B$ skupaj s (sestavljeno) izjavo $\mathcal{I}$. Iz nje razberi, da je pravilnostna tabela za $\mathcal{I}$ enaka
 \begin{table}[ht!]
 \centering
 \begin{tabular}{c|c|c}
@@ -550,8 +550,9 @@ A & B & $\mathcal{I}$\\
 Torej je $\mathcal{I} \Leftrightarrow \neg A \vee \neg B$ v KNO.
 \end{sol}
 
-\end{ex} \begin{ex} For the following circuits find the  corresponding compound propositions
-
+\end{ex} 
+\begin{ex} 
+Za naslednja preklopna vezja najdi ustrezne logične izjave. 
 \noindent (i)
 \begin{center}
 \includegraphics{img/vez1}
@@ -595,7 +596,7 @@ Pokaži pravilnost spodnjih implikacij:
 \item[(v)] $A \wedge (A \Leftrightarrow B) \Rightarrow B$
 \end{enumerate}
 
-% \emph{Re"sitev.} (i) Recimo $A \wedge (A \Rightarrow B)$ pravilna, $B$ pa nepravilna. Potem je $A$ pravilna in $A\Rightarrow B$ pravilna. Sledi $B$ pravilna. Protislovje. 
+% \emph{Rešitev.} (i) Recimo $A \wedge (A \Rightarrow B)$ pravilna, $B$ pa nepravilna. Potem je $A$ pravilna in $A\Rightarrow B$ pravilna. Sledi $B$ pravilna. Protislovje. 
 
 
 \end{ex} \begin{ex} Preveri, če so spodnje izjave pravilne, ter utemelji z dokazom oz. s protiprimerom.
@@ -797,7 +798,7 @@ Dokaži, da velja $A\subseteq C  \wedge B\subseteq C \Rightarrow A\cup B\subsete
 \begin{ex}
  (Predzadnja lastnost pri preseku) Prove that $A\subseteq  B \Leftrightarrow A\cap B = A$.
 
-\emph{ Re"sitev.} V dveh delih.
+\emph{ Rešitev.} V dveh delih.
 
 \end{ex}
 \begin{ex}
@@ -818,7 +819,7 @@ Dokaži, da velja $A\subseteq C  \wedge B\subseteq C \Rightarrow A\cup B\subsete
 \end{ex}
 \begin{ex}
  (Predzadnja lastnost pri razliki) Prove that $(A\cap B )\setminus B = \emptyset$.
-\emph{ Re"sitev.} 
+\emph{ Rešitev.} 
 \begin{eqnarray*}
 x\in (A\cap B )\setminus B  &\Leftrightarrow & x \in (A\cap B)  \wedge x\notin B\\
 &\Leftrightarrow & (x\in A\wedge x\in  B ) \wedge x\notin B\\
