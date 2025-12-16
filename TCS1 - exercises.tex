@@ -35,6 +35,9 @@
 \def\kz{{\hfill{\S}}}% konec zgleda
 \newenvironment{example}{\paragraph{Example:}}{\hfill \S}
 
+% relation macro for typesetting relation names, e.g. \rel{R} -> \mathcal{R}
+\newcommand{\rel}[1]{\mathcal{#1}}
+
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 \newtheorem*{lemma}{Lemma}
@@ -1291,6 +1294,88 @@ and define
 Let \(P(A) = \{\emptyset, \{1\}, \{2\}, \{1, 2\}\}\) be the power set of \(A = \{1, 2\}\). Define a relation \(R \subseteq P(A) \times P(A)\) such that \((X, Y) \in R\) if and only if \(X \subseteq Y\).
     Prove that \(R\) is a partial order. 
 \end{ex}
+
+\begin{ex}
+A \textbf{preorder} is a relation that is \textbf{reflexive} and \textbf{transitive}. A \textbf{partial order} is a relation that is \textbf{reflexive}, \textbf{anti-symmetric}, and \textbf{transitive}.
+
+Based on the definitions:
+\begin{enumerate}
+    \item Show that every partial order is a preorder.
+    \item Give an example of a preorder that is NOT a partial order.
+\end{enumerate}
+\begin{sol}
+\begin{enumerate}
+    \item Let $\rel{R}$ be a partial order on a set $A$. By definition, $\rel{R}$ is reflexive, anti-symmetric, and transitive. The definition of a preorder requires only that a relation be reflexive and transitive. Since $\rel{R}$ satisfies these two properties, $\rel{R}$ is a preorder.
+    \item Let $A = \{a, b\}$ and let $\rel{R} = \{(a, a), (b, b), (a, b), (b, a)\}$.
+    \begin{itemize}
+        \item \textbf{Reflexivity:} $(a, a) \in \rel{R}$ and $(b, b) \in \rel{R}$, so it is reflexive.
+        \item \textbf{Transitivity:} The only pairs that could fail transitivity are $(a, b)$ and $(b, a)$, which imply $(a, a) \in \rel{R}$ (satisfied); and $(b, a)$ and $(a, b)$, which imply $(b, b) \in \rel{R}$ (satisfied). So, it is transitive.
+        \item \textbf{Anti-symmetry:} $(a, b) \in \rel{R}$ and $(b, a) \in \rel{R}$, but $a \ne b$. Thus, $\rel{R}$ is NOT anti-symmetric.
+    \end{itemize}
+    Since $\rel{R}$ is reflexive and transitive, it is a preorder. Since it is not anti-symmetric, it is not a partial order.
+\end{enumerate}
+\end{sol}
+\end{ex}
+
+\begin{ex}
+The diagram suggests that a \textbf{strict partial order} is characterized only by the \textbf{transitivity} property and an additional property.
+
+\begin{enumerate}
+    \item What is the standard additional property that defines a strict partial order? (Hint: It is a property that ensures $(a, a)$ is never in the relation.)
+    \item Show that a relation $\rel{R}$ is a strict partial order if and only if it is \textbf{transitive} and \textbf{irreflexive}.
+\end{enumerate}
+\begin{sol}
+\begin{enumerate}
+    \item The standard additional property is \textbf{irreflexivity} (or anti-reflexivity).
+    \item Proof:
+    \begin{itemize}
+        \item[($\Rightarrow$)] Let $\rel{R}$ be a strict partial order. By definition, a strict partial order is an irreflexive and transitive relation. (The property of anti-symmetry is redundant given irreflexivity and transitivity: if $(a, b) \in \rel{R}$ and $(b, a) \in \rel{R}$, then by transitivity, $(a, a) \in \rel{R}$. But since $\rel{R}$ is irreflexive, this is impossible. Thus, we cannot have both $(a, b)$ and $(b, a)$, which vacuously satisfies anti-symmetry.)
+        \item[($\Leftarrow$)] Let $\rel{R}$ be a transitive and irreflexive relation. This is the standard definition of a strict partial order, so $\rel{R}$ is a strict partial order.
+    \end{itemize}
+    (Alternatively, if we define a strict partial order as an irreflexive, anti-symmetric, and transitive relation, we only need to show anti-symmetry follows from the other two, as noted above).
+\end{enumerate}
+\end{sol}
+\end{ex}
+
+\begin{ex}
+A \textbf{linear order} (or \textbf{total order}) is a partial order that is also \textbf{total}. A \textbf{strict linear order} (or \textbf{strict total order}) is a strict partial order that is also \textbf{total} on all distinct pairs (i.e., for $a \ne b$, we must have $(a, b) \in \rel{R}$ or $(b, a) \in \rel{R}$).
+
+Show that for any set $A$, there is a one-to-one correspondence between the set of linear orders on $A$ and the set of strict linear orders on $A$.
+\begin{sol}
+Let $\rel{R}$ be a relation on $A$.
+\begin{itemize}
+    \item \textbf{From Linear Order $\rel{R}$ to Strict Linear Order $\rel{R}^-$:}
+    Define $\rel{R}^- = \rel{R} \setminus \{(a, a) \mid a \in A\}$.
+    If $\rel{R}$ is a linear order, it is reflexive, anti-symmetric, transitive, and total. $\rel{R}^-$ is clearly irreflexive by construction. It is transitive because $\rel{R}$ is transitive, and removing the reflexive pairs does not create any new transitivity failures. $\rel{R}^-$ is total for distinct elements: since $\rel{R}$ is total, for $a \ne b$, we have $(a, b) \in \rel{R}$ or $(b, a) \in \rel{R}$. Since $a \ne b$, these are not reflexive pairs, so $(a, b) \in \rel{R}^-$ or $(b, a) \in \rel{R}^-$. Thus, $\rel{R}^-$ is a strict linear order.
+
+    \item \textbf{From Strict Linear Order $\rel{S}$ to Linear Order $\rel{S}^+$:}
+    Define $\rel{S}^+ = \rel{S} \cup \{(a, a) \mid a \in A\}$.
+    If $\rel{S}$ is a strict linear order, it is irreflexive, transitive, and total for distinct elements. $\rel{S}^+$ is clearly reflexive by construction. It is transitive: any transitivity failure must involve at least one new reflexive pair, say $(a, a) \in \rel{S}^+$ and $(a, b) \in \rel{S}^+$. This implies $(a, b) \in \rel{S}$, and thus $(a, b) \in \rel{S}^+$. Similarly for $(b, a) \in \rel{S}^+$ and $(a, a) \in \rel{S}^+$. It is anti-symmetric: if $(a, b) \in \rel{S}^+$ and $(b, a) \in \rel{S}^+$, by irreflexivity of $\rel{S}$, this is only possible if $a=b$. It is total: for any $a, b$, if $a=b$, $(a, a) \in \rel{S}^+$. If $a \ne b$, then $(a, b) \in \rel{S}$ or $(b, a) \in \rel{S}$, which means $(a, b) \in \rel{S}^+$ or $(b, a) \in \rel{S}^+$. Thus, $\rel{S}^+$ is a linear order.
+\end{itemize}
+Since $(\rel{R}^-)^+ = \rel{R}$ and $(\rel{S}^+)^- = \rel{S}$, the maps are inverses, establishing a one-to-one correspondence.
+\end{sol}
+\end{ex}
+
+% \begin{ex}
+% A relation $\rel{R}$ is a \textbf{preorder} if it is \textbf{transitive} and satisfies \textbf{local reflexivity}: for every $a \in A$, if there exists $b \in A$ such that $(a, b) \in \rel{R}$ or $(b, a) \in \rel{R}$, then $(a, a) \in \rel{R}$.
+
+% \begin{enumerate}
+%     \item Based on the diagram, which of the other four types of orders shown are special cases of a virtual order?
+%     \item Show that every \textbf{preorder} is a virtual order.
+% \end{enumerate}
+% \begin{sol}
+% \begin{enumerate}
+%     \item The diagram shows a preorder is included in virtual order, and a partial order is included in a preorder (and thus virtual order). A linear order is included in a partial order (and thus virtual order). Therefore, \textbf{preorder, partial order, and linear order} are special cases of a virtual order. (Note: The diagram shows \emph{strict} orders are not related to virtual order, they only share transitivity).
+%     \item Let $\rel{R}$ be a preorder on a set $A$. By definition, $\rel{R}$ is reflexive and transitive.
+%     \begin{itemize}
+%         \item $\rel{R}$ is \textbf{transitive} by definition.
+%         \item $\rel{R}$ satisfies \textbf{local reflexivity}: Let $a \in A$. The condition for local reflexivity is that if there exists $b \in A$ such that $(a, b) \in \rel{R}$ or $(b, a) \in \rel{R}$, then $(a, a) \in \rel{R}$. Since $\rel{R}$ is reflexive, $(a, a) \in \rel{R}$ must hold for *all* $a \in A$, regardless of the existence of such a $b$. Therefore, the condition for local reflexivity is vacuously satisfied (the conclusion is true, so the implication is true).
+%     \end{itemize}
+%     Since $\rel{R}$ is transitive and satisfies local reflexivity, every preorder is a virtual order.
+% \end{enumerate}
+% \end{sol}
+% \end{ex}
+
 
 \begin{ex}
     Choose a diagram from Section \ref{sec:hasse}, and arbitrarily label its universe $S$ with labels $S=\{1,2,\dots\}$.
