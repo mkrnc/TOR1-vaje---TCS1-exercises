@@ -832,11 +832,11 @@ x\in (A\cap B )\setminus B  &\Leftrightarrow & x \in (A\cap B)  \wedge x\notin B
 
 \end{ex}
 \begin{ex}
- Determine the following sets:
+	Determine the following sets:
 \begin{enumerate}
 \item[(i)] $\{\emptyset, \{\emptyset\}\}\setminus \emptyset$ \quad [$\{\emptyset, \{\emptyset\}\}$]
 \item[(ii)] $\{\emptyset, \{\emptyset\}\}\setminus \{\emptyset\}$
-\item[(iii)] $\{\emptyset, \{\emptyset\}\}\setminus \{\}\emptyset\}\}$
+\item[(iii)] $\{\emptyset, \{\emptyset\}\}\setminus \{\emptyset\}$
 \item[(iv)] $\{1,2,3,\{1\}, \{5\}  \}\setminus \{2,\{3\},5\}$
 \end{enumerate}
 
@@ -1682,9 +1682,9 @@ pod njim.
         \item Ali je $R$ dobra urejenost?
     \end{enumerate}
 \end{ex}
-    \begin{ex}
-        Ali je relacija iz Vaje \ref{ex:hasse5} dobro urejena? 
-    \end{ex}
+	\begin{ex}
+		Ali je relacija iz Vaje \ref{ex:hasse5} dobro urejena?
+	\end{ex}
     \begin{ex} Naj bo $S= \{0,\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \ldots, \frac{n}{n+1}, \ldots, 1\}$, in naj bo $R=\{(a,b)\mid a<b\}$ relacija na $S$. Ali $R$ dobro ureja $S$?
 	
 	\end{ex} \begin{ex} Naj bo $S = \mathbb{N}\setminus \{0\}$ in naj bo  $R$ relacija na $S$, definirana kot 
@@ -2572,12 +2572,12 @@ $\le k$ ničel.
 				\node (e) at (-1,3) [label=left:e] {};
 				\node (f) at (1,3) [label=right:f] {};
 				\node (g) at (0,4) [label=above:g] {};
-				\draw (a) -- (b) -- (d);
+				\draw (a) -- (b);% -- (d);
 				\draw (a) -- (c) -- (d);
 				\draw (b) -- (e);
 				\draw (c) -- (f);
 				\draw (d) -- (e);
-				\draw (d) -- (f);
+				%\draw (d) -- (f);
 				\draw (e) -- (g);
 				\draw (f) -- (g);
 			} \\

@@ -2042,18 +2042,20 @@ where $m=2^p(2q+1)$ and $n=2^u(2v+1)$ with $p$ and $u$ maximal possible exponent
 				\draw (e) -- (g);
 				\draw (e) -- (h);
 			} &
-			\HasseDiagram{
+            \HasseDiagram{
 				\node (a) at (0,0) [label=below:a] {};
 				\node (b) at (-1,1) [label=left:b] {};
 				\node (c) at (1,1) [label=right:c] {};
 				\node (d) at (0,2) [label=above:d] {};
 				\node (e) at (-1,3) [label=left:e] {};
 				\node (f) at (1,3) [label=right:f] {};
-				\node (g) at (0,4) [label=left:g] {};
-				\draw (a) -- (b) -- (d);
+				\node (g) at (0,4) [label=above:g] {};
+				\draw (a) -- (b);% -- (d);
 				\draw (a) -- (c) -- (d);
+				\draw (b) -- (e);
+				\draw (c) -- (f);
 				\draw (d) -- (e);
-				\draw (d) -- (f);
+				%\draw (d) -- (f);
 				\draw (e) -- (g);
 				\draw (f) -- (g);
 			} &
