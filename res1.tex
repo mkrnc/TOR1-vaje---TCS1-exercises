@@ -356,6 +356,42 @@ $S^{-1}\cup R = \{(c, a), (f, a), (c, d), (d, f),
 
 Relacija ni simetrična, saj je $(f,a)\in S^{-1}\cup R$ in $(a,f)\not\in S^{-1}\cup R$.
 \end{answer}
+\begin{answer}{3.37}
+\begin{enumerate}
+    \item Naj bo $\rel{R}$ delna urejenost na množici $A$. Po definiciji je $\rel{R}$ refleksivna, antisimetrična in tranzitivna. Definicija predurejenosti zahteva le, da je relacija refleksivna in tranzitivna. Ker $\rel{R}$ zadošča tema dvema lastnostma, je $\rel{R}$ predurejenost.
+    \item Naj bo $A = \{a, b\}$ in naj bo $\rel{R} = \{(a, a), (b, b), (a, b), (b, a)\}$.
+    \begin{itemize}
+        \item \textbf{Refleksivnost:} $(a, a) \in \rel{R}$ in $(b, b) \in \rel{R}$, torej je refleksivna.
+        \item \textbf{Tranzitivnost:} Edina para, ki bi lahko kršila tranzitivnost, sta $(a, b)$ in $(b, a)$, kar implicira $(a, a) \in \rel{R}$ (izpolnjeno); ter $(b, a)$ in $(a, b)$, kar implicira $(b, b) \in \rel{R}$ (izpolnjeno). Torej je tranzitivna.
+        \item \textbf{Antisimetričnost:} $(a, b) \in \rel{R}$ in $(b, a) \in \rel{R}$, vendar $a \ne b$. Torej $\rel{R}$ NI antisimetrična.
+    \end{itemize}
+    Ker je $\rel{R}$ refleksivna in tranzitivna, je predurejenost. Ker ni antisimetrična, ni delna urejenost.
+\end{enumerate}
+\end{answer}
+\begin{answer}{3.38}
+\begin{enumerate}
+    \item Standardna dodatna lastnost je \textbf{irefleksivnost} (ali protirefleksivnost).
+    \item Dokaz:
+    \begin{itemize}
+        \item[($\Rightarrow$)] Naj bo $\rel{R}$ stroga delna urejenost. Po definiciji je stroga delna urejenost irefleksivna in tranzitivna relacija. (Lastnost antisimetričnosti je ob irefleksivnosti in tranzitivnosti odveč: če $(a, b) \in \rel{R}$ in $(b, a) \in \rel{R}$, potem zaradi tranzitivnosti sledi $(a, a) \in \rel{R}$. Toda ker je $\rel{R}$ irefleksivna, je to nemogoče. Torej ne moremo imeti hkrati $(a, b)$ in $(b, a)$, kar pomeni, da je antisimetričnost izpolnjena "na prazno".)
+        \item[($\Leftarrow$)] Naj bo $\rel{R}$ tranzitivna in irefleksivna relacija. To je standardna definicija stroge delne urejenosti, torej je $\rel{R}$ stroga delna urejenost.
+    \end{itemize}
+    (Alternativno: če strogo delno urejenost definiramo kot irefleksivno, antisimetrično in tranzitivno relacijo, moramo le pokazati, da antisimetričnost sledi iz drugih dveh, kot je navedeno zgoraj).
+\end{enumerate}
+\end{answer}
+\begin{answer}{3.39}
+Naj bo $\rel{R}$ relacija na $A$.
+\begin{itemize}
+    \item \textbf{Iz linearne urejenosti $\rel{R}$ v strogo linearno urejenost $\rel{R}^-$:}
+    Definirajmo $\rel{R}^- = \rel{R} \setminus \{(a, a) \mid a \in A\}$.
+    Če je $\rel{R}$ linearna urejenost, je refleksivna, antisimetrična, tranzitivna in polna. $\rel{R}^-$ je po konstrukciji očitno irefleksivna. Je tranzitivna, ker je $\rel{R}$ tranzitivna, odstranitev refleksivnih parov pa ne ustvari novih kršitev tranzitivnosti. $\rel{R}^-$ je polna za različne elemente: ker je $\rel{R}$ polna, za $a \ne b$ velja $(a, b) \in \rel{R}$ ali $(b, a) \in \rel{R}$. Ker $a \ne b$, to niso refleksivni pari, zato $(a, b) \in \rel{R}^-$ ali $(b, a) \in \rel{R}^-$. Torej je $\rel{R}^-$ stroga linearna urejenost.
+
+    \item \textbf{Iz stroge linearne urejenosti $\rel{S}$ v linearno urejenost $\rel{S}^+$:}
+    Definirajmo $\rel{S}^+ = \rel{S} \cup \{(a, a) \mid a \in A\}$.
+    Če je $\rel{S}$ stroga linearna urejenost, je irefleksivna, tranzitivna in polna za različne elemente. $\rel{S}^+$ je po konstrukciji očitno refleksivna. Je tranzitivna: vsaka kršitev tranzitivnosti bi morala vključevati vsaj en nov refleksivni par, recimo $(a, a) \in \rel{S}^+$ in $(a, b) \in \rel{S}^+$. To implicira $(a, b) \in \rel{S}$ in s tem $(a, b) \in \rel{S}^+$. Podobno za $(b, a) \in \rel{S}^+$ in $(a, a) \in \rel{S}^+$. Je antisimetrična: če $(a, b) \in \rel{S}^+$ in $(b, a) \in \rel{S}^+$, je to zaradi irefleksivnosti $\rel{S}$ možno le, če $a=b$. Je polna: za poljubna $a, b$, če $a=b$, velja $(a, a) \in \rel{S}^+$. Če $a \ne b$, potem $(a, b) \in \rel{S}$ ali $(b, a) \in \rel{S}$, kar pomeni $(a, b) \in \rel{S}^+$ ali $(b, a) \in \rel{S}^+$. Torej je $\rel{S}^+$ linearna urejenost.
+\end{itemize}
+Ker velja $(\rel{R}^-)^+ = \rel{R}$ in $(\rel{S}^+)^- = \rel{S}$, sta preslikavi inverzni, kar vzpostavi bijektivno korespondenco.
+\end{answer}
 \begin{answer}{3.5}
 
 (a) $R = \{(5,2),(5,1),(4,2),(4,1),(5,3),(4,1),(2,1),(3,1)\}$.

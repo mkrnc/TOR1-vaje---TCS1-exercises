@@ -66,6 +66,8 @@
 \usepackage{graphics}
 \usepackage{color}
 \usepackage{comment}
+\usepackage{hyperref}
+\usepackage[capitalise, nameinlink]{cleveref}
 %\usepackage{times}
 %\usepackage{txfonts}
 \def\P {{\cal P}}
@@ -76,6 +78,7 @@
 \def\cee {{~\Leftrightarrow~}}
 \def\zgled{\noindent\textbf{\color{blue} Zgled: }}
 \def\kz{{\hfill{\color{blue}$\blacktriangle$}}}% konec zgleda
+\def\rel#1{{\mathit{#1}}}
 %\parskip=7pt
 %
 %\textwidth=17cm\textheight=22cm\parindent=15pt\parskip=5pt
@@ -1501,6 +1504,138 @@ množica, $R$-omejena množica, $R$-infimum (največja spodnja meja),
 $R$-supremum (najmanjša zgornja meja).
 \end{itemize}
 \hrule
+
+\begin{ex}
+Naj bo \(P(A) = \{\emptyset, \{1\}, \{2\}, \{1, 2\}\}\) potenčna množica množice \(A = \{1, 2\}\). Definirajmo relacijo \(R \subseteq P(A) \times P(A)\) tako, da velja \((X, Y) \in R\) če in samo če \(X \subseteq Y\).
+    Dokaži, da je \(R\) delna urejenost. 
+\end{ex}
+
+\begin{ex}
+\textbf{Navidezna urejenost} je relacija, ki je \textbf{refleksivna} in \textbf{tranzitivna}. \textbf{Delna urejenost} je relacija, ki je \textbf{refleksivna}, \textbf{antisimetrična} in \textbf{tranzitivna}.
+
+Na podlagi definicij:
+\begin{enumerate}
+    \item Pokaži, da je vsaka delna urejenost tudi predurejenost.
+    \item Podaj primer navidezne urejenosti, ki NI delna urejenost.
+\end{enumerate}
+\begin{sol}
+\begin{enumerate}
+    \item Naj bo $\rel{R}$ delna urejenost na množici $A$. Po definiciji je $\rel{R}$ refleksivna, antisimetrična in tranzitivna. Definicija predurejenosti zahteva le, da je relacija refleksivna in tranzitivna. Ker $\rel{R}$ zadošča tema dvema lastnostma, je $\rel{R}$ predurejenost.
+    \item Naj bo $A = \{a, b\}$ in naj bo $\rel{R} = \{(a, a), (b, b), (a, b), (b, a)\}$.
+    \begin{itemize}
+        \item \textbf{Refleksivnost:} $(a, a) \in \rel{R}$ in $(b, b) \in \rel{R}$, torej je refleksivna.
+        \item \textbf{Tranzitivnost:} Edina para, ki bi lahko kršila tranzitivnost, sta $(a, b)$ in $(b, a)$, kar implicira $(a, a) \in \rel{R}$ (izpolnjeno); ter $(b, a)$ in $(a, b)$, kar implicira $(b, b) \in \rel{R}$ (izpolnjeno). Torej je tranzitivna.
+        \item \textbf{Antisimetričnost:} $(a, b) \in \rel{R}$ in $(b, a) \in \rel{R}$, vendar $a \ne b$. Torej $\rel{R}$ NI antisimetrična.
+    \end{itemize}
+    Ker je $\rel{R}$ refleksivna in tranzitivna, je predurejenost. Ker ni antisimetrična, ni delna urejenost.
+\end{enumerate}
+\end{sol}
+\end{ex}
+
+\begin{ex}
+Diagram nakazuje, da je \textbf{stroga delna urejenost} določena le z lastnostjo \textbf{tranzitivnosti} in dodatno lastnostjo.
+
+\begin{enumerate}
+    \item Katera je standardna dodatna lastnost, ki definira strogo delno urejenost? (Namig: To je lastnost, ki zagotavlja, da $(a, a)$ nikoli ni v relaciji.)
+    \item Pokaži, da je relacija $\rel{R}$ stroga delna urejenost če in samo če je \textbf{tranzitivna} in \textbf{irefleksivna}.
+\end{enumerate}
+\begin{sol}
+\begin{enumerate}
+    \item Standardna dodatna lastnost je \textbf{irefleksivnost} (ali protirefleksivnost).
+    \item Dokaz:
+    \begin{itemize}
+        \item[($\Rightarrow$)] Naj bo $\rel{R}$ stroga delna urejenost. Po definiciji je stroga delna urejenost irefleksivna in tranzitivna relacija. (Lastnost antisimetričnosti je ob irefleksivnosti in tranzitivnosti odveč: če $(a, b) \in \rel{R}$ in $(b, a) \in \rel{R}$, potem zaradi tranzitivnosti sledi $(a, a) \in \rel{R}$. Toda ker je $\rel{R}$ irefleksivna, je to nemogoče. Torej ne moremo imeti hkrati $(a, b)$ in $(b, a)$, kar pomeni, da je antisimetričnost izpolnjena "na prazno".)
+        \item[($\Leftarrow$)] Naj bo $\rel{R}$ tranzitivna in irefleksivna relacija. To je standardna definicija stroge delne urejenosti, torej je $\rel{R}$ stroga delna urejenost.
+    \end{itemize}
+    (Alternativno: če strogo delno urejenost definiramo kot irefleksivno, antisimetrično in tranzitivno relacijo, moramo le pokazati, da antisimetričnost sledi iz drugih dveh, kot je navedeno zgoraj).
+\end{enumerate}
+\end{sol}
+\end{ex}
+
+\begin{ex}
+\textbf{Linearna urejenost} (ali \textbf{polna urejenost}) je delna urejenost, ki je tudi \textbf{polna} (totalna). \textbf{Stroga linearna urejenost} (ali \textbf{stroga polna urejenost}) je stroga delna urejenost, ki je tudi \textbf{polna} na vseh različnih parih (t.j. za $a \ne b$ mora veljati $(a, b) \in \rel{R}$ ali $(b, a) \in \rel{R}$).
+
+Pokaži, da za katero koli množico $A$ obstaja bijektivna korespondenca med množico linearnih ureditev na $A$ in množico strogih linearnih ureditev na $A$.
+\begin{sol}
+Naj bo $\rel{R}$ relacija na $A$.
+\begin{itemize}
+    \item \textbf{Iz linearne urejenosti $\rel{R}$ v strogo linearno urejenost $\rel{R}^-$:}
+    Definirajmo $\rel{R}^- = \rel{R} \setminus \{(a, a) \mid a \in A\}$.
+    Če je $\rel{R}$ linearna urejenost, je refleksivna, antisimetrična, tranzitivna in polna. $\rel{R}^-$ je po konstrukciji očitno irefleksivna. Je tranzitivna, ker je $\rel{R}$ tranzitivna, odstranitev refleksivnih parov pa ne ustvari novih kršitev tranzitivnosti. $\rel{R}^-$ je polna za različne elemente: ker je $\rel{R}$ polna, za $a \ne b$ velja $(a, b) \in \rel{R}$ ali $(b, a) \in \rel{R}$. Ker $a \ne b$, to niso refleksivni pari, zato $(a, b) \in \rel{R}^-$ ali $(b, a) \in \rel{R}^-$. Torej je $\rel{R}^-$ stroga linearna urejenost.
+
+    \item \textbf{Iz stroge linearne urejenosti $\rel{S}$ v linearno urejenost $\rel{S}^+$:}
+    Definirajmo $\rel{S}^+ = \rel{S} \cup \{(a, a) \mid a \in A\}$.
+    Če je $\rel{S}$ stroga linearna urejenost, je irefleksivna, tranzitivna in polna za različne elemente. $\rel{S}^+$ je po konstrukciji očitno refleksivna. Je tranzitivna: vsaka kršitev tranzitivnosti bi morala vključevati vsaj en nov refleksivni par, recimo $(a, a) \in \rel{S}^+$ in $(a, b) \in \rel{S}^+$. To implicira $(a, b) \in \rel{S}$ in s tem $(a, b) \in \rel{S}^+$. Podobno za $(b, a) \in \rel{S}^+$ in $(a, a) \in \rel{S}^+$. Je antisimetrična: če $(a, b) \in \rel{S}^+$ in $(b, a) \in \rel{S}^+$, je to zaradi irefleksivnosti $\rel{S}$ možno le, če $a=b$. Je polna: za poljubna $a, b$, če $a=b$, velja $(a, a) \in \rel{S}^+$. Če $a \ne b$, potem $(a, b) \in \rel{S}$ ali $(b, a) \in \rel{S}$, kar pomeni $(a, b) \in \rel{S}^+$ ali $(b, a) \in \rel{S}^+$. Torej je $\rel{S}^+$ linearna urejenost.
+\end{itemize}
+Ker velja $(\rel{R}^-)^+ = \rel{R}$ in $(\rel{S}^+)^- = \rel{S}$, sta preslikavi inverzni, kar vzpostavi bijektivno korespondenco.
+\end{sol}
+\end{ex}
+
+\begin{ex}
+    Izberi diagram iz \cref{sec:hasse} in označi  $S=\{1,2,\dots\}$.
+    Naj bodo $A=\{1,3\}$, $B=\{1,2,3\}$, $C=S$ in $D=\emptyset$. 
+    \begin{enumerate}
+        \item 
+    Za množice $A,B,C$ in $D$ izpolni naslednjo tabelo:
+
+    \begin{tabular}{c|c|c|c|c}
+         &$R$-spodnje meje &$R$-zgornje meje & $R$-infimum
+         & $R$-supremum \\\hline
+         $A$ &&&&\\
+         $B$ &&&&\\
+         $C$ &&&&\\
+         $D$ &&&&
+    \end{tabular}
+\item Ugotovi, ali je delno urejena množica mreža. Če ni, določi ustrezno množico, ki ne premore infimuma ali supremuma.
+    \end{enumerate}
+
+\end{ex}
+
+
+\begin{ex}
+    Izberi diagram iz \cref{sec:hasse-l} z $S=\{a,b,\dots\}$ in nastavi $A=\{a,c\}$, $B=\{b,d,e\}$, $C=S$ in $D=\emptyset$. 
+    \begin{enumerate}
+        \item 
+    Za množice $A,B,C$ in $D$ izpolni naslednjo tabelo:
+
+    \begin{tabular}{c|c|c|c|c}
+         &$R$-spodnje meje &$R$-zgornje meje & $R$-infimum
+         & $R$-supremum \\\hline
+         $A$ &&&&\\
+         $B$ &&&&\\
+         $C$ &&&&\\
+         $D$ &&&&
+    \end{tabular}
+\item Ugotovi, ali je delno urejena množica mreža. Če ni, določi ustrezno množico, ki ne premore infimuma ali supremuma.
+    \end{enumerate}
+
+\end{ex}
+
+
+\begin{ex}
+    Naj bo $S=\{ (x,y) \,:\, x, y\in\mathbb{R} \textrm{ in } y\leq 0 \}$ in naj bo $R$ relacija na $S$, definirana z 
+$$(x_1,y_1)\, R\, (x_2,y_2) \Leftrightarrow  x_1 = x_2 \textrm{ in } y_1\leq y_2.$$
+\begin{enumerate}
+\item[(i)] Pokaži, da je $R$ delna urejenost na $S$.
+\item[(ii)] Poišči vse $R$-minimalne elemente.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+     Naj bo $S= \{0,\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \ldots, \frac{n}{n+1}, \ldots, 1\}$ in naj bo $R=\{(a,b)\mid a<b\}$ relacija na $S$. Ali $R$ dobro uredi $S$?
+\end{ex}
+\begin{ex}
+    Naj bo $S = \mathbb{N}\setminus \{0\}$ in naj bo $R$ relacija na $S$, definirana z
+$$m\, R\, n \Leftrightarrow  \textrm{ $p< u$ ali ($p=u$ in $q < v$),} $$
+kjer sta $m=2^p(2q+1)$ in $n=2^u(2v+1)$, pri čemer sta $p$ in $u$ največja možna eksponenta.
+\begin{enumerate}
+\item[(i)] Pokaži, da $R$ dobro uredi $S$.
+\item[(ii)] Uredi množico $\{1,2\ldots, 10\}$ glede na $R$.
+\item[(iii)] Naj bo $C= \{50, 51, 52, \ldots\}$. Poišči $R$-minimalni element množice $C$.
+\item[(iv)] Poišči neposrednega naslednika števila $96$.
+\end{enumerate}
+\end{ex}
+
 \begin{ex}\label{ex:hasse5}
 Množica $S=\{1,\ldots,5\}$ je strogo delno urejena z naslednjo relacijo $R$:
 \begin{center}
