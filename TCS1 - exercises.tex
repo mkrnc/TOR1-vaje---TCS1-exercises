@@ -18,23 +18,23 @@
 \usepackage{comment}
 \usepackage{graphicx}
 \usepackage{amsfonts,amsmath,amssymb,amsthm}
-\usepackage{graphics}
-\usepackage{color}
-\usepackage{fullpage}
+
+
+
 \usepackage[capitalise, nameinlink]{cleveref}
 \usepackage{hyperref}
 \usepackage{makecell}
 \usepackage{answers}
 %\usepackage{times}
 %\usepackage{txfonts}
-\def\P {{\cal P}}
-\def\ali {{~\vee~}}
-\def\inn {{~\wedge~}}
-\def\sledi {{~\Rightarrow~}}
-\def\brez {{\,\setminus\,}}
-\def\cee {{~\Leftrightarrow~}}
-\def\zgled{\paragraph{Example:}}
-\def\kz{{\hfill{\S}}}% konec zgleda
+
+\newcommand{\ali}{\ensuremath{\,\vee\,}}
+\newcommand{\inn}{\ensuremath{\,\wedge\,}}
+\newcommand{\sledi}{\ensuremath{\,\Rightarrow\,}}
+\newcommand{\brez}{\ensuremath{\,\setminus\,}}
+\newcommand{\cee}{\ensuremath{\,\Leftrightarrow\,}}
+\newcommand{\zgled}{\paragraph{Example:}}
+\newcommand{\kz}{\hfill\S}% konec zgleda
 \newenvironment{example}{\paragraph{Example:}}{\hfill \S}
 
 % relation macro for typesetting relation names, e.g. \rel{R} -> \mathcal{R}
@@ -487,19 +487,7 @@ is a tautology.
 \end{itemize}
 \end{ex}
 
-\begin{ex} Show that the following propositions are logical implications (a tautology where the main connective is implication).
-\begin{enumerate}
-\item[(i)] $A \wedge (A \Rightarrow B) \Rightarrow B$
-\item[(ii)] $\neg B \wedge (A \Rightarrow B) \Rightarrow \neg A$
-\item[(iii)] $\neg A \wedge (A \vee B) \Rightarrow B$
-\item[(iv)] $(A \Rightarrow B) \wedge (B \Rightarrow C) \Rightarrow (A \Rightarrow C)$
-\item[(v)] $A \wedge (A \Leftrightarrow B) \Rightarrow B$
-\end{enumerate}
-
-% \emph{Rešitev.} (i) Recimo $A \wedge (A \Rightarrow B)$ pravilna, $B$ pa nepravilna. Potem je $A$ pravilna in $A\Rightarrow B$ pravilna. Sledi $B$ pravilna. Protislovje. 
-
-
-\end{ex} \begin{ex} Are the following propositions logical implications?
+ \begin{ex} Are the following propositions logical implications?
 \begin{enumerate}
 \item[(i)] $(A \Rightarrow B ) \wedge (A \Rightarrow C) \wedge A \Rightarrow B \wedge C$
 \item[(ii)] $\neg (A \vee B) \wedge (A\vee C) \wedge (D\Rightarrow C) \Rightarrow D$
@@ -1255,6 +1243,157 @@ of “size” but only the definition via bijections. Proceed by induction.
 
 
 \section{Graph theory}
+
+\begin{ex}
+\textbf{Degrees and Handshaking} \\
+Let $G$ be a graph with vertex set $V(G) = \{1, 2, 3, 4, 5\}$ and edge set 
+$$E(G) = \{\{1,2\}, \{1,3\}, \{1,4\}, \{2,3\}, \{3,4\}, \{4,5\}\}.$$
+\begin{enumerate}
+    \item Calculate the degree $deg(v)$ for every vertex $v \in V(G)$.
+    \item Determine $\Delta(G)$ (maximum degree) and $\delta(G)$ (minimum degree).
+    \item Verify the basic degree sum property (Handshaking Lemma).
+\end{enumerate}
+
+\begin{sol}
+    \begin{enumerate}
+        \item Using the definition of degree as the number of neighbors:
+        \begin{itemize}
+            \item $deg(1) = 3$ (connected to 2, 3, 4)
+            \item $deg(2) = 2$ (connected to 1, 3)
+            \item $deg(3) = 3$ (connected to 1, 2, 4)
+            \item $deg(4) = 3$ (connected to 1, 3, 5)
+            \item $deg(5) = 1$ (connected to 4)
+        \end{itemize}
+        \item 
+        \begin{itemize}
+            \item $\Delta(G) = \max \{3, 2, 3, 3, 1\} = 3$.
+            \item $\delta(G) = \min \{3, 2, 3, 3, 1\} = 1$.
+        \end{itemize}
+        \item The sum of degrees is $3+2+3+3+1 = 12$. The number of edges $|E(G)|$ is 6. The property states $\sum deg(v) = 2|E(G)|$. Since $12 = 2(6)$, the property holds.
+    \end{enumerate}
+\end{sol}
+\end{ex}
+
+\begin{ex}
+\textbf{Graph Operations: Removal} \\
+Consider the cycle graph $C_4$ with vertices labeled $1, 2, 3, 4$ and edges $\{\{1,2\}, \{2,3\}, \{3,4\}, \{4,1\}\}$.
+\begin{enumerate}
+    \item Let $G' = C_4 - v$ where $v=1$. Identify the resulting graph.
+    \item Let $G'' = C_4 - e$ where $e = \{1,2\}$. Is $G''$ connected?
+\end{enumerate}
+
+\begin{sol}
+    \begin{enumerate}
+        \item Vertex removal removes the vertex and all incident edges. Removing vertex 1 removes edges $\{1,2\}$ and $\{1,4\}$. The remaining vertices are $\{2,3,4\}$ with edges $\{\{2,3\}, \{3,4\}\}$. This is isomorphic to the Path graph $P_3$.
+        \item Edge removal removes only the edge, keeping vertices intact. Removing $\{1,2\}$ leaves vertices $\{1,2,3,4\}$ and edges $\{\{2,3\}, \{3,4\}, \{4,1\}\}$. This forms a path $2-3-4-1$ (which is $P_4$). Yes, it is still connected.
+    \end{enumerate}
+\end{sol}
+\end{ex}
+
+\begin{ex}
+\textbf{Special Graphs} \\
+Consider the complete graph $K_5$.
+\begin{enumerate}
+    \item Find the size (number of edges) of $K_5$.
+    \item Determine the clique number $\omega(K_5)$ and independence number $\alpha(K_5)$.
+\end{enumerate}
+
+\begin{sol}
+    \begin{enumerate}
+        \item A complete graph has all possible edges. For $n=5$, size is $\binom{5}{2} = \frac{5 \times 4}{2} = 10$.
+        \item 
+        \begin{itemize}
+            \item The clique number $\omega(G)$ is the size of the largest complete subgraph. Since $K_5$ is complete, $\omega(K_5) = 5$.
+            \item The independence number $\alpha(K_5)$ is the size of the largest empty induced subgraph. In a complete graph, no two vertices are non-adjacent, so $\alpha(K_5) = 1$.
+        \end{itemize}
+    \end{enumerate}
+\end{sol}
+\end{ex}
+
+\begin{ex}
+\textbf{Subgraphs vs. Induced Subgraphs} \\
+The lecture notes distinguish between subgraphs (vertex/edge removal) and induced subgraphs (only vertex removal).
+\begin{enumerate}
+    \item Let $G = C_5$ (Cycle: $1-2-3-4-5-1$). Does $G$ contain $P_3$ (Path: $a-b-c$) as an \textbf{induced} subgraph?
+    \item Let $G = K_4$. Is $C_4$ (Cycle of 4) a subgraph of $K_4$? Is it an \textbf{induced} subgraph?
+\end{enumerate}
+
+\begin{sol}
+    \begin{enumerate}
+        \item Yes. If we choose vertices $\{1, 2, 3\}$ from $C_5$, the induced edges are those in $C_5$ connecting these vertices: $\{1,2\}$ and $\{2,3\}$. The edge $\{1,3\}$ does not exist in $C_5$. Thus, the induced subgraph is $1-2-3$, which is $P_3$.
+        \item $K_4$ contains all possible edges between 4 vertices.
+        \begin{itemize}
+            \item $C_4$ is a subgraph because we can select 4 vertices and remove the two "diagonal" edges.
+            \item $C_4$ is \textbf{not} an induced subgraph. If we induce on any 4 vertices in $K_4$, we must keep \textit{all} edges between them. This yields $K_4$, not $C_4$.
+        \end{itemize}
+    \end{enumerate}
+\end{sol}
+\end{ex}
+
+\begin{ex}
+\textbf{Isomorphism and Invariants} \\
+Let $G = C_6$ (cycle of length 6) and $H = 2K_3$ (two disjoint triangles).
+\begin{enumerate}
+    \item Calculate the number of vertices and degrees for both $G$ and $H$.
+    \item Determine the girth $g(G)$ and $g(H)$.
+    \item Are $G$ and $H$ isomorphic?
+\end{enumerate}
+
+\begin{sol}
+    \begin{enumerate}
+        \item Both graphs have 6 vertices. Both are 2-regular (every vertex has degree 2).
+        \item 
+        \begin{itemize}
+            \item $g(G) = 6$ (the shortest cycle in $C_6$ is length 6).
+            \item $g(H) = 3$ (the shortest cycles are the triangles $K_3$).
+        \end{itemize}
+        \item No, they are not isomorphic. While they share the same number of vertices and degree sequence, their structural parameters differ. Specifically, $g(G) \neq g(H)$. Also, $G$ is connected while $H$ is disconnected.
+    \end{enumerate}
+\end{sol}
+\end{ex}
+
+\begin{ex}
+\textbf{Automorphisms} \\
+An automorphism is an isomorphism from a graph to itself. Consider the path graph $P_3$ with vertices $V=\{1, 2, 3\}$ and edges $\{\{1,2\}, \{2,3\}\}$.
+\begin{enumerate}
+    \item Find the degree of each vertex.
+    \item List all automorphisms $\phi: V \to V$.
+\end{enumerate}
+
+\begin{sol}
+    \begin{enumerate}
+        \item $deg(1)=1$, $deg(2)=2$, $deg(3)=1$.
+        \item An automorphism must map a vertex to another vertex of the same degree.
+        \begin{itemize}
+            \item Vertex 2 (unique degree 2) must map to itself: $\phi(2)=2$.
+            \item Vertices 1 and 3 (degree 1) can be swapped or stay fixed.
+        \end{itemize}
+        There are exactly 2 automorphisms:
+        \begin{itemize}
+            \item Identity: $\{1\to 1, 2\to 2, 3\to 3\}$
+            \item Flip: $\{1\to 3, 2\to 2, 3\to 1\}$
+        \end{itemize}
+    \end{enumerate}
+\end{sol}
+\end{ex}
+
+\begin{ex}
+\textbf{Girth and Trees} \\
+The girth $g(G)$ is the size of the shortest cycle contained in $G$ as a subgraph.
+\begin{enumerate}
+    \item Construct a graph with $\Delta(G)=2$ and $g(G)=4$.
+    \item What is the girth of a Tree graph (a connected graph with no cycles)?
+\end{enumerate}
+
+\begin{sol}
+    \begin{enumerate}
+        \item A graph with $\Delta(G)=2$ consists of paths and cycles. To have girth 4, it must contain a cycle of length 4. The graph $C_4$ satisfies this: every vertex has degree 2, and the cycle length is 4.
+        \item By definition, a tree contains no cycles. Therefore, the set of cycle lengths is empty. Depending on convention, $g(Tree) = \infty$ or is undefined.
+    \end{enumerate}
+\end{sol}
+\end{ex}
+
+
 \begin{ex}
     Let $G$ be any graph from Section \ref{ch:listofGraphs}.
     Determine:
@@ -1288,6 +1427,71 @@ and define
 \item Prove: \(\chi (G) \geq \frac{n}{\alpha(G)}\)
 \end{itemize}
 \end{ex}
+
+\begin{ex}
+\textbf{The Pigeonhole Principle in Graphs} \\
+Let $G$ be a simple graph with $n$ vertices ($n \ge 2$). Prove that there must exist at least two vertices $u, v \in V(G)$ such that $deg(u) = deg(v)$. \\
+\textit{(Hint: Consider the possible values the degree of a vertex can take. Can a graph contain both a vertex of degree 0 and a vertex of degree $n-1$?)}
+\end{ex}
+
+\begin{sol}
+    Let $V(G) = \{v_1, ..., v_n\}$. The possible values for the degree of any vertex are integers in the set $\{0, 1, 2, ..., n-1\}$.
+    
+    However, it is impossible for a simple graph to contain both a vertex of degree $0$ (connected to no one) and a vertex of degree $n-1$ (connected to everyone else). 
+    \begin{itemize}
+        \item If there is a vertex of degree $n-1$, no vertex can have degree $0$. The possible degree values are $\{1, 2, ..., n-1\}$.
+        \item If there is a vertex of degree $0$, no vertex can have degree $n-1$. The possible degree values are $\{0, 1, ..., n-2\}$.
+    \end{itemize}
+    In either case, the vertices can take values from a set of size $n-1$. Since there are $n$ vertices (pigeons) and only $n-1$ possible degree values (holes), by the Pigeonhole Principle, at least two vertices must share the same degree.
+\end{sol}
+
+\begin{ex}
+\textbf{Structural Existence Proof (The Longest Path Argument)} \\
+Let $G$ be a finite graph where every vertex has a degree of at least 2 (i.e., $\delta(G) \ge 2$). Prove that $G$ must contain a cycle. \\
+\textit{(Hint: Consider the longest path $P = v_1 - v_2 - ... - v_k$ in the graph. Look at the neighbors of the endpoint $v_k$.)}
+\end{ex}
+
+\begin{sol}
+    Consider a path of maximum length in $G$, denoted $P = x_0, x_1, ..., x_k$. Since the path is maximal, $x_k$ cannot be adjacent to any vertex outside the path (otherwise we could extend the path).
+    
+    However, we know $deg(x_k) \ge 2$. Therefore, $x_k$ must have at least two neighbors. Since these neighbors cannot be outside the path, they must be vertices already in the path (e.g., $x_i$ where $0 \le i < k-1$).
+    
+    If $x_k$ is connected to some $x_i$ in the path, the edges $(x_k, x_i)$ combined with the path segment $x_i, ..., x_k$ form a cycle. Thus, $G$ contains a cycle.
+\end{sol}
+
+\begin{ex}
+\textbf{Extremal Graph Theory: Triangle-Free Graphs} \\
+A graph is called "triangle-free" if it contains no $K_3$ (complete graph of size 3) as a subgraph. Equivalently, $\omega(G) < 3$.
+\begin{enumerate}
+    \item Draw a graph with 5 vertices that is triangle-free but has as many edges as possible. How many edges does it have?
+    \item Prove that if a graph $G$ on $n$ vertices is bipartite, it is triangle-free.
+\end{enumerate}
+\end{ex}
+
+\begin{sol}
+    \begin{enumerate}
+        \item To maximize edges without creating a triangle, we should divide vertices into two sets and connect all vertices between the sets, but none within the sets (a complete bipartite graph). For $n=5$, we split vertices into sets of size 2 and 3. The graph $K_{2,3}$ has $2 \times 3 = 6$ edges. (Note: $C_5$ has only 5 edges).
+        \item A bipartite graph divides $V(G)$ into two disjoint sets $A$ and $B$ where all edges go from $A$ to $B$. A triangle requires 3 vertices connected in a cycle $u-v-w-u$. In a bipartite graph, a path of length 3 ($u \in A \to v \in B \to w \in A$) ends back in set $A$. For $w$ to connect to $u$, there would need to be an edge within set $A$, which is forbidden. Thus, no odd cycles (including triangles) exist.
+    \end{enumerate}
+\end{sol}
+
+\begin{ex}
+\textbf{Automorphism Groups of Cycles vs. Paths} \\
+Let $C_4$ be the cycle graph with 4 vertices, and $P_4$ be the path graph with 4 vertices.
+\begin{enumerate}
+    \item Determine the number of automorphisms for $P_4$.
+    \item Determine the number of automorphisms for $C_4$.
+    \item Explain why the symmetry (number of automorphisms) increases when we add an edge to $P_4$ to turn it into $C_4$.
+\end{enumerate}
+\end{ex}
+
+\begin{sol}
+    \begin{enumerate}
+        \item \textbf{$P_4$ ($1-2-3-4$):} The endpoints 1 and 4 have degree 1; the centers 2 and 3 have degree 2. An automorphism must map endpoints to endpoints. We can either fix everyone (Identity) or flip the whole path ($1 \leftrightarrow 4, 2 \leftrightarrow 3$). Total: 2 automorphisms.
+        \item \textbf{$C_4$ ($1-2-3-4-1$):} Every vertex has degree 2, so we have more freedom. We can rotate the square ($0^\circ, 90^\circ, 180^\circ, 270^\circ$)—giving 4 rotations. We can also reflect it (flip horizontally, vertically, or diagonally). The automorphism group is the Dihedral group $D_4$, which has size $2n = 2(4) = 8$.
+        \item Adding the edge $(1,4)$ to $P_4$ makes all vertices indistinguishable by degree (all become degree 2). This structural homogeneity allows any vertex to be mapped to any other vertex (vertex-transitivity), drastically increasing the number of symmetries from 2 to 8.
+    \end{enumerate}
+\end{sol}
 
 
 \newpage

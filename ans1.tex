@@ -88,7 +88,7 @@ Thus, \( B \), \( C \), \( D \), and \( E \) are knights, while \( A \) is a ser
 &\Leftrightarrow & 1.
 \end{eqnarray*}
 \end{answer}
-\begin{answer}{1.34}
+\begin{answer}{1.33}
     We need to show that $x + \frac{1}{x} \geq 2$. Since $x \geq 0$, we can multiply the inequality by $x$ to get
     \[
     x^2 + 1 \geq 2x
@@ -99,20 +99,20 @@ Thus, \( B \), \( C \), \( D \), and \( E \) are knights, while \( A \) is a ser
     \]
     This is obviously always true.
 \end{answer}
-\begin{answer}{1.35}
+\begin{answer}{1.34}
     Suppose there are only finitely many primes $p_1, p_2, \ldots, p_n$. Then the number $p = p_1 p_2 \cdots p_n + 1$ is not divisible by any prime $p_i$ and $p_i \neq p$ for each $i$. By definition, $p$ is therefore a prime number that is different from each of the previous ones. This is a contradiction.
 \end{answer}
-\begin{answer}{1.36}
+\begin{answer}{1.35}
     The opposite statement is: there exists a natural number greater than $1$.
 \end{answer}
-\begin{answer}{1.38}
+\begin{answer}{1.37}
 We prove both directions separately:
 
 ($\Rightarrow$) Assume that $m$ and $n$ have different parities. Write $m = 2k$ and $n = 2l + 1$, substitute into the expression $m^2 - n^2$, and the result follows.
 
     ($\Leftarrow$) We show indirectly: If $m$ and $n$ have the same parity, then $m^2 - n^2$ is even. Consider both cases.
 \end{answer}
-\begin{answer}{1.40}
+\begin{answer}{1.39}
     \begin{enumerate}[label=(\roman*)]
         \item $(A \Rightarrow B) \wedge A \Rightarrow B$. This is true.
         \item  $(A \Rightarrow B) \wedge \neg A \Rightarrow \neg B$. This is not necessarily true.
@@ -258,7 +258,113 @@ Thus, \(R\) is \textbf{not transitive}.
 
     
 \end{answer}
+\begin{answer}{3.45}
+    \begin{enumerate}
+        \item Using the definition of degree as the number of neighbors:
+        \begin{itemize}
+            \item $deg(1) = 3$ (connected to 2, 3, 4)
+            \item $deg(2) = 2$ (connected to 1, 3)
+            \item $deg(3) = 3$ (connected to 1, 2, 4)
+            \item $deg(4) = 3$ (connected to 1, 3, 5)
+            \item $deg(5) = 1$ (connected to 4)
+        \end{itemize}
+        \item
+        \begin{itemize}
+            \item $\Delta(G) = \max \{3, 2, 3, 3, 1\} = 3$.
+            \item $\delta(G) = \min \{3, 2, 3, 3, 1\} = 1$.
+        \end{itemize}
+        \item The sum of degrees is $3+2+3+3+1 = 12$. The number of edges $|E(G)|$ is 6. The property states $\sum deg(v) = 2|E(G)|$. Since $12 = 2(6)$, the property holds.
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.46}
+    \begin{enumerate}
+        \item Vertex removal removes the vertex and all incident edges. Removing vertex 1 removes edges $\{1,2\}$ and $\{1,4\}$. The remaining vertices are $\{2,3,4\}$ with edges $\{\{2,3\}, \{3,4\}\}$. This is isomorphic to the Path graph $P_3$.
+        \item Edge removal removes only the edge, keeping vertices intact. Removing $\{1,2\}$ leaves vertices $\{1,2,3,4\}$ and edges $\{\{2,3\}, \{3,4\}, \{4,1\}\}$. This forms a path $2-3-4-1$ (which is $P_4$). Yes, it is still connected.
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.47}
+    \begin{enumerate}
+        \item A complete graph has all possible edges. For $n=5$, size is $\binom{5}{2} = \frac{5 \times 4}{2} = 10$.
+        \item
+        \begin{itemize}
+            \item The clique number $\omega(G)$ is the size of the largest complete subgraph. Since $K_5$ is complete, $\omega(K_5) = 5$.
+            \item The independence number $\alpha(K_5)$ is the size of the largest empty induced subgraph. In a complete graph, no two vertices are non-adjacent, so $\alpha(K_5) = 1$.
+        \end{itemize}
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.48}
+    \begin{enumerate}
+        \item Yes. If we choose vertices $\{1, 2, 3\}$ from $C_5$, the induced edges are those in $C_5$ connecting these vertices: $\{1,2\}$ and $\{2,3\}$. The edge $\{1,3\}$ does not exist in $C_5$. Thus, the induced subgraph is $1-2-3$, which is $P_3$.
+        \item $K_4$ contains all possible edges between 4 vertices.
+        \begin{itemize}
+            \item $C_4$ is a subgraph because we can select 4 vertices and remove the two "diagonal" edges.
+            \item $C_4$ is \textbf{not} an induced subgraph. If we induce on any 4 vertices in $K_4$, we must keep \textit{all} edges between them. This yields $K_4$, not $C_4$.
+        \end{itemize}
+    \end{enumerate}
+\end{answer}
 \begin{answer}{3.49}
+    \begin{enumerate}
+        \item Both graphs have 6 vertices. Both are 2-regular (every vertex has degree 2).
+        \item
+        \begin{itemize}
+            \item $g(G) = 6$ (the shortest cycle in $C_6$ is length 6).
+            \item $g(H) = 3$ (the shortest cycles are the triangles $K_3$).
+        \end{itemize}
+        \item No, they are not isomorphic. While they share the same number of vertices and degree sequence, their structural parameters differ. Specifically, $g(G) \neq g(H)$. Also, $G$ is connected while $H$ is disconnected.
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.50}
+    \begin{enumerate}
+        \item $deg(1)=1$, $deg(2)=2$, $deg(3)=1$.
+        \item An automorphism must map a vertex to another vertex of the same degree.
+        \begin{itemize}
+            \item Vertex 2 (unique degree 2) must map to itself: $\phi(2)=2$.
+            \item Vertices 1 and 3 (degree 1) can be swapped or stay fixed.
+        \end{itemize}
+        There are exactly 2 automorphisms:
+        \begin{itemize}
+            \item Identity: $\{1\to 1, 2\to 2, 3\to 3\}$
+            \item Flip: $\{1\to 3, 2\to 2, 3\to 1\}$
+        \end{itemize}
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.51}
+    \begin{enumerate}
+        \item A graph with $\Delta(G)=2$ consists of paths and cycles. To have girth 4, it must contain a cycle of length 4. The graph $C_4$ satisfies this: every vertex has degree 2, and the cycle length is 4.
+        \item By definition, a tree contains no cycles. Therefore, the set of cycle lengths is empty. Depending on convention, $g(Tree) = \infty$ or is undefined.
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.4}
+    Let $V(G) = \{v_1, ..., v_n\}$. The possible values for the degree of any vertex are integers in the set $\{0, 1, 2, ..., n-1\}$.
+
+    However, it is impossible for a simple graph to contain both a vertex of degree $0$ (connected to no one) and a vertex of degree $n-1$ (connected to everyone else).
+    \begin{itemize}
+        \item If there is a vertex of degree $n-1$, no vertex can have degree $0$. The possible degree values are $\{1, 2, ..., n-1\}$.
+        \item If there is a vertex of degree $0$, no vertex can have degree $n-1$. The possible degree values are $\{0, 1, ..., n-2\}$.
+    \end{itemize}
+    In either case, the vertices can take values from a set of size $n-1$. Since there are $n$ vertices (pigeons) and only $n-1$ possible degree values (holes), by the Pigeonhole Principle, at least two vertices must share the same degree.
+\end{answer}
+\begin{answer}{3.4}
+    Consider a path of maximum length in $G$, denoted $P = x_0, x_1, ..., x_k$. Since the path is maximal, $x_k$ cannot be adjacent to any vertex outside the path (otherwise we could extend the path).
+
+    However, we know $deg(x_k) \ge 2$. Therefore, $x_k$ must have at least two neighbors. Since these neighbors cannot be outside the path, they must be vertices already in the path (e.g., $x_i$ where $0 \le i < k-1$).
+
+    If $x_k$ is connected to some $x_i$ in the path, the edges $(x_k, x_i)$ combined with the path segment $x_i, ..., x_k$ form a cycle. Thus, $G$ contains a cycle.
+\end{answer}
+\begin{answer}{3.4}
+    \begin{enumerate}
+        \item To maximize edges without creating a triangle, we should divide vertices into two sets and connect all vertices between the sets, but none within the sets (a complete bipartite graph). For $n=5$, we split vertices into sets of size 2 and 3. The graph $K_{2,3}$ has $2 \times 3 = 6$ edges. (Note: $C_5$ has only 5 edges).
+        \item A bipartite graph divides $V(G)$ into two disjoint sets $A$ and $B$ where all edges go from $A$ to $B$. A triangle requires 3 vertices connected in a cycle $u-v-w-u$. In a bipartite graph, a path of length 3 ($u \in A \to v \in B \to w \in A$) ends back in set $A$. For $w$ to connect to $u$, there would need to be an edge within set $A$, which is forbidden. Thus, no odd cycles (including triangles) exist.
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.4}
+    \begin{enumerate}
+        \item \textbf{$P_4$ ($1-2-3-4$):} The endpoints 1 and 4 have degree 1; the centers 2 and 3 have degree 2. An automorphism must map endpoints to endpoints. We can either fix everyone (Identity) or flip the whole path ($1 \leftrightarrow 4, 2 \leftrightarrow 3$). Total: 2 automorphisms.
+        \item \textbf{$C_4$ ($1-2-3-4-1$):} Every vertex has degree 2, so we have more freedom. We can rotate the square ($0^\circ, 90^\circ, 180^\circ, 270^\circ$)—giving 4 rotations. We can also reflect it (flip horizontally, vertically, or diagonally). The automorphism group is the Dihedral group $D_4$, which has size $2n = 2(4) = 8$.
+        \item Adding the edge $(1,4)$ to $P_4$ makes all vertices indistinguishable by degree (all become degree 2). This structural homogeneity allows any vertex to be mapped to any other vertex (vertex-transitivity), drastically increasing the number of symmetries from 2 to 8.
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.60}
 \begin{enumerate}
     \item Let $\rel{R}$ be a partial order on a set $A$. By definition, $\rel{R}$ is reflexive, anti-symmetric, and transitive. The definition of a preorder requires only that a relation be reflexive and transitive. Since $\rel{R}$ satisfies these two properties, $\rel{R}$ is a preorder.
     \item Let $A = \{a, b\}$ and let $\rel{R} = \{(a, a), (b, b), (a, b), (b, a)\}$.
@@ -270,7 +376,7 @@ Thus, \(R\) is \textbf{not transitive}.
     Since $\rel{R}$ is reflexive and transitive, it is a preorder. Since it is not anti-symmetric, it is not a partial order.
 \end{enumerate}
 \end{answer}
-\begin{answer}{3.50}
+\begin{answer}{3.61}
 \begin{enumerate}
     \item The standard additional property is \textbf{irreflexivity} (or anti-reflexivity).
     \item Proof:
@@ -281,7 +387,7 @@ Thus, \(R\) is \textbf{not transitive}.
     (Alternatively, if we define a strict partial order as an irreflexive, anti-symmetric, and transitive relation, we only need to show anti-symmetry follows from the other two, as noted above).
 \end{enumerate}
 \end{answer}
-\begin{answer}{3.51}
+\begin{answer}{3.62}
 Let $\rel{R}$ be a relation on $A$.
 \begin{itemize}
     \item \textbf{From Linear Order $\rel{R}$ to Strict Linear Order $\rel{R}^-$:}
