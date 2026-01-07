@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1765979577 "/Users/matjaz/repos/TOR1-vaje---TCS1-exercises/TOR1 - vaje.tex" "TOR1 - vaje.pdf" "TOR1 - vaje" 1765979581
-  "/Users/matjaz/repos/TOR1-vaje---TCS1-exercises/TOR1 - vaje.tex" 1765979577 101784 6746ce18855c4e23ac3b75dd86eaed71 ""
+["pdflatex"] 1767792355 "/Users/matjaz/repos/TOR1-vaje---TCS1-exercises/TOR1 - vaje.tex" "TOR1 - vaje.pdf" "TOR1 - vaje" 1767792360
+  "/Users/matjaz/repos/TOR1-vaje---TCS1-exercises/TOR1 - vaje.tex" 1767792355 113644 6e93dd438b092d6bbd7c95456e09a11d ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/iwona/ec-iwona-sc.enc" 1276043435 2452 388b1f44dfda03ab19527677af70e7fb ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/iwona/ec-iwona.enc" 1276043435 2027 f8708480c25b8150843bb94b8b39c93f ""
@@ -275,10 +275,10 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1669503180 2826440 dae52637cd8708ef7b5635a4d63ebb71 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "TOR1 - vaje.aux" 1765979581 11831 12d8dbbf3acb53107f1a45fb97f40548 "pdflatex"
+  "TOR1 - vaje.aux" 1767792359 12055 2927e8283a51dcbf254e57519115bc51 "pdflatex"
   "TOR1 - vaje.out" 0 -1 0 "pdflatex"
-  "TOR1 - vaje.tex" 1765979577 101784 6746ce18855c4e23ac3b75dd86eaed71 ""
-  "TOR1 - vaje.toc" 1765979581 1703 bf55c3d59801c30e9b8aced138922693 "pdflatex"
+  "TOR1 - vaje.tex" 1767792355 113644 6e93dd438b092d6bbd7c95456e09a11d ""
+  "TOR1 - vaje.toc" 1767792359 1703 a7566acda6f770a9a38017c409d93c69 "pdflatex"
   "Titlepage.tex" 1704722980 986 b9d330972f344cfef178358cec8ee4ac ""
   "classicthesis.sty" 1704722980 30059 c405eec51ad6592640d49c4c83e34d5e ""
   "img/hasse5.pdf" 1696923389 4298 ba7ec044de4213fd34b3e2e65cf2c99d ""
@@ -286,7 +286,7 @@
   "img/vez2.pdf" 1704722980 55954 ca3aa048c999ff5a7e2a4182faec1379 ""
   "img/vez3.pdf" 1704722980 57003 0d456728eb7224a6b68a0a6448a6a308 ""
   "petersen.png" 1704722980 13793 12eef7a4b1e224f17427d576c93fe42b ""
-  "res1.tex" 1765979581 16304 75e656f6a93106630cacaecec3da70b6 "pdflatex"
+  "res1.tex" 1767792359 24070 cdef7f7a83bfde0f3e19dd0f74910d8a "pdflatex"
   "si/cip.tex" 1704722980 777 7337259165a6af21917be6ec34cd22a5 ""
   "si/kolofon.tex" 1715011822 540 c0d52e4af9198a76699cb0d8072307c3 ""
   "smallGraphs/g_2C4.png" 1761064181 139 93bf8dbd68c3b78a5c906c922f7b729a ""

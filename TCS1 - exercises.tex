@@ -1395,40 +1395,6 @@ The girth $g(G)$ is the size of the shortest cycle contained in $G$ as a subgrap
 
 
 \begin{ex}
-    Let $G$ be any graph from Section \ref{ch:listofGraphs}.
-    Determine:
-	\begin{enumerate}
-	\item Order and size of the graph, that is, number of vertices and number of edges in $G$;
-        \item The maximum and minimum degree, i.e., \( \Delta(G) \), \( \delta(G) \)
-		\item The size of the largest clique, i.e., \( \omega(G) \),
-		\item The girth of the graph, i.e., \( g(G) \)
-		\item The size of the largest independent set, i.e., \( \alpha(G) \), and
-		\item The minimum number of colors needed for coloring the graph, i.e., \( \chi(G) \).
-	\end{enumerate}
-\end{ex}
-
-\begin{ex}
-    Let $n\ge 3$. Recall the definition of cycles and complete graphs:
-\[C_{n}=\{[n], E_{1}\}\]
-\[K_{n}=\{[n], E_{2}\}\]
-and define
-\[G_{n}=\{[n], E_{2} \setminus E_{1}\}\]
-\begin{itemize}
-    \item Draw \(H, G_{4}, G_{5}, G_{6}, C_{5}, C_{6}, \overline{C_{i}}\)
-    \item For all the above graphs, determine \(\Delta(G_{i}), \delta(G_{i}), \alpha(G_{i}), \omega(G_{i}), \chi(G_{i}), g(G_{i})\)
-    \item Prove \((\forall i \geq 3) (G_{i} \simeq \overline{C_{i}})\)
-\end{itemize}
-
-\end{ex}
-\begin{ex}
- Let \(G = ([n], E)\) be a graph.
-\begin{itemize}
-\item Prove: \(\chi (G) \geq \omega (G)\)
-\item Prove: \(\chi (G) \geq \frac{n}{\alpha(G)}\)
-\end{itemize}
-\end{ex}
-
-\begin{ex}
 \textbf{The Pigeonhole Principle in Graphs} \\
 Let $G$ be a simple graph with $n$ vertices ($n \ge 2$). Prove that there must exist at least two vertices $u, v \in V(G)$ such that $deg(u) = deg(v)$. \\
 \textit{(Hint: Consider the possible values the degree of a vertex can take. Can a graph contain both a vertex of degree 0 and a vertex of degree $n-1$?)}
@@ -1492,6 +1458,43 @@ Let $C_4$ be the cycle graph with 4 vertices, and $P_4$ be the path graph with 4
         \item Adding the edge $(1,4)$ to $P_4$ makes all vertices indistinguishable by degree (all become degree 2). This structural homogeneity allows any vertex to be mapped to any other vertex (vertex-transitivity), drastically increasing the number of symmetries from 2 to 8.
     \end{enumerate}
 \end{sol}
+
+
+
+\begin{ex}
+    Let $G$ be any graph from Section \ref{ch:listofGraphs}.
+    Determine:
+	\begin{enumerate}
+	\item Order and size of the graph, that is, number of vertices and number of edges in $G$;
+        \item The maximum and minimum degree, i.e., \( \Delta(G) \), \( \delta(G) \)
+		\item The size of the largest clique, i.e., \( \omega(G) \),
+		\item The girth of the graph, i.e., \( g(G) \)
+		\item The size of the largest independent set, i.e., \( \alpha(G) \), and
+		\item The minimum number of colors needed for coloring the graph, i.e., \( \chi(G) \).
+	\end{enumerate}
+\end{ex}
+
+\begin{ex}
+    Let $n\ge 3$. Recall the definition of cycles and complete graphs:
+\[C_{n}=\{[n], E_{1}\}\]
+\[K_{n}=\{[n], E_{2}\}\]
+and define
+\[G_{n}=\{[n], E_{2} \setminus E_{1}\}\]
+\begin{itemize}
+    \item Draw \(H, G_{4}, G_{5}, G_{6}, C_{5}, C_{6}, \overline{C_{i}}\)
+    \item For all the above graphs, determine \(\Delta(G_{i}), \delta(G_{i}), \alpha(G_{i}), \omega(G_{i}), \chi(G_{i}), g(G_{i})\)
+    \item Prove \((\forall i \geq 3) (G_{i} \simeq \overline{C_{i}})\)
+\end{itemize}
+
+\end{ex}
+
+\begin{ex}
+ Let \(G = ([n], E)\) be a graph.
+\begin{itemize}
+\item Prove: \(\chi (G) \geq \omega (G)\)
+\item Prove: \(\chi (G) \geq \frac{n}{\alpha(G)}\)
+\end{itemize}
+\end{ex}
 
 
 \newpage

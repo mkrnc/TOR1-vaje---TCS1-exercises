@@ -356,7 +356,113 @@ $S^{-1}\cup R = \{(c, a), (f, a), (c, d), (d, f),
 
 Relacija ni simetrična, saj je $(f,a)\in S^{-1}\cup R$ in $(a,f)\not\in S^{-1}\cup R$.
 \end{answer}
+\begin{answer}{3.35}
+    \begin{enumerate}
+        \item Z uporabo definicije stopnje kot števila sosedov:
+        \begin{itemize}
+            \item $deg(1) = 3$ (povezano z 2, 3, 4)
+            \item $deg(2) = 2$ (povezano z 1, 3)
+            \item $deg(3) = 3$ (povezano z 1, 2, 4)
+            \item $deg(4) = 3$ (povezano z 1, 3, 5)
+            \item $deg(5) = 1$ (povezano s 4)
+        \end{itemize}
+        \item
+        \begin{itemize}
+            \item $\Delta(G) = \max \{3, 2, 3, 3, 1\} = 3$.
+            \item $\delta(G) = \min \{3, 2, 3, 3, 1\} = 1$.
+        \end{itemize}
+        \item Vsota stopenj je $3+2+3+3+1 = 12$. Število povezav $|E(G)|$ je 6. Lastnost pravi $\sum deg(v) = 2|E(G)|$. Ker je $12 = 2(6)$, lastnost velja.
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.36}
+    \begin{enumerate}
+        \item Odstranitev vozlišča odstrani vozlišče in vse incidentne povezave. Odstranitev vozlišča 1 odstrani povezavi $\{1,2\}$ in $\{1,4\}$. Preostala vozlišča so $\{2,3,4\}$ s povezavami $\{\{2,3\}, \{3,4\}\}$. To je izomorfno grafu poti $P_3$.
+        \item Odstranitev povezave odstrani le povezavo, vozlišča pa ohrani nedotaknjena. Odstranitev $\{1,2\}$ pusti vozlišča $\{1,2,3,4\}$ in povezave $\{\{2,3\}, \{3,4\}, \{4,1\}\}$. To tvori pot $2-3-4-1$ (kar je $P_4$). Da, graf je še vedno povezan.
+    \end{enumerate}
+\end{answer}
 \begin{answer}{3.37}
+    \begin{enumerate}
+        \item Polni graf ima vse možne povezave. Za $n=5$ je velikost $\binom{5}{2} = \frac{5 \times 4}{2} = 10$.
+        \item
+        \begin{itemize}
+            \item Klično število $\omega(G)$ je velikost največjega polnega podgrafa. Ker je $K_5$ poln, je $\omega(K_5) = 5$.
+            \item Neodvisnostno število $\alpha(K_5)$ je velikost največjega praznega induciranega podgrafa. V polnem grafu nobeni dve vozlišči nista nesosednji, zato je $\alpha(K_5) = 1$.
+        \end{itemize}
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.38}
+    \begin{enumerate}
+        \item Da. Če izberemo vozlišča $\{1, 2, 3\}$ iz $C_5$, so inducirane povezave tiste v $C_5$, ki povezujejo ta vozlišča: $\{1,2\}$ in $\{2,3\}$. Povezava $\{1,3\}$ v $C_5$ ne obstaja. Torej je induciran podgraf $1-2-3$, kar je $P_3$.
+        \item $K_4$ vsebuje vse možne povezave med 4 vozlišči.
+        \begin{itemize}
+            \item $C_4$ je podgraf, ker lahko izberemo 4 vozlišča in odstranimo dve "diagonalni" povezavi.
+            \item $C_4$ \textbf{ni} induciran podgraf. Če induciramo na katerihkoli 4 vozliščih v $K_4$, moramo ohraniti \textit{vse} povezave med njimi. To nam da $K_4$, ne $C_4$.
+        \end{itemize}
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.39}
+    \begin{enumerate}
+        \item Oba grafa imata 6 vozlišč. Oba sta 2-regularna (vsako vozlišče ima stopnjo 2).
+        \item
+        \begin{itemize}
+            \item $g(G) = 6$ (najkrajši cikel v $C_6$ je dolžine 6).
+            \item $g(H) = 3$ (najkrajši cikli so trikotniki $K_3$).
+        \end{itemize}
+        \item Ne, nista izomorfna. Čeprav imata enako število vozlišč in enako zaporedje stopenj, se njuni strukturni parametri razlikujejo. Konkretno, $g(G) \neq g(H)$. Prav tako je $G$ povezan, medtem ko je $H$ nepovezan.
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.40}
+    \begin{enumerate}
+        \item $deg(1)=1$, $deg(2)=2$, $deg(3)=1$.
+        \item Avtomorfizem mora preslikati vozlišče v drugo vozlišče iste stopnje.
+        \begin{itemize}
+            \item Vozlišče 2 (edino s stopnjo 2) se mora preslikati nase: $\phi(2)=2$.
+            \item Vozlišči 1 in 3 (stopnja 1) se lahko zamenjata ali ostaneta fiksni.
+        \end{itemize}
+        Obstajata natanko 2 avtomorfizma:
+        \begin{itemize}
+            \item Identiteta: $\{1\to 1, 2\to 2, 3\to 3\}$
+            \item Zasuk (flip): $\{1\to 3, 2\to 2, 3\to 1\}$
+        \end{itemize}
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.41}
+    \begin{enumerate}
+        \item Graf z $\Delta(G)=2$ je sestavljen iz poti in ciklov. Da bi imel ožino 4, mora vsebovati cikel dolžine 4. Graf $C_4$ temu zadošča: vsako vozlišče ima stopnjo 2 in dolžina cikla je 4.
+        \item Po definiciji drevo ne vsebuje ciklov. Zato je množica dolžin ciklov prazna. Odvisno od dogovora je $g(Tree) = \infty$ ali pa je nedefinirana.
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.4}
+    Naj bo $V(G) = \{v_1, ..., v_n\}$. Možne vrednosti za stopnjo kateregakoli vozlišča so cela števila v množici $\{0, 1, 2, ..., n-1\}$.
+
+    Vendar pa je nemogoče, da bi enostaven graf vseboval tako vozlišče stopnje $0$ (povezano z nikomer) kot vozlišče stopnje $n-1$ (povezano z vsemi ostalimi).
+    \begin{itemize}
+        \item Če obstaja vozlišče stopnje $n-1$, nobeno vozlišče ne more imeti stopnje $0$. Možne vrednosti stopenj so $\{1, 2, ..., n-1\}$.
+        \item Če obstaja vozlišče stopnje $0$, nobeno vozlišče ne more imeti stopnje $n-1$. Možne vrednosti stopenj so $\{0, 1, ..., n-2\}$.
+    \end{itemize}
+    V obeh primerih lahko vozlišča zavzamejo vrednosti iz množice velikosti $n-1$. Ker je vozlišč $n$ (golobi) in možnih vrednosti stopenj le $n-1$ (predali), morata po načelu golobnjaka vsaj dve vozlišči imeti enako stopnjo.
+\end{answer}
+\begin{answer}{3.4}
+    Obravnavajmo pot maksimalne dolžine v $G$, označeno s $P = x_0, x_1, ..., x_k$. Ker je pot maksimalna, $x_k$ ne more biti soseden nobenemu vozlišču izven poti (sicer bi lahko pot podaljšali).
+
+    Vendar vemo, da je $deg(x_k) \ge 2$. Zato mora imeti $x_k$ vsaj dva soseda. Ker ti sosedje ne morejo biti izven poti, morajo biti vozlišča, ki so že na poti (npr. $x_i$, kjer je $0 \le i < k-1$).
+
+    Če je $x_k$ povezan z nekim $x_i$ na poti, povezava $(x_k, x_i)$ skupaj s segmentom poti $x_i, ..., x_k$ tvori cikel. Torej $G$ vsebuje cikel.
+\end{answer}
+\begin{answer}{3.4}
+    \begin{enumerate}
+        \item Da bi maksimizirali število povezav brez ustvarjanja trikotnika, moramo vozlišča razdeliti v dve množici in povezati vsa vozlišča med množicama, nobenega pa znotraj množic (poln dvodelen graf). Za $n=5$ razdelimo vozlišča v množici velikosti 2 in 3. Graf $K_{2,3}$ ima $2 \times 3 = 6$ povezav. (Opomba: $C_5$ ima le 5 povezav).
+        \item Dvodelen graf razdeli $V(G)$ v dve disjunktni množici $A$ in $B$, kjer vse povezave potekajo od $A$ do $B$. Trikotnik zahteva 3 vozlišča povezana v cikel $u-v-w-u$. V dvodelnem grafu se pot dolžine 3 ($u \in A \to v \in B \to w \in A$) konča nazaj v množici $A$. Da bi se $w$ povezal z $u$, bi morala obstajati povezava znotraj množice $A$, kar je prepovedano. Torej ne obstajajo lihi cikli (vključno s trikotniki).
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.4}
+    \begin{enumerate}
+        \item \textbf{$P_4$ ($1-2-3-4$):} Končni vozlišči 1 in 4 imata stopnjo 1; srednji vozlišči 2 in 3 imata stopnjo 2. Avtomorfizem mora preslikati končna vozlišča v končna vozlišča. Lahko vse fiksiramo (Identiteta) ali obrnemo celotno pot ($1 \leftrightarrow 4, 2 \leftrightarrow 3$). Skupaj: 2 avtomorfizma.
+        \item \textbf{$C_4$ ($1-2-3-4-1$):} Vsako vozlišče ima stopnjo 2, zato imamo več svobode. Kvadrat lahko zavrtimo ($0^\circ, 90^\circ, 180^\circ, 270^\circ$)—kar da 4 rotacije. Lahko ga tudi zrcalimo (vodoravno, navpično ali diagonalno). Grupa avtomorfizmov je diedrska grupa $D_4$, ki je velikosti $2n = 2(4) = 8$.
+        \item Dodajanje povezave $(1,4)$ grafu $P_4$ naredi vsa vozlišča nerazločljiva glede na stopnjo (vsa postanejo stopnje 2). Ta strukturna homogenost omogoča, da se katero koli vozlišče preslika v katero koli drugo vozlišče (vozliščna tranzitivnost), kar drastično poveča število simetrij z 2 na 8.
+    \end{enumerate}
+\end{answer}
+\begin{answer}{3.50}
 \begin{enumerate}
     \item Naj bo $\rel{R}$ delna urejenost na množici $A$. Po definiciji je $\rel{R}$ refleksivna, antisimetrična in tranzitivna. Definicija predurejenosti zahteva le, da je relacija refleksivna in tranzitivna. Ker $\rel{R}$ zadošča tema dvema lastnostma, je $\rel{R}$ predurejenost.
     \item Naj bo $A = \{a, b\}$ in naj bo $\rel{R} = \{(a, a), (b, b), (a, b), (b, a)\}$.
@@ -368,7 +474,7 @@ Relacija ni simetrična, saj je $(f,a)\in S^{-1}\cup R$ in $(a,f)\not\in S^{-1}\
     Ker je $\rel{R}$ refleksivna in tranzitivna, je predurejenost. Ker ni antisimetrična, ni delna urejenost.
 \end{enumerate}
 \end{answer}
-\begin{answer}{3.38}
+\begin{answer}{3.51}
 \begin{enumerate}
     \item Standardna dodatna lastnost je \textbf{irefleksivnost} (ali protirefleksivnost).
     \item Dokaz:
@@ -379,7 +485,7 @@ Relacija ni simetrična, saj je $(f,a)\in S^{-1}\cup R$ in $(a,f)\not\in S^{-1}\
     (Alternativno: če strogo delno urejenost definiramo kot irefleksivno, antisimetrično in tranzitivno relacijo, moramo le pokazati, da antisimetričnost sledi iz drugih dveh, kot je navedeno zgoraj).
 \end{enumerate}
 \end{answer}
-\begin{answer}{3.39}
+\begin{answer}{3.52}
 Naj bo $\rel{R}$ relacija na $A$.
 \begin{itemize}
     \item \textbf{Iz linearne urejenosti $\rel{R}$ v strogo linearno urejenost $\rel{R}^-$:}
